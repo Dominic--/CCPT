@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: 有关lab3文档的一个问题 from xyong on 2012-04-09 (gmail.mbox)</title>
+<meta name="Author" content="xyong (xyong_at_mail.tsinghua.edu.cn)" />
+<meta name="Subject" content="Re: 有关lab3文档的一个问题" />
+<meta name="Date" content="2012-04-09" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: 有关lab3文档的一个问题</h1>
+<!-- received="Wed May 15 21:24:25 2013" -->
+<!-- isoreceived="20130515172425" -->
+<!-- sent="Mon, 9 Apr 2012 23:09:12 +0800" -->
+<!-- isosent="20120409150912" -->
+<!-- name="xyong" -->
+<!-- email="xyong_at_mail.tsinghua.edu.cn" -->
+<!-- subject="Re: 有关lab3文档的一个问题" -->
+<!-- id="4E7D581F-FFBA-4F5C-9599-E5341C30ECFE_at_mail.tsinghua.edu.cn" -->
+<!-- charset="GB2312" -->
+<!-- inreplyto="CAMRA=5QAXi4Qmpbfqz3BNb9=NwtwACW_NsXwiS30W-9r+zJM8w_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start251" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0252.html" accesskey="d" title="Zhongxing Ming: &quot;&#26412;&#21608;&#20363;&#20250;&quot;">Next message</a> ]
+[ <a href="0250.html" title="Yong Xiang: &quot;Re: OS google group&#38382;&#39064;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg251" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg251" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg251" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg251" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: xyong &lt;<a href="mailto:xyong_at_mail.tsinghua.edu.cn?Subject=Re%3A%20有%FF豯ab3文档的�%FF%FF鑫侍�">xyong_at_mail.tsinghua.edu.cn</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 9 Apr 2012 23:09:12 +0800</span><br />
+</address>
+<br />
+改进的时钟页替换算法的基本想法是，在时钟算法的基础上增加对是否修改的考虑。即：在统计周期内没有引用的先淘汰，引用的后淘汰；当是否补引用的状态相同时，再考虑是否被修改，没有修改的先淘汰，修改的后淘汰。这样就得到了文档中所说的淘汰顺序。这个顺序的依据是局部性原理。
+<br />
+
+<br />
+当然，我们可以定义一个算法，按你说的顺序来淘汰，但按减少当前I/O次数，并不一定会减少总的I/O次数。因为把修改过但近期没有引用的页面保留在内存中，并不能从统计上得到“以后会更多引用”的结论。
+<br />
+
+<br />
+--向勇
+<br />
+
+<br />
+在 2012-4-9，下午9:58， 齐子阳 写道：
+<br />
+
+<br />
+<em class="quotelev1">&gt; 抱歉……刚才打错了，应该是：应该是（1，0）最近使用而未修改，其次选择；（0，1）最近未被使用，但被修改，再次选择
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 在 2012年4月9日 下午9:54，齐子阳 &lt;qizy09_at_gmail.com&gt;写道：
+</em><br />
+<em class="quotelev1">&gt; 向老师：
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 您好，lab3文档的第七页讲“改进的时钟页替换算法”的那段最后说道：这样两位就存在四种可能的组合情况：（0，0）表示最近未被引用也修改，首先选择此页淘汰；（0，1）最近未被使用，但被修改，其次选择；（1，0）最近使用而未修改，再次选择；（1，1）最近使用且修改，最后选择。
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 我觉得，这里是不是(0,1)和（1,0）说反了？应该是（1，0）最近使用而未修改，但被修改，其次选择；（0，1）最近未被使用，再次选择吧？因为应该尽量避免换出已修改的页，以减少IO访问次数吧？请向老师指教，谢谢~
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; -- 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 齐子阳 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 清华大学计算机科学与技术系 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 地址：紫荆公寓2号楼117A, 100084 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; James  Qi 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Department of Computer Science and Technology
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Tsinghua University Beijing P.R.C 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Add: Building ZiJing 2# Room 117A, 100084 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Tel:  +8615210580346
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; E-mail: qizy09_at_gmail.com
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; -- 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 齐子阳 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 清华大学计算机科学与技术系 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 地址：紫荆公寓2号楼117A, 100084 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; James  Qi 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Department of Computer Science and Technology
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Tsinghua University Beijing P.R.C 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Add: Building ZiJing 2# Room 117A, 100084 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Tel:  +8615210580346
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; E-mail: qizy09_at_gmail.com
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+
+<br />
+<pre>
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:24:25 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start251">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0252.html" title="Next message in the list">Zhongxing Ming: "&#26412;&#21608;&#20363;&#20250;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0250.html" title="Previous message in the list">Yong Xiang: "Re: OS google group&#38382;&#39064;"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg251" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg251" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg251" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg251" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

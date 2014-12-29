@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>进程切换问题 from xiaoqixue_1 on 2012-10-03 (gmail.mbox)</title>
+<meta name="Author" content="xiaoqixue_1 (xiaoqixue_1_at_163.com)" />
+<meta name="Subject" content="进程切换问题" />
+<meta name="Date" content="2012-10-03" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>进程切换问题</h1>
+<!-- received="Wed May 15 21:26:02 2013" -->
+<!-- isoreceived="20130515172602" -->
+<!-- sent="Wed, 3 Oct 2012 15:36:53 +0800 (CST)" -->
+<!-- isosent="20121003073653" -->
+<!-- name="xiaoqixue_1" -->
+<!-- email="xiaoqixue_1_at_163.com" -->
+<!-- subject="进程切换问题" -->
+<!-- id="3d659c02.12d5.13a258e4c53.Coremail.xiaoqixue_1_at_163.com" -->
+<!-- charset="GB2312" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start550" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0551.html" accesskey="d" title="BinHoster: &quot;Client Sign Up Confirmation&quot;">Next message</a> ]
+[ <a href="0549.html" title="xiaoqixue_1: &quot;LAB5&#38382;&#39064;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="0573.html" accesskey="t" title="Yu Chen: &quot;Re: &#36827;&#31243;&#20999;&#25442;&#38382;&#39064;&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg550" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg550" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg550" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg550" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: xiaoqixue_1 &lt;<a href="mailto:xiaoqixue_1_at_163.com?Subject=Re%3A%20%FF�%FF糖�%FF%FF问题">xiaoqixue_1_at_163.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 3 Oct 2012 15:36:53 +0800 (CST)</span><br />
+</address>
+<br />
+&nbsp;根据ucore文档和代码，我理解
+<br />
+在进程0切换到进程1时，即idle 到 init的时候。
+<br />
+在copy_thread里设置的新的eip是forkret，
+<br />
+在forkret中，又构造一个中断返回的context，再调用iret指令，返回到current-&gt;tf.tf_eip，此时current-&gt;tf.tf_eip = kernel_thread_entry，
+<br />
+在kernel_thread_entry，通过call ebx来调用init进程的函数，init_main.。
+<br />
+<br />为什么要绕这么大一圈，为什么不直接在copy_thread中设置新的eip为init_main？
+<br />
+<br /><pre>
+-- 
+All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+--- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:26:02 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start550">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0551.html" title="Next message in the list">BinHoster: "Client Sign Up Confirmation"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0549.html" title="Previous message in the list">xiaoqixue_1: "LAB5&#38382;&#39064;"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0573.html" title="Next message in this discussion thread">Yu Chen: "Re: &#36827;&#31243;&#20999;&#25442;&#38382;&#39064;"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0573.html" title="Message sent in reply to this message">Yu Chen: "Re: &#36827;&#31243;&#20999;&#25442;&#38382;&#39064;"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg550" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg550" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg550" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg550" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

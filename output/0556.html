@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: [Lab 6] About Stride Scheduling from Object Ho on 2012-10-04 (gmail.mbox)</title>
+<meta name="Author" content="Object Ho (objectkuan_at_gmail.com)" />
+<meta name="Subject" content="Re: [Lab 6] About Stride Scheduling" />
+<meta name="Date" content="2012-10-04" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: [Lab 6] About Stride Scheduling</h1>
+<!-- received="Wed May 15 21:26:04 2013" -->
+<!-- isoreceived="20130515172604" -->
+<!-- sent="Thu, 4 Oct 2012 15:58:17 +0800" -->
+<!-- isosent="20121004075817" -->
+<!-- name="Object Ho" -->
+<!-- email="objectkuan_at_gmail.com" -->
+<!-- subject="Re: [Lab 6] About Stride Scheduling" -->
+<!-- id="CAH5fjeP17hA7hXF9OWdiXgLL=JybWQPR_bMk-xRf0K9hYaPFrw_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- inreplyto="CAH5fjeNcALBizohfq9Z+UABJeH5umk7U_kmEJBd764t9Bvp6pw_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start556" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0557.html" accesskey="d" title="Object Ho: &quot;Re: [Lab 6] About Stride Scheduling&quot;">Next message</a> ]
+[ <a href="0555.html" title="Object Ho: &quot;[Lab 6] About Stride Scheduling&quot;">Previous message</a> ]
+[ <a href="0555.html" title="Object Ho: &quot;[Lab 6] About Stride Scheduling&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="0557.html" accesskey="t" title="Object Ho: &quot;Re: [Lab 6] About Stride Scheduling&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg556" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg556" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg556" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg556" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Object Ho &lt;<a href="mailto:objectkuan_at_gmail.com?Subject=Re%3A%20%5BLab%206%5D%20About%20Stride%20Scheduling">objectkuan_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 4 Oct 2012 15:58:17 +0800</span><br />
+</address>
+<br />
+And I think we should add a yield(); after lab6_set_priority(i + 1); to
+<br />
+make sure that before increasing spinning, each process have a right
+<br />
+priority. Am I right?
+<br />
+<br />2012/10/3 Object Ho &lt;objectkuan_at_gmail.com&gt;
+<br />
+<br /><em class="quotelev1">&gt; I met another frustrating question.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; In *priority.c*, there are lines of code:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;      for (i = 0; i &lt; TOTAL; i ++) {
+</em><br />
+<em class="quotelev2">&gt;&gt;          acc[i]=0;
+</em><br />
+<em class="quotelev2">&gt;&gt;           if ((pids[i] = fork()) == 0) {
+</em><br />
+<em class="quotelev2">&gt;&gt;                lab6_set_priority(i + 1);
+</em><br />
+<em class="quotelev2">&gt;&gt;                acc[i] = 0;
+</em><br />
+<em class="quotelev2">&gt;&gt;                while (1) {
+</em><br />
+<em class="quotelev2">&gt;&gt;                    spin_delay();
+</em><br />
+<em class="quotelev2">&gt;&gt;                    ++ acc[i];
+</em><br />
+<em class="quotelev2">&gt;&gt;                    if(acc[i]%4000==0) {
+</em><br />
+<em class="quotelev2">&gt;&gt;                         if((time=gettime_msec())&gt;MAX_TIME) {
+</em><br />
+<em class="quotelev2">&gt;&gt;                             cprintf(&quot;child pid %d, acc %d, time %d\n&quot;,
+</em><br />
+<em class="quotelev2">&gt;&gt; getpid(),acc[i],time);
+</em><br />
+<em class="quotelev2">&gt;&gt;                             exit(acc[i]);
+</em><br />
+<em class="quotelev2">&gt;&gt;                         }
+</em><br />
+<em class="quotelev2">&gt;&gt;                     }
+</em><br />
+<em class="quotelev2">&gt;&gt;                }
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;           }
+</em><br />
+<em class="quotelev2">&gt;&gt;           if (pids[i] &lt; 0) {
+</em><br />
+<em class="quotelev2">&gt;&gt;                goto failed*;统计*
+</em><br />
+<em class="quotelev2">&gt;&gt;           }
+</em><br />
+<em class="quotelev2">&gt;&gt;      }
+</em><br />
+<em class="quotelev2">&gt;&gt;      cprintf(&quot;main: fork ok,now need to wait pids.\n&quot;);
+</em><br />
+<em class="quotelev2">&gt;&gt;      for (i = 0; i &lt; TOTAL; i ++) {
+</em><br />
+<em class="quotelev2">&gt;&gt;          status[i]=0;
+</em><br />
+<em class="quotelev2">&gt;&gt;          waitpid(pids[i],&amp;status[i]);
+</em><br />
+<em class="quotelev2">&gt;&gt;          cprintf(&quot;main: pid %d, acc %d, time %d\n&quot;,pids[i],status[i],
+</em><br />
+<em class="quotelev2">&gt;&gt; gettime_msec());
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;      }
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; First, think about these two lines:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; if ((pids[i] = fork()) == 0) {
+</em><br />
+<em class="quotelev2">&gt;&gt;      lab6_set_priority(i + 1);
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; After fork() the new child process is added to run queue, but it's just
+</em><br />
+<em class="quotelev1">&gt; RUNNABLE, not RUNNING.
+</em><br />
+<em class="quotelev1">&gt; While its priority will be set only when it's RUNNING.
+</em><br />
+<em class="quotelev1">&gt; Therefore, after the FOR loop, all child processes have a default priority
+</em><br />
+<em class="quotelev1">&gt; (which is 1). The run queue look like this:
+</em><br />
+<em class="quotelev1">&gt; { (7,1) (6,1) (5,1) (4,1) (3,1) }, which pair stands for *(pid,priority)*,
+</em><br />
+<em class="quotelev1">&gt; ignoring the structure how they're stored in the heap
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Then the code reaches the seconde FOR loop, and the waitpid(pids[i],&amp;
+</em><br />
+<em class="quotelev1">&gt; status[i]); will invoke the schedule() function.
+</em><br />
+<em class="quotelev1">&gt; Inside that function, sched_class_pick_next() is called.
+</em><br />
+<em class="quotelev1">&gt; According to the Doc 6 Page 11, the function should increase the
+</em><br />
+<em class="quotelev1">&gt; processes' strides (proc-&gt;lab6_stride += BIG_STRIDE / proc-&gt;lab6_priority)
+</em><br />
+<em class="quotelev1">&gt; But at that time, proc-&gt;lab6_priority has not been set yet. And it equals
+</em><br />
+<em class="quotelev1">&gt; 1.
+</em><br />
+<em class="quotelev1">&gt; This will bring in errors when the user *priority.c* runs, and the acc
+</em><br />
+<em class="quotelev1">&gt; ratio is not the expected correct answer 1:2:3:4:5.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><pre>
+-- 
+All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+--- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:26:04 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start556">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0557.html" title="Next message in the list">Object Ho: "Re: [Lab 6] About Stride Scheduling"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0555.html" title="Previous message in the list">Object Ho: "[Lab 6] About Stride Scheduling"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0555.html" title="Message to which this message replies">Object Ho: "[Lab 6] About Stride Scheduling"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0557.html" title="Next message in this discussion thread">Object Ho: "Re: [Lab 6] About Stride Scheduling"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0557.html" title="Message sent in reply to this message">Object Ho: "Re: [Lab 6] About Stride Scheduling"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg556" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg556" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg556" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg556" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

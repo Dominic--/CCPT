@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>LAB5问题 from xiaoqixue_1 on 2012-10-03 (gmail.mbox)</title>
+<meta name="Author" content="xiaoqixue_1 (xiaoqixue_1_at_163.com)" />
+<meta name="Subject" content="LAB5问题" />
+<meta name="Date" content="2012-10-03" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>LAB5问题</h1>
+<!-- received="Wed May 15 21:26:02 2013" -->
+<!-- isoreceived="20130515172602" -->
+<!-- sent="Wed, 3 Oct 2012 11:48:36 +0800 (CST)" -->
+<!-- isosent="20121003034836" -->
+<!-- name="xiaoqixue_1" -->
+<!-- email="xiaoqixue_1_at_163.com" -->
+<!-- subject="LAB5问题" -->
+<!-- id="70e000dc.1875.13a24bd4b97.Coremail.xiaoqixue_1_at_163.com" -->
+<!-- charset="GB2312" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start549" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0550.html" accesskey="d" title="xiaoqixue_1: &quot;&#36827;&#31243;&#20999;&#25442;&#38382;&#39064;&quot;">Next message</a> ]
+[ <a href="0548.html" title="xiaoqixue_1 : &quot;Re:Re: Re: Re: [Lab 5] Maybe some functions are missing&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="0554.html" accesskey="t" title="&#33541;&#20426;&#26480;: &quot;Re: LAB5&#38382;&#39064;&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg549" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg549" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg549" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg549" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: xiaoqixue_1 &lt;<a href="mailto:xiaoqixue_1_at_163.com?Subject=Re%3A%20LAB5问题">xiaoqixue_1_at_163.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 3 Oct 2012 11:48:36 +0800 (CST)</span><br />
+</address>
+<br />
+&nbsp;有3个问题：
+<br />
+1）idle进程在proc_list中吗？如果在是何时加入的？
+<br />
+<br /><br />2）LAB5最后的显示结果是怎样的，我能够成功打印helloworld，但紧接着还有错误，这正常吗？
+<br />
+下面是打印输出信息：
+<br />
+Hello world!!.
+<br />
+I am process 2.
+<br />
+hello pass.
+<br />
+listproc: head=c01a81b0,pid=-1--&gt;le=c05ea1e8,pid=2--&gt;le=c05ea168,pid=1
+<br />
+do_wait return 0
+<br />
+listproc: head=c01a81b0,pid=-1--&gt;le=c05ea168,pid=1
+<br />
+all user-mode processes have quit.nr_process=2
+<br />
+init check memory pass.
+<br />
+kernel panic at kern/process/proc.c:479:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;initproc exit.
+<br />
+<br />3）在用gdb调试时候，为何有些iret之后就gdb就没有指令了？显示no source available, 汇编代码也无法单步执行？
+<br />
+<br /><pre>
+-- 
+All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+--- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:26:02 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start549">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0550.html" title="Next message in the list">xiaoqixue_1: "&#36827;&#31243;&#20999;&#25442;&#38382;&#39064;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0548.html" title="Previous message in the list">xiaoqixue_1 : "Re:Re: Re: Re: [Lab 5] Maybe some functions are missing"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0554.html" title="Next message in this discussion thread">&#33541;&#20426;&#26480;: "Re: LAB5&#38382;&#39064;"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0554.html" title="Message sent in reply to this message">&#33541;&#20426;&#26480;: "Re: LAB5&#38382;&#39064;"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg549" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg549" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg549" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg549" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

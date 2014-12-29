@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: ubuntu 12.04 运行 ucore问题。 from Yu Chen on 2012-10-08 (gmail.mbox)</title>
+<meta name="Author" content="Yu Chen (chyyuu_at_gmail.com)" />
+<meta name="Subject" content="Re: ubuntu 12.04 运行 ucore问题。" />
+<meta name="Date" content="2012-10-08" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: ubuntu 12.04 运行 ucore问题。</h1>
+<!-- received="Wed May 15 21:26:12 2013" -->
+<!-- isoreceived="20130515172612" -->
+<!-- sent="Mon, 8 Oct 2012 16:50:57 +0800" -->
+<!-- isosent="20121008085057" -->
+<!-- name="Yu Chen" -->
+<!-- email="chyyuu_at_gmail.com" -->
+<!-- subject="Re: ubuntu 12.04 运行 ucore问题。" -->
+<!-- id="CAAdffVFfaX3szET6xDG1a=mBJ6j3Q+Zy=bE1zXsy1XiaFMVJKg_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- inreplyto="CAOHZ3szmf51Qow42THGa6C0g3yN3WaK5ah7UNKG6XxvA4DRghw_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start589" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0590.html" accesskey="d" title="Yu Chen: &quot;Re: ubuntu 12.04 &#36816;&#34892; ucore&#38382;&#39064;&#12290;&quot;">Next message</a> ]
+[ <a href="0588.html" title="wangyulj_at_sina.com: &quot;RoutingGroup&#23567;&#32452;&#36890;&#30693;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="0590.html" accesskey="t" title="Yu Chen: &quot;Re: ubuntu 12.04 &#36816;&#34892; ucore&#38382;&#39064;&#12290;&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg589" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg589" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg589" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg589" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yu Chen &lt;<a href="mailto:chyyuu_at_gmail.com?Subject=Re%3A%20ubuntu%2012.04%20运行%20ucore问题%FF%FF">chyyuu_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 8 Oct 2012 16:50:57 +0800</span><br />
+</address>
+<br />
+请问是完成了lab1练习后的现象吗？如果不是，请先完成lab1练习。如果是，请给我发源码，我看看。
+<br />
+另外，可以试试用
+<br />
+make grade
+<br />
+来检查labX的完成情况。
+<br />
+<br />2012/10/8 asmcos he &lt;asmcos_at_gmail.com&gt;:
+<br />
+<em class="quotelev1">&gt; 1. aptitude install qemu-system
+</em><br />
+<em class="quotelev1">&gt; 2. 没有qemu命令，只有qemu-system-i386
+</em><br />
+<em class="quotelev1">&gt; 3. 修改lab1的Makefile 使用qemu-system-i386 后：
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; qemu看到一直在重启，控制台log如下：
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; make qemu
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; (THU.CST) os is loading ...
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Special kernel symbols:
+</em><br />
+<em class="quotelev1">&gt;   entry  0x00100000 (phys)
+</em><br />
+<em class="quotelev1">&gt;   etext  0x0010331f (phys)
+</em><br />
+<em class="quotelev1">&gt;   edata  0x0010ea18 (phys)
+</em><br />
+<em class="quotelev1">&gt;   end    0x0010fd20 (phys)
+</em><br />
+<em class="quotelev1">&gt; Kernel executable memory footprint: 64KB
+</em><br />
+<em class="quotelev1">&gt; ++ setup timer interrupts
+</em><br />
+<em class="quotelev1">&gt; (THU.CST) os is loading ...
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Special kernel symbols:
+</em><br />
+<em class="quotelev1">&gt;   entry  0x00100000 (phys)
+</em><br />
+<em class="quotelev1">&gt;   etext  0x0010331f (phys)
+</em><br />
+<em class="quotelev1">&gt;   edata  0x0010ea18 (phys)
+</em><br />
+<em class="quotelev1">&gt;   end    0x0010fd20 (phys)
+</em><br />
+<em class="quotelev1">&gt; Kernel executable memory footprint: 64KB
+</em><br />
+<em class="quotelev1">&gt; ++ setup timer interrupts
+</em><br />
+<em class="quotelev1">&gt; (THU.CST) os is loading ...
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 4.我用qemu-system-i386 启动ubuntu的安装盘是可以的。没有问题。
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; －－－－－－－－－－－－－－－－
+</em><br />
+<em class="quotelev1">&gt; 何家胜
+</em><br />
+<em class="quotelev1">&gt; 智普开源--知识框架
+</em><br />
+<em class="quotelev1">&gt; website : <a href="http://frame.jeapedu.com">http://frame.jeapedu.com</a>
+</em><br />
+<em class="quotelev1">&gt; 手机    ：137-1860-9533（移动），18010096001 （电信）
+</em><br />
+<em class="quotelev1">&gt; MSN    :  asmcos_at_hotmail.com
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><br /><br /><pre>
+-- 
+Best Regards
+==============================================
+Yu Chen
+Ph.D.  Associate Professor
+System Software&amp;Software Engineering Group,
+Laboratory of Pervasive Computing,
+Dept. of Computer Science and Technology
+Tsinghua University, Beijing 100084, P.R. China
+E-Mail: mailto:yuchen_at_tsinghua&#46;<!--nospam-->edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+==============================================
+
+-- 
+【提醒】要取消订阅此论坛，请用你收到此邮件列表的电子邮件地址发送一个题目和内容为空的电子邮件至 oscourse+unsubscribe@googlegroups.com  即可。所有OS Labs的 src codes and docs位于<a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+--- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:26:12 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start589">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0590.html" title="Next message in the list">Yu Chen: "Re: ubuntu 12.04 &#36816;&#34892; ucore&#38382;&#39064;&#12290;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0588.html" title="Previous message in the list">wangyulj_at_sina.com: "RoutingGroup&#23567;&#32452;&#36890;&#30693;"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0590.html" title="Next message in this discussion thread">Yu Chen: "Re: ubuntu 12.04 &#36816;&#34892; ucore&#38382;&#39064;&#12290;"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Maybe reply</dfn>: <a href="0590.html" title="Message sent in reply to this message">Yu Chen: "Re: ubuntu 12.04 &#36816;&#34892; ucore&#38382;&#39064;&#12290;"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg589" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg589" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg589" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg589" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

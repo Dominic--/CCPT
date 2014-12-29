@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: 关于进程问题 from Yu Chen on 2012-10-07 (gmail.mbox)</title>
+<meta name="Author" content="Yu Chen (chyyuu_at_gmail.com)" />
+<meta name="Subject" content="Re: 关于进程问题" />
+<meta name="Date" content="2012-10-07" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: 关于进程问题</h1>
+<!-- received="Wed May 15 21:26:08 2013" -->
+<!-- isoreceived="20130515172608" -->
+<!-- sent="Sun, 7 Oct 2012 08:23:40 +0800" -->
+<!-- isosent="20121007002340" -->
+<!-- name="Yu Chen" -->
+<!-- email="chyyuu_at_gmail.com" -->
+<!-- subject="Re: 关于进程问题" -->
+<!-- id="CAAdffVFSnEackpN1ntSHh2TKUFEs6KpL2oh9zAkoy32T4XUn-w_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- inreplyto="757af965.b5d9.13a35f61bfc.Coremail.xiaoqixue_1_at_163.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start574" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0575.html" accesskey="d" title="Yu Chen: &quot;Re: [Lab 7] doc unfinished&quot;">Next message</a> ]
+[ <a href="0573.html" title="Yu Chen: &quot;Re: &#36827;&#31243;&#20999;&#25442;&#38382;&#39064;&quot;">Previous message</a> ]
+[ <a href="0571.html" title="xiaoqixue_1: &quot;&#20851;&#20110;&#36827;&#31243;&#38382;&#39064;&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="0581.html" accesskey="t" title="xiaoqixue_1 : &quot;Re:Re: &#20851;&#20110;&#36827;&#31243;&#38382;&#39064;&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg574" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg574" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg574" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg574" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yu Chen &lt;<a href="mailto:chyyuu_at_gmail.com?Subject=Re%3A%20%FF赜�%FF�%FF涛侍�">chyyuu_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sun, 7 Oct 2012 08:23:40 +0800</span><br />
+</address>
+<br />
+我理解你做的是lab4，建议下次提问把lab编号标出在题目中。idle和init进程是内核线程，同享ucore
+<br />
+os已经建立好的内核页表。所以在proc_struct数据结构中只要有一个记录页表起始地址的cr3成员变量即可。而mm在lab3中用于虚存管理。但在实际OS中，内核线程不需要考虑swap
+<br />
+page问题，而将用于表示进程的用户态可用内存，所以对于内核线程就没有用了，导致内核线程*mm=0是合理的。
+<br />
+<br />2012/10/6 xiaoqixue_1 &lt;xiaoqixue_1_at_163.com&gt;:
+<br />
+<em class="quotelev1">&gt;  想问一下，在产生idle 和init进程之后，内存管理结构体指针为空，这种情况常吗？
+</em><br />
+<em class="quotelev1">&gt; 如下所示（这是dump出来的idle进程proc_list结构）：
+</em><br />
+<em class="quotelev1">&gt;  {state = PROC_RUNNABLE, pid = 0, runs = 0, kstack = 3222474752,
+</em><br />
+<em class="quotelev1">&gt;   need_resched = 0, parent = 0x0, mm = 0x0, context = {eip = 3222324135,
+</em><br />
+<em class="quotelev1">&gt;     esp = 3222482736, ebx = 3222324152, ecx = 0, edx = 3227427116,
+</em><br />
+<em class="quotelev1">&gt;     esi = 65684, edi = 32892, ebp = 3222482792}, tf = 0x0, cr3 = 5279744,
+</em><br />
+<em class="quotelev1">&gt;   flags = 0, name = &quot;idle\000\000\000\000proc_in&quot;, list_link = {prev = 0x0,
+</em><br />
+<em class="quotelev1">&gt;     next = 0x0}, hash_link = {prev = 0x0, next = 0x0}, exit_code = 0,
+</em><br />
+<em class="quotelev1">&gt;   wait_state = 0, cptr = 0xc05ea110, yptr = 0x0, optr = 0x0}
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 其中，mm = 0x0 ？？
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+</em><br />
+<em class="quotelev1">&gt; ---
+</em><br />
+<em class="quotelev1">&gt; You received this message because you are subscribed to the Google Groups
+</em><br />
+<em class="quotelev1">&gt; &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev1">&gt; To post to this group, send email to oscourse_at_googlegroups&#46;<!--nospam-->com.
+</em><br />
+<em class="quotelev1">&gt; To unsubscribe from this group, send email to
+</em><br />
+<em class="quotelev1">&gt; oscourse+unsubscribe_at_googlegroups&#46;<!--nospam-->com.
+</em><br />
+<em class="quotelev1">&gt; Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><br /><br /><pre>
+-- 
+Best Regards
+==============================================
+Yu Chen
+Ph.D.  Associate Professor
+System Software&amp;Software Engineering Group,
+Laboratory of Pervasive Computing,
+Dept. of Computer Science and Technology
+Tsinghua University, Beijing 100084, P.R. China
+E-Mail: mailto:yuchen_at_tsinghua.edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+==============================================
+
+-- 
+All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+--- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups&#46;<!--nospam-->com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups&#46;<!--nospam-->com.
+Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:26:08 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start574">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0575.html" title="Next message in the list">Yu Chen: "Re: [Lab 7] doc unfinished"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0573.html" title="Previous message in the list">Yu Chen: "Re: &#36827;&#31243;&#20999;&#25442;&#38382;&#39064;"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0571.html" title="Message to which this message replies">xiaoqixue_1: "&#20851;&#20110;&#36827;&#31243;&#38382;&#39064;"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0581.html" title="Next message in this discussion thread">xiaoqixue_1 : "Re:Re: &#20851;&#20110;&#36827;&#31243;&#38382;&#39064;"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0581.html" title="Message sent in reply to this message">xiaoqixue_1 : "Re:Re: &#20851;&#20110;&#36827;&#31243;&#38382;&#39064;"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg574" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg574" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg574" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg574" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

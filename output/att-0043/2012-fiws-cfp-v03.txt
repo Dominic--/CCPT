@@ -1,0 +1,116 @@
+- Jan. 10, 2012 by Fumio Teraoka (ver.02)
+--------------------------------------------------------------------
+                          Call for Papers:
+          AsiaFI 2012 Future Internet Architecture Workshop
+	         a part of AsiaFI 2012 Summer School
+
+                 Aug 20, 2012, Kyoto University, Kyoto, Japan.
+            http://asiafi.net/meeting/2012/????/
+
+  The Internet is becoming the global digital infrastructure, however,
+its design still faces many challenges.  Many of these issues arose
+due to the technology advances and drastic changes of the environment
+which bring fundamental changes in the requirements.  The Future
+Internet has become the research theme for the global networking
+community to creating a better digital environment for the future.
+
+  AsiaFI 2012 Future Internet Architecture Workshop solicits papers
+that have obtained good results, are posing questions, or are work-
+in-progress.  Possible topics include, but are not limited to:
+
+  - New clean-slate FI architecture
+  - New evolutionary FI architecture and technologies
+  - New green networking architecture and technologies
+  - New mobility architecture and technologies
+  - New security architecture and technologies
+  - Key components in a recently proposed new network architecture
+
+[Date]
+  Monday, August 20, 2012
+
+[Venue]
+  xxx Building, Kyoto University, Kyoto, Japan
+
+[Registration fee (including School and Workshop)]
+  - ????? JPY (about ??? dollars) for general
+  - ????? JPY (about ??? dollars) for a full-time student
+
+[Who should attend]
+    Researchers including Ph.D. students and advanced master course
+  students who are interested in architecture and technologies for
+  future Internet are welcome.
+    You will be able to obtain supportive/productive comments and
+  suggestions by world-leading professors.  These professors usually
+  will not be involved in the students' Ph.D defense, allowing students
+  to interact freely, with fewer barriers.  While we welcome quality
+  paper submission, work-in-progress or even work-to-be-done type of
+  presentations are welcome as well provided they are interesting.
+
+[Fellowship]
+    We will provide fellowship for best papers and for selected students
+  from developing countries; either full support or partial support.
+  The full support roughly covers airfare, room and board, and
+  registration fee, while the partial support covers only room and board
+  and registration fee.
+    We expect about 10 students to be rewarded but the exact number
+  depends on the available funding.
+
+[How to Submit]
+    The paper must be previously unpublished in any conference or journal.
+  The page limit is up to 8 pages.  Papers should be in the PDF format and
+  submitted through EasyChair.
+
+  https://www.easychair.org/conferences/?conf=asiafi2012-fiws
+
+  Papers must be in two-column 10pt format.  Please use the following
+  LaTeX2e or MS Word templates.
+
+  http://conferences.sigcomm.org/sigcomm/2010/sig-alternate-10pt.cls
+  http://conferences.sigcomm.org/sigcomm/2010/sig-proc-word-10pt.doc
+
+[Recommendation to IEICE Trans. (tentative)]
+    High quality papers will be recommended to IEICE Transactions.  The
+  recommended papers will be reviewed in the regular review process.
+  Some TPC members of this workshop will serve as the reviewer of the
+  recommended papers in the review process.
+
+[Proceedings]
+    The proceedings will be available on the web (and no paper version
+  will be provided).  The AsiaFI Forum allows authors to retain
+  copyright of their submitted work to encourage early submission of
+  work.
+
+[Important Dates]
+  Paper submission due                 April 30, 2012
+  Paper acceptance notification        June 1, 2012
+  The fellowship notification          June 1, 2012
+  Final manuscript submission due      July 31, 2012
+  Future Internet Technology Workshop  August 20, 2012
+
+Summer School General Chair:
+	Yasuo Okabe (Kyoto University, Japan)
+
+Workshop TPC Chair:
+	Fumio Teraoka (Keio University, Japan)
+
+Workshop TPC Members (tentative):
+       	Jun Bi (Tsinghua University, China)
+        Kenjiro Cho (IIJ, Japan)
+        Nakyung Choi (Bell Lab., Korea)
+       	Serge Fdida (UPMC, France)
+       	Xiaohong Huang (BUPT, China)
+        Akira Kato (Keio University, Japan)
+       	Dae Young Kim (CNU, Korea)
+        Jong Won Kim (GIST, Korea)
+        Dongman Lee (KAIST, Korea)
+        Dan Li (Tsinghua University, China)
+        Hideya Ochiai (University of Tokyo, Japan)
+       	Koji Okamura (Kyusyu University, Japan)
+       	Sangheon Pack (Korea University, Korea)
+       	Keiichi Shima (IIJ, Japan)
+        Hajime Tazaki (NICT, Japan)
+       	Rodney Van Meter (Keio University, Japan)
+        Yonggang Wen (Nanyang University of Technology, Singapore)
+       	Mingwei Xu (Tsinghua University, China)
+        Lixia Zhang (UCLA, USA)
+

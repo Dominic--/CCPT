@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Lab2代码更新 from Yu Chen on 2012-03-11 (gmail.mbox)</title>
+<meta name="Author" content="Yu Chen (chyyuu_at_gmail.com)" />
+<meta name="Subject" content="Lab2代码更新" />
+<meta name="Date" content="2012-03-11" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Lab2代码更新</h1>
+<!-- received="Wed May 15 21:23:45 2013" -->
+<!-- isoreceived="20130515172345" -->
+<!-- sent="Sun, 11 Mar 2012 19:50:23 +0800" -->
+<!-- isosent="20120311115023" -->
+<!-- name="Yu Chen" -->
+<!-- email="chyyuu_at_gmail.com" -->
+<!-- subject="Lab2代码更新" -->
+<!-- id="CAAdffVEmmErW+BwK_JHxJiFbg_h8VJLwJ26g+MvgwNWF+csO6w_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start112" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0113.html" accesskey="d" title="Yu Chen: &quot;[&#25552;&#31034;] lab2&#30340;default_pmm&#30340;&#30456;&#20851;&#20989;&#25968;&quot;">Next message</a> ]
+[ <a href="0111.html" title="Yu Chen: &quot;Re: Lab2 ex1&#30340;&#19968;&#20010;assert&#38169;&#20102;&#65311;&#65288;&#19978;&#19968;post&#21457;&#38169;&#20102;&#65289;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg112" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg112" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg112" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg112" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yu Chen &lt;<a href="mailto:chyyuu_at_gmail.com?Subject=Re%3A%20Lab2%FF�%FF�">chyyuu_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sun, 11 Mar 2012 19:50:23 +0800</span><br />
+</address>
+<br />
+lab2代码更新的部分只有kern/mm/default_pmm.c中line146 一行：
+<br />
+把
+<br />
+assert((p0 = alloc_page()) == p2 + 1);
+<br />
+改为
+<br />
+assert((p0 = alloc_page()) == p2 - 1);
+<br />
+<br />大家可直接修改代码，或到如下地址下载更新的代码包
+<br />
+<a href="http://os.cs.tsinghua.edu.cn/oscourse/OS2012/lab2">http://os.cs.tsinghua.edu.cn/oscourse/OS2012/lab2</a>
+<br />
+<br />我也更新了在网络学堂上的代码包lab2-code-20120311.tar.bz2
+<br />
+<br />提示：在实现first fit 内存分配算法的回收函数时，要考虑地址连续的空闲块直接的合并操作。
+<br />
+<br />在 2012年3月11日 下午5:49，Yu Chen &lt;chyyuu_at_gmail&#46;<!--nospam-->com&gt; 写道：
+<br />
+<em class="quotelev1">&gt; 你的分析是对的。
+</em><br />
+<em class="quotelev1">&gt; 我会尽快更新代码，并放到wiki和网络学堂上。
+</em><br />
+<em class="quotelev1">&gt; 谢谢！
+</em><br />
+<em class="quotelev1">&gt; 在 2012年3月11日 下午1:19，Yuheng Chen &lt;chyh1990_at_gmail&#46;<!--nospam-->com&gt; 写道：
+</em><br />
+<em class="quotelev2">&gt;&gt; 根据题目要求和default_pmm.c:default_check的assert序列要求，似乎是要实现address order
+</em><br />
+<em class="quotelev2">&gt;&gt; first-fit算法
+</em><br />
+<em class="quotelev2">&gt;&gt; 这个算法需要保持地址有序，每次分配都从最低地址拿一个符合要求的block
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 但line146 assert((p0 = alloc_page()) == p2 + 1);好像不对啊
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 125     list_entry_t free_list_store = free_list;
+</em><br />
+<em class="quotelev2">&gt;&gt; 126     list_init(&amp;free_list);
+</em><br />
+<em class="quotelev2">&gt;&gt; 127     assert(list_empty(&amp;free_list));
+</em><br />
+<em class="quotelev2">&gt;&gt; 128     assert(alloc_page() == NULL);
+</em><br />
+<em class="quotelev2">&gt;&gt; 129
+</em><br />
+<em class="quotelev2">&gt;&gt; 130     unsigned int nr_free_store = nr_free;
+</em><br />
+<em class="quotelev2">&gt;&gt; 131     nr_free = 0;
+</em><br />
+<em class="quotelev2">&gt;&gt; 132
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 以上建立一个空free_list
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 133     free_pages(p0 + 2, 3);
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 此时前五页为
+</em><br />
+<em class="quotelev2">&gt;&gt; | 0 | 0 | 1 | 1 | 1 |
+</em><br />
+<em class="quotelev2">&gt;&gt; 1=空，0=占用
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 134     assert(alloc_pages(4) == NULL);
+</em><br />
+<em class="quotelev2">&gt;&gt; 135     assert(PageProperty(p0 + 2) &amp;&amp; p0[2].property == 3);
+</em><br />
+<em class="quotelev2">&gt;&gt; 136     assert((p1 = alloc_pages(3)) != NULL);
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 此时前五页为
+</em><br />
+<em class="quotelev2">&gt;&gt; | 0 | 0 | 0 | 0 | 0 |
+</em><br />
+<em class="quotelev2">&gt;&gt;   |       |
+</em><br />
+<em class="quotelev2">&gt;&gt;   p0     p1
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 137     assert(alloc_page() == NULL);
+</em><br />
+<em class="quotelev2">&gt;&gt; 138     assert(p0 + 2 == p1);
+</em><br />
+<em class="quotelev2">&gt;&gt; 139
+</em><br />
+<em class="quotelev2">&gt;&gt; 140     p2 = p0 + 1;
+</em><br />
+<em class="quotelev2">&gt;&gt; 141     free_page(p0);
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; | 1 | 0 | 0 | 0 | 0 |
+</em><br />
+<em class="quotelev2">&gt;&gt;  |    |    |
+</em><br />
+<em class="quotelev2">&gt;&gt;  p0 p2  p1
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 142     free_pages(p1, 3);
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; | 1 | 0 | 1 | 1 | 1 |
+</em><br />
+<em class="quotelev2">&gt;&gt;  |    |    |
+</em><br />
+<em class="quotelev2">&gt;&gt;  p0 p2  p1
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 143     assert(PageProperty(p0) &amp;&amp; p0-&gt;property == 1);
+</em><br />
+<em class="quotelev2">&gt;&gt; 144     assert(PageProperty(p1) &amp;&amp; p1-&gt;property == 3);
+</em><br />
+<em class="quotelev2">&gt;&gt; 145
+</em><br />
+<em class="quotelev2">&gt;&gt; 146     assert((p0 = alloc_page()) == p2 + 1);
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; line146 buggy？
+</em><br />
+<em class="quotelev2">&gt;&gt; 按照first-fit，p0即第一个单元以空，地址最低
+</em><br />
+<em class="quotelev2">&gt;&gt; 此时alloc_page()用第一个Page即可
+</em><br />
+<em class="quotelev2">&gt;&gt; p0==p2-1，不应该是p2 + 1吧
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 难道我理解错了？
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; --
+</em><br />
+<em class="quotelev2">&gt;&gt; You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev2">&gt;&gt; To post to this group, send email to oscourse_at_googlegroups&#46;<!--nospam-->com.
+</em><br />
+<em class="quotelev2">&gt;&gt; To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups&#46;<!--nospam-->com.
+</em><br />
+<em class="quotelev2">&gt;&gt; For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; Best Regards
+</em><br />
+<em class="quotelev1">&gt; ==============================================
+</em><br />
+<em class="quotelev1">&gt; Chen Yu
+</em><br />
+<em class="quotelev1">&gt; Ph.D.  Associate Professor
+</em><br />
+<em class="quotelev1">&gt; System Software&amp;Software Engineering Group,
+</em><br />
+<em class="quotelev1">&gt; Laboratory of Pervasive Computing,
+</em><br />
+<em class="quotelev1">&gt; Dept. of Computer Science and Technology
+</em><br />
+<em class="quotelev1">&gt; Tsinghua University, Beijing 100084, P.R. China
+</em><br />
+<em class="quotelev1">&gt; E-Mail: mailto:yuchen_at_tsinghua&#46;<!--nospam-->edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+</em><br />
+<em class="quotelev1">&gt; ==============================================
+</em><br />
+<br /><br /><br /><pre>
+-- 
+Best Regards
+==============================================
+Chen Yu
+Ph.D.  Associate Professor
+System Software&amp;Software Engineering Group,
+Laboratory of Pervasive Computing,
+Dept. of Computer Science and Technology
+Tsinghua University, Beijing 100084, P.R. China
+E-Mail: mailto:yuchen_at_tsinghua.edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+==============================================
+
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups&#46;<!--nospam-->com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups&#46;<!--nospam-->com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:23:45 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start112">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0113.html" title="Next message in the list">Yu Chen: "[&#25552;&#31034;] lab2&#30340;default_pmm&#30340;&#30456;&#20851;&#20989;&#25968;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0111.html" title="Previous message in the list">Yu Chen: "Re: Lab2 ex1&#30340;&#19968;&#20010;assert&#38169;&#20102;&#65311;&#65288;&#19978;&#19968;post&#21457;&#38169;&#20102;&#65289;"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg112" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg112" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg112" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg112" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

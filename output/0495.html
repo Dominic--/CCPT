@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: [Lab 2] Question on running check_boot_pgdir from Object Ho on 2012-09-15 (gmail.mbox)</title>
+<meta name="Author" content="Object Ho (objectkuan_at_gmail.com)" />
+<meta name="Subject" content="Re: [Lab 2] Question on running check_boot_pgdir" />
+<meta name="Date" content="2012-09-15" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: [Lab 2] Question on running check_boot_pgdir</h1>
+<!-- received="Wed May 15 21:25:45 2013" -->
+<!-- isoreceived="20130515172545" -->
+<!-- sent="Sat, 15 Sep 2012 21:09:35 +0800" -->
+<!-- isosent="20120915130935" -->
+<!-- name="Object Ho" -->
+<!-- email="objectkuan_at_gmail.com" -->
+<!-- subject="Re: [Lab 2] Question on running check_boot_pgdir" -->
+<!-- id="CAH5fjeMLYVm+h8W8bkHN6aCAb+szRF4Z0=NN5G=vdsV1Mkxv_A_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- inreplyto="3716388379807645003_at_unknownmsgid" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start495" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0496.html" accesskey="d" title="Yu Chen: &quot;Re: [Lab 2] Question on running check_boot_pgdir&quot;">Next message</a> ]
+[ <a href="0494.html" title="&#33541;&#20426;&#26480;: &quot;Re: [Lab 2] Question on running check_boot_pgdir&quot;">Previous message</a> ]
+[ <a href="0494.html" title="&#33541;&#20426;&#26480;: &quot;Re: [Lab 2] Question on running check_boot_pgdir&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="0496.html" accesskey="t" title="Yu Chen: &quot;Re: [Lab 2] Question on running check_boot_pgdir&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg495" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg495" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg495" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg495" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Object Ho &lt;<a href="mailto:objectkuan_at_gmail.com?Subject=Re%3A%20%5BLab%202%5D%20Question%20on%20running%20check_boot_pgdir">objectkuan_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sat, 15 Sep 2012 21:09:35 +0800</span><br />
+</address>
+<br />
+yes, it is the same...
+<br />
+ok. lab 2 passed
+<br />
+<br />Doc 2 has two sentences:
+<br />
+页表的空间大小取决与页表要管理的物数 n，一个页表项（ 32位，即 4字节）可管理一个物页，*页表需要占
+<br />
+n/256个物理页空间。这样目录表和所占的总大小为 4096+1024*n字节。*
+<br />
+<br />I'm not sure whether I understand this in a wrong way.
+<br />
+I feel it's easier for me to understand it with this order:
+<br />
+页表的空间大小取决与页表要管理的物数 n，一个页表项（ 32位，即 4字节）可管理一个物页，*目录表和所占的总大小为
+<br />
+4096+1024*n字节。这样页表需要占 n/256个物理页空间。*
+<br />
+<br /><br />2012/9/15 茅俊杰 &lt;eternal.n08_at_gmail.com&gt;
+<br />
+<br /><em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 在 15 Sep 2012，13:40，Object Ho &lt;objectkuan_at_gmail.com&gt; 写道：
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; After passing *check_alloc_page()* and *check_pgdir()*
+</em><br />
+<em class="quotelev1">&gt; my code crashes in *check_boot_pgdir()* and cannot pass
+</em><br />
+<em class="quotelev1">&gt; in  *assert(page_insert(boot_pgdir, p, 0x100, PTE_W) == 0);*
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; the os reboots repeatly once it reaches this assertion.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I trace the code and find the problem appears in the function *memset* in
+</em><br />
+<em class="quotelev1">&gt; *get_pte()*
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; memset(pa, 0, PGSIZE);
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Maybe Same with the issue you have yesterday?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; here pa=0x3dc000
+</em><br />
+<em class="quotelev1">&gt; and PGSIZE=0x1000
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; what might be the cause of this error?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+</em><br />
+<em class="quotelev1">&gt; ---
+</em><br />
+<em class="quotelev1">&gt; You received this message because you are subscribed to the Google Groups
+</em><br />
+<em class="quotelev1">&gt; &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev1">&gt; To post to this group, send email to oscourse_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; To unsubscribe from this group, send email to
+</em><br />
+<em class="quotelev1">&gt; oscourse+unsubscribe_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;  --
+</em><br />
+<em class="quotelev1">&gt; All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+</em><br />
+<em class="quotelev1">&gt; ---
+</em><br />
+<em class="quotelev1">&gt; You received this message because you are subscribed to the Google Groups
+</em><br />
+<em class="quotelev1">&gt; &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev1">&gt; To post to this group, send email to oscourse_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; To unsubscribe from this group, send email to
+</em><br />
+<em class="quotelev1">&gt; oscourse+unsubscribe_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><pre>
+-- 
+All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+--- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:25:45 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start495">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0496.html" title="Next message in the list">Yu Chen: "Re: [Lab 2] Question on running check_boot_pgdir"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0494.html" title="Previous message in the list">&#33541;&#20426;&#26480;: "Re: [Lab 2] Question on running check_boot_pgdir"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0494.html" title="Message to which this message replies">&#33541;&#20426;&#26480;: "Re: [Lab 2] Question on running check_boot_pgdir"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0496.html" title="Next message in this discussion thread">Yu Chen: "Re: [Lab 2] Question on running check_boot_pgdir"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0496.html" title="Message sent in reply to this message">Yu Chen: "Re: [Lab 2] Question on running check_boot_pgdir"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg495" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg495" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg495" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg495" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

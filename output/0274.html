@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re:Re: 关于lab6的小问题 from Geraint Yang on 2012-04-15 (gmail.mbox)</title>
+<meta name="Author" content="Geraint Yang (geraint0923_at_gmail.com)" />
+<meta name="Subject" content="Re:Re: 关于lab6的小问题" />
+<meta name="Date" content="2012-04-15" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re:Re: 关于lab6的小问题</h1>
+<!-- received="Wed May 15 21:24:32 2013" -->
+<!-- isoreceived="20130515172432" -->
+<!-- sent="Sun, 15 Apr 2012 19:13:23 +0800" -->
+<!-- isosent="20120415111323" -->
+<!-- name="Geraint Yang" -->
+<!-- email="geraint0923_at_gmail.com" -->
+<!-- subject="Re:Re: 关于lab6的小问题" -->
+<!-- id="CAAdM-RXiuPRLR-r0TvY1O1afXeY7+9AdL4bWP7qPL2Rzac7MSg_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- inreplyto="40f2674d.595e.136b585db76.Coremail.jf426_at_163.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start274" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0275.html" accesskey="d" title="Yu Chen: &quot;Re: Re: &#20851;&#20110;lab6&#30340;&#23567;&#38382;&#39064;&quot;">Next message</a> ]
+[ <a href="0273.html" title="Yu Chen: &quot;Re: Re: &#20851;&#20110;lab6&#30340;&#23567;&#38382;&#39064;&quot;">Previous message</a> ]
+[ <a href="0272.html" title="&#23004;&#39134;: &quot;Re:Re: &#20851;&#20110;lab6&#30340;&#23567;&#38382;&#39064;&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="0275.html" accesskey="t" title="Yu Chen: &quot;Re: Re: &#20851;&#20110;lab6&#30340;&#23567;&#38382;&#39064;&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg274" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg274" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg274" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg274" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Geraint Yang &lt;<a href="mailto:geraint0923_at_gmail.com?Subject=Re%3ARe%3A%20%FF赜趌ab6的�%FF问题">geraint0923_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sun, 15 Apr 2012 19:13:23 +0800</span><br />
+</address>
+<br />
+大神的这个办法很有效啊，将time_slice设置为10直接就对了，只是不知道这样改允不允许？
+<br />
+On Apr 15, 2012 6:22 PM, &quot;姜飞&quot; &lt;jf426_at_163.com&gt; wrote:
+<br />
+<br /><em class="quotelev1">&gt; 老师您好，我也遇到了前面几个同学遇到的问题，主要就是输出的比例不是1 2 3 4 5，
+</em><br />
+<em class="quotelev1">&gt; 是 1 2 3 3 4 或者 1 2 2 3 4，我觉得就是MAX_TIME的零头分配不均匀的问题，
+</em><br />
+<em class="quotelev1">&gt; 既然priority.c不能改，但是把max_time_slice调小可以使得给每个进程的时间片
+</em><br />
+<em class="quotelev1">&gt; 分配更加均匀，就可解决这个问题，这应该符合要求吧？注释里面说的是
+</em><br />
+<em class="quotelev1">&gt; max_time_slice: no need here, the variable would be assigned by the caller.
+</em><br />
+<em class="quotelev1">&gt; 没有说 not allowed 或者 forbidden
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt;  姜飞
+</em><br />
+<em class="quotelev1">&gt; 清华大学计算机系
+</em><br />
+<em class="quotelev1">&gt; 紫荆公寓2#117A  100084
+</em><br />
+<em class="quotelev1">&gt; 电话：15011467636
+</em><br />
+<em class="quotelev1">&gt; 邮箱：jf426_at_163.com
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 在 2012-04-14 23:36:42，&quot;Xiongchao Tang&quot; &lt;tomxice_at_gmail.com&gt; 写道：
+</em><br />
+<em class="quotelev2">&gt; &gt;我对stride算法的理解和杨扬是一样的。不过，虽然12345的比例是基于大数据样本的结论，但是经过对priority.c的分析，在测试样例中
+</em><br />
+<em class="quotelev2">&gt; &gt;各个进程总共会执行105次，分配到12345就是7的倍数次。所以对这个样例而言，虽然样本较小，但应该是可以得出12345的结果的。我一开始也是
+</em><br />
+<em class="quotelev2">&gt; &gt;12334，原因在于对各种边界条件的理解不同，比如更新累计值pass的时机，比如对每个进程的pass的第一次赋值，是在第一次enqueue的时
+</em><br />
+<em class="quotelev2">&gt; &gt;候，还是第一次pick_next的时候，结果是不一样的。不过我个人觉得这些小差异在大样本的情况下可以忽略的吧。。。。。
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;On Apr 14, 10:32 pm, Geraint Yang &lt;geraint0..._at_gmail.com&gt; wrote:
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 对于像我这样，优先级为1的进程总要多执行一次，导致比例总为1:2:3:3:4的悲催同学，老师有没有什么比较好的建议？
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 谢谢老师！
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; On Sat, Apr 14, 2012 at 10:09 PM, Yu Chen &lt;chy..._at_gmail.com&gt; wrote:
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; hi, Geraint Yang:
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt;  很高兴你能思考这么深入。你的考虑是对的。1:2:3:4:5（取整的情况下）是一种基于概率的统计结果。但如果统计的样本足够大（即执行的时间足够长），在绝 大部分情况下能够满足1:2:3:4:5的结果（取整的情况下）。
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 这好比抛硬币，落在正面和反面的比例在足够多抛的次数下，会是1：1 （取整的情况下）。这也是stride算法的一个特点。
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 所以在我的机器上，目前的测试在90%（10次会&gt;9次）的情况下都会得出1:2:3:4:5的结果。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 在 2012年4月14日 下午9:54，Geraint Yang &lt;geraint0..._at_gmail.com&gt; 写道：
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt; &gt; &gt; 陈老师，
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt; &gt; &gt; 您好，我想咨询一个lab6的问题：
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; lab6中的练习2中priority.c的测试中，最后是通过对status数组的比例关系是否为1:2:3:4:5来判断正确与否的，那么这样会不会有很大 的运气成分在里面？
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 我理解的stride算法是按照优先级的比例关系来分配每个process的执行时间比例的，举个极端的例子假设有两个process，一个优先级为1，记为A ，另一个为3，记为B，在stride算法中，两个process的执行顺序可以是ABBBABBBABBBABBBABBBABBBABBBA...这样的执 行时间的比例接近1:3。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 然而，在B进程运气比较差的时候，比如，刚刚执行了ABBBABBBA的时候测试程序认为应该退出了，结果A执行了3次，B执行了6次，比值为1:2，即使使用 priority.c中的计算公式：(status[i]
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt; &gt; &gt; * 2 / status[0] + 1) /
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 2，那么i=0时，输出为(3*2/3+1)/2=1，i=1时，输出为(6*2/3+1)/2=2，结果为1:2，同样不正确，但是算法本身应该是没问题的。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt; &gt; &gt; 不知道是我对stride理解有误，还是比例的计算的确有问题，还请老师指正！
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt; &gt; &gt; 谢谢老师！
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; --
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; Best Regards
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; ==============================================
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; Chen Yu
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; Ph.D.  Associate Professor
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; System Software&amp;Software Engineering Group,
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; Laboratory of Pervasive Computing,
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; Dept. of Computer Science and Technology
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; Tsinghua University, Beijing 100084, P.R. China
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; E-Mail: mailto:yuc..._at_tsinghua.edu.cn  chy..._at_gmail.com
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; ==============================================
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;--
+</em><br />
+<em class="quotelev2">&gt; &gt;You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev2">&gt; &gt;To post to this group, send email to oscourse_at_googlegroups.com.
+</em><br />
+<em class="quotelev2">&gt; &gt;To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+</em><br />
+<em class="quotelev2">&gt; &gt;For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;  --
+</em><br />
+<em class="quotelev1">&gt; You received this message because you are subscribed to the Google Groups
+</em><br />
+<em class="quotelev1">&gt; &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev1">&gt; To post to this group, send email to oscourse_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; To unsubscribe from this group, send email to
+</em><br />
+<em class="quotelev1">&gt; oscourse+unsubscribe_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; For more options, visit this group at
+</em><br />
+<em class="quotelev1">&gt; <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+
+<br />
+<pre>
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:24:32 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start274">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0275.html" title="Next message in the list">Yu Chen: "Re: Re: &#20851;&#20110;lab6&#30340;&#23567;&#38382;&#39064;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0273.html" title="Previous message in the list">Yu Chen: "Re: Re: &#20851;&#20110;lab6&#30340;&#23567;&#38382;&#39064;"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0272.html" title="Message to which this message replies">&#23004;&#39134;: "Re:Re: &#20851;&#20110;lab6&#30340;&#23567;&#38382;&#39064;"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0275.html" title="Next message in this discussion thread">Yu Chen: "Re: Re: &#20851;&#20110;lab6&#30340;&#23567;&#38382;&#39064;"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0275.html" title="Message sent in reply to this message">Yu Chen: "Re: Re: &#20851;&#20110;lab6&#30340;&#23567;&#38382;&#39064;"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg274" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg274" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg274" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg274" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

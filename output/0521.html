@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: [Lab 2] Two more questions from (wrong string) æ&#x9d;¨å&#x9d;¤ on 2012-09-23 (gmail.mbox)</title>
+<meta name="Author" content="(wrong string) æ&#x9d;¨å&#x9d;¤ (kelwya_at_gmail.com)" />
+<meta name="Subject" content="Re: [Lab 2] Two more questions" />
+<meta name="Date" content="2012-09-23" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: [Lab 2] Two more questions</h1>
+<!-- received="Wed May 15 21:25:53 2013" -->
+<!-- isoreceived="20130515172553" -->
+<!-- sent="Sun, 23 Sep 2012 09:57:50 +0800" -->
+<!-- isosent="20120923015750" -->
+<!-- name="(wrong string) æ¨å¤" -->
+<!-- email="kelwya_at_gmail.com" -->
+<!-- subject="Re: [Lab 2] Two more questions" -->
+<!-- id="CAPNVONhXY6vAudCTjUf80Z1Jzp_gjE3MOTUiVeM3fP8rTrXFGA_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="CAH5fjePKuoBzpCyGw5Zin48BP6zDCoERW_WFbbZKdU0PBeXAPg_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start521" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0522.html" accesskey="d" title="Object Ho: &quot;[Labs] Summaries&quot;">Next message</a> ]
+[ <a href="0520.html" title="Object Ho: &quot;[Lab 2] Two more questions&quot;">Previous message</a> ]
+[ <a href="0520.html" title="Object Ho: &quot;[Lab 2] Two more questions&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg521" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg521" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg521" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg521" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: (wrong string) æ¨å¤ &lt;<a href="mailto:kelwya_at_gmail.com?Subject=Re%3A%20%5BLab%202%5D%20Two%20more%20questions">kelwya_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sun, 23 Sep 2012 09:57:50 +0800</span><br />
+</address>
+<br />
+I didn't do labs of ucore but did some of MIT JOS. So my answer may be
+<br />
+unofficial:)
+<br />
+(1) I thinks so. JOS enables paging from start to deal with the mapping of
+<br />
+kernel's link address and load address without using segmentation mechanism.
+<br />
+(2) we can combine PDE and PTE to control the permission. Here we sets
+<br />
+PTE_U for all PDEs and transfer final decision of permission control to PTE.
+<br />
+Below is a reference:
+<br />
+<a href="http://css.csail.mit.edu/6.858/2012/readings/i386/s06_05.htm">http://css.csail.mit.edu/6.858/2012/readings/i386/s06_05.htm</a>
+<br />
+<br />I don't know if I understand the right point of your questions.
+<br />
+<br />Regards,
+<br />
+Kun Yang
+<br />
+<br />On Sat, Sep 22, 2012 at 8:18 PM, Object Ho &lt;objectkuan_at_gmail.com&gt; wrote:
+<br />
+<br /><em class="quotelev1">&gt; I'm writing the summary of Lab 2 and come up with several more questions
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; (1)
+</em><br />
+<em class="quotelev1">&gt; We know that when booting the OS it goes through a period using a
+</em><br />
+<em class="quotelev1">&gt; temporary segment mapping, which makes *Virtual Address* not equal to *Linear
+</em><br />
+<em class="quotelev1">&gt; Address*
+</em><br />
+<em class="quotelev1">&gt; Why should we have such an annoying period? Can we finish all the jobs
+</em><br />
+<em class="quotelev1">&gt; without setting such a disgusting mapping?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; (2)
+</em><br />
+<em class="quotelev1">&gt; [Page Directory Table Entry] = [Base Address of Page Table] | PTE_U |
+</em><br />
+<em class="quotelev1">&gt; PTE_W | PTE_P
+</em><br />
+<em class="quotelev1">&gt; [Page Table Entry] = pa | PTE_P | PTE_W
+</em><br />
+<em class="quotelev1">&gt; Why the second one doesn't set the PTE_U bit?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+</em><br />
+<em class="quotelev1">&gt; ---
+</em><br />
+<em class="quotelev1">&gt; You received this message because you are subscribed to the Google Groups
+</em><br />
+<em class="quotelev1">&gt; &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev1">&gt; To post to this group, send email to oscourse_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; To unsubscribe from this group, send email to
+</em><br />
+<em class="quotelev1">&gt; oscourse+unsubscribe_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><pre>
+-- 
+All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+--- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:25:53 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start521">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0522.html" title="Next message in the list">Object Ho: "[Labs] Summaries"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0520.html" title="Previous message in the list">Object Ho: "[Lab 2] Two more questions"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0520.html" title="Message to which this message replies">Object Ho: "[Lab 2] Two more questions"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg521" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg521" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg521" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg521" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

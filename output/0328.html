@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: [U17]关于中断调用的一些疑问. from Yong Xiang on 2012-05-13 (gmail.mbox)</title>
+<meta name="Author" content="Yong Xiang (xyongcn_at_gmail.com)" />
+<meta name="Subject" content="Re: [U17]关于中断调用的一些疑问." />
+<meta name="Date" content="2012-05-13" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: [U17]关于中断调用的一些疑问.</h1>
+<!-- received="Wed May 15 21:24:49 2013" -->
+<!-- isoreceived="20130515172449" -->
+<!-- sent="Sun, 13 May 2012 17:10:22 +0800" -->
+<!-- isosent="20120513091022" -->
+<!-- name="Yong Xiang" -->
+<!-- email="xyongcn_at_gmail.com" -->
+<!-- subject="Re: [U17]关于中断调用的一些疑问." -->
+<!-- id="D3D2731C-70C4-4158-8EBD-4D663A3094C0_at_gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- inreplyto="CAGryVTxAGVgGE2QT5GVxc29s-z+ENmN3Mj13Ru+7_v2KuR4dTg_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start328" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0329.html" accesskey="d" title="wrong string: &quot;lab7&#30340;deadline&#21487;&#21542;&#24310;&#21518;&#19968;&#20004;&#22825;&quot;">Next message</a> ]
+[ <a href="0327.html" title="Yong Xiang: &quot;Fwd: &#25552;&#37266; - &#25805;&#20316;&#31995;&#32479;&#35838;&#31572;&#30097;&#21644;&#35838;&#31243;&#35774;&#35745;&#20132;&#27969;&#23433;&#25490; &#26102;&#38388;&#65306;&#21608;&#20845;&#19978;&#21320;10&#28857;&#33267;12&#28857; &#22320;&#28857;&#65306;&#19996;&#20027;&#27004;10&#21306;109&#20250;&#35758;&#23460;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg328" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg328" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg328" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg328" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yong Xiang &lt;<a href="mailto:xyongcn_at_gmail.com?Subject=Re%3A%20%5BU17%5D%FF赜谥�%FF系%FF用的�%FF�%FF疑问.">xyongcn_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sun, 13 May 2012 17:10:22 +0800</span><br />
+</address>
+<br />
+我查到的信息如下：
+<br />
+
+<br />
+在最新的Linux内核3.3.6中的kvm支持已有rdpmc的支持。参见下面几个链接。
+<br />
+<a href="http://lxr.linux.no/linux+v3.3.6/arch/x86/kvm/pmu.c#L408">http://lxr.linux.no/linux+v3.3.6/arch/x86/kvm/pmu.c#L408</a>
+<br />
+<a href="http://www.mail-archive.com/stable_at_vger.kernel.org/msg07451.html">http://www.mail-archive.com/stable_at_vger.kernel.org/msg07451.html</a>
+<br />
+<a href="http://sourceforge.net/projects/kvm/files/qemu-kvm/1.0.1/">http://sourceforge.net/projects/kvm/files/qemu-kvm/1.0.1/</a>
+<br />
+我认为触发T_DEBUG的方法是条件编译，即在编译命令中定义宏T_DEBUG。
+<br />
+
+<br />
+--向勇
+<br />
+
+<br />
+在 2012-5-12，下午11:53， shike mei 写道：
+<br />
+
+<br />
+<em class="quotelev1">&gt; 老师您好：
+</em><br />
+<em class="quotelev1">&gt; 本周Wiki已更新.
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; 经过今天的交流，我们又把Determinator程序跑了看了一遍，并发现对当前版本Qemu-kvm 0.12.5,不支持任何PMC功能。在这种情况下Determinator通过T_DEBUG=1号中断调用模拟单步指令计数，在不涉及任何PMC情况下实现了Deterministic。但我们尚未理解怎样触发T_DEBUG以模拟PMC。现已发邮件询问yale方面。
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; UCORE中新设置的中断经过验证已经无误,但上述原因导致中断没法触发。解决方法是
+</em><br />
+<em class="quotelev1">&gt; 1.用其他版本QEMU实现，还是
+</em><br />
+<em class="quotelev1">&gt; 2.通过T_DEBUG模拟?
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; 这些问题都已经写在wiki里了.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; -- 
+</em><br />
+<em class="quotelev1">&gt; Mei Shike
+</em><br />
+<em class="quotelev1">&gt; Dept. of Computer Science
+</em><br />
+<em class="quotelev1">&gt; and Technology,
+</em><br />
+<em class="quotelev1">&gt; Tsinghua University,
+</em><br />
+<em class="quotelev1">&gt; 100084, Beijing,
+</em><br />
+<em class="quotelev1">&gt; China.
+</em><br />
+<em class="quotelev1">&gt; tel: 86-010-51532304(dorm)
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+
+<br />
+<pre>
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:24:49 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start328">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0329.html" title="Next message in the list">wrong string: "lab7&#30340;deadline&#21487;&#21542;&#24310;&#21518;&#19968;&#20004;&#22825;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0327.html" title="Previous message in the list">Yong Xiang: "Fwd: &#25552;&#37266; - &#25805;&#20316;&#31995;&#32479;&#35838;&#31572;&#30097;&#21644;&#35838;&#31243;&#35774;&#35745;&#20132;&#27969;&#23433;&#25490; &#26102;&#38388;&#65306;&#21608;&#20845;&#19978;&#21320;10&#28857;&#33267;12&#28857; &#22320;&#28857;&#65306;&#19996;&#20027;&#27004;10&#21306;109&#20250;&#35758;&#23460;"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg328" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg328" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg328" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg328" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

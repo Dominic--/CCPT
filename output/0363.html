@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>ucore的单步调试讨论 from Yu Chen on 2012-05-31 (gmail.mbox)</title>
+<meta name="Author" content="Yu Chen (chyyuu_at_gmail.com)" />
+<meta name="Subject" content="ucore的单步调试讨论" />
+<meta name="Date" content="2012-05-31" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>ucore的单步调试讨论</h1>
+<!-- received="Wed May 15 21:25:00 2013" -->
+<!-- isoreceived="20130515172500" -->
+<!-- sent="Thu, 31 May 2012 16:23:00 +0800" -->
+<!-- isosent="20120531082300" -->
+<!-- name="Yu Chen" -->
+<!-- email="chyyuu_at_gmail.com" -->
+<!-- subject="ucore的单步调试讨论" -->
+<!-- id="CAAdffVHfq94r5zHC4qNJNu1THby_O+XRpSALGgFm+e0VHAg+Kg_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start363" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0364.html" accesskey="d" title="Yong Xiang: &quot;Fwd: &#25552;&#37266; - &#25805;&#20316;&#31995;&#32479;&#35838;&#31572;&#30097;&#21644;&#35838;&#31243;&#35774;&#35745;&#20132;&#27969;&#23433;&#25490; &#26102;&#38388;&#65306;&#21608;&#20845;&#19978;&#21320;10&#28857;&#33267;12&#28857; &#22320;&#28857;&#65306;&#19996;&#20027;&#27004;10&#21306;109&#20250;&#35758;&#23460;&quot;">Next message</a> ]
+[ <a href="0362.html" title="mzx: &quot;&#22238;&#22797;&#65306; Re: &#26412;&#21608;&#20363;&#20250;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg363" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg363" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg363" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg363" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yu Chen &lt;<a href="mailto:chyyuu_at_gmail.com?Subject=Re%3A%20ucore的�%FF%FF%FF�%FF试讨论">chyyuu_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 31 May 2012 16:23:00 +0800</span><br />
+</address>
+<br />
+陈宇恒，你好：
+<br />
+&nbsp;很高兴你还在继续扩展ucore的功能。对于ARM应用级单步执行模式，相对比较简单。
+<br />
+&nbsp;主流ARM的系统级（内核级）软件调试，可通过JTAG机制（CPU+JTAG仿真器）来完成，需要额外的硬件。如果不用硬件，对于ARM内核级单步执行模式，其实比较困难一些（需要考虑中断等导致不确定性的一些因素）。这也是为何在Linux内部实现的gdb-stub过了很久才进入Linux内核的一个原因。
+<br />
+&nbsp;&nbsp;我的理解是最好参考一下Linux kernel中对ARM cpu的kernel级gdb stub是如何做的（看源码）。
+<br />
+<a href="http://www.unixresources.net/linux/clf/linuxK/archive/00/00/70/85/708507.html">http://www.unixresources.net/linux/clf/linuxK/archive/00/00/70/85/708507.html</a>
+<br />
+<a href="http://blog.csdn.net/lvqqrainbow/article/details/6548235">http://blog.csdn.net/lvqqrainbow/article/details/6548235</a>
+<br />
+<br /><br />在 2012年5月31日 下午3:59，chyh1990 &lt;chyh1990_at_163.com&gt; 写道：
+<br />
+<br /><br /><em class="quotelev1">&gt; 陈老师您好！
+</em><br />
+<em class="quotelev1">&gt; 不知道ARM（特别是arm9）上是否有单步执行模式（如x86的单步trap）？
+</em><br />
+<em class="quotelev1">&gt; 我们要在ucore里实现一个gdb-stub，软件断点用未定义指令
+</em><br />
+<em class="quotelev1">&gt; 实现，但继续执行时需要先patch回原来指令然后单步，再patch断点（否则只能中断一次）。
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 另外软件断点是否有其他方法实现？
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 祝好！
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 陈宇恒
+</em><br />
+<em class="quotelev1">&gt; Chen, Yuheng
+</em><br />
+<em class="quotelev1">&gt; 2009010989
+</em><br />
+<em class="quotelev1">&gt; 清华大学 计算机科学与技术
+</em><br />
+<em class="quotelev1">&gt; Department of Computer Science and Tech. Tsinghua Unv.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><br /><br /><pre>
+--
+Best Regards
+==============================================
+Chen Yu
+Ph.D.  Associate Professor
+System Software&amp;Software Engineering Group,
+Laboratory of Pervasive Computing,
+Dept. of Computer Science and Technology
+Tsinghua University, Beijing 100084, P.R. China
+E-Mail: mailto:yuchen_at_tsinghua.edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+==============================================
+
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups&#46;<!--nospam-->com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups&#46;<!--nospam-->com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:25:00 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start363">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0364.html" title="Next message in the list">Yong Xiang: "Fwd: &#25552;&#37266; - &#25805;&#20316;&#31995;&#32479;&#35838;&#31572;&#30097;&#21644;&#35838;&#31243;&#35774;&#35745;&#20132;&#27969;&#23433;&#25490; &#26102;&#38388;&#65306;&#21608;&#20845;&#19978;&#21320;10&#28857;&#33267;12&#28857; &#22320;&#28857;&#65306;&#19996;&#20027;&#27004;10&#21306;109&#20250;&#35758;&#23460;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0362.html" title="Previous message in the list">mzx: "&#22238;&#22797;&#65306; Re: &#26412;&#21608;&#20363;&#20250;"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg363" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg363" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg363" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg363" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

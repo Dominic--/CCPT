@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: Lab2 ex1的一个assert错了？（上一post发错了） from Object Ho on 2012-11-23 (gmail.mbox)</title>
+<meta name="Author" content="Object Ho (objectkuan_at_gmail.com)" />
+<meta name="Subject" content="Re: Lab2 ex1的一个assert错了？（上一post发错了）" />
+<meta name="Date" content="2012-11-23" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: Lab2 ex1的一个assert错了？（上一post发错了）</h1>
+<!-- received="Wed May 15 21:26:42 2013" -->
+<!-- isoreceived="20130515172642" -->
+<!-- sent="Fri, 23 Nov 2012 11:42:47 +0800" -->
+<!-- isosent="20121123034247" -->
+<!-- name="Object Ho" -->
+<!-- email="objectkuan_at_gmail.com" -->
+<!-- subject="Re: Lab2 ex1的一个assert错了？（上一post发错了）" -->
+<!-- id="CAH5fjeOoz=d-69Ofqh5TvJVipE-gpZM7gDL25H2rf3XtD65upw_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- inreplyto="CAAdffVFhi55Akd4-qhUjLe83uwk1+5bgoXeLfZwzheP6z3mBGA_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start655" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0656.html" accesskey="d" title="Google+ &#23567;&#32452;: &quot;Google+ &#19978;&#24744;&#21487;&#33021;&#35748;&#35782;&#30340; 6 &#20010;&#20154;&quot;">Next message</a> ]
+[ <a href="0654.html" title="wangyulj_at_sina.com: &quot;&#26377;&#20851;&#20363;&#20250;&#20107;&#23452;&#36890;&#30693;&quot;">Previous message</a> ]
+[ <a href="0110.html" title="Yuheng Chen: &quot;Lab2 ex1&#30340;&#19968;&#20010;assert&#38169;&#20102;&#65311;&#65288;&#19978;&#19968;post&#21457;&#38169;&#20102;&#65289;&quot;">Maybe in reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg655" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg655" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg655" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg655" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Object Ho &lt;<a href="mailto:objectkuan_at_gmail.com?Subject=Re%3A%20Lab2%20ex1的�%FF%FF鯽ssert%FF砹�%FF%FF%FF%FF上�%FFpost%FF%FF%FF砹�%FF%FF">objectkuan_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 23 Nov 2012 11:42:47 +0800</span><br />
+</address>
+<br />
+<a href="https://github.com/chyyuu/ucore_lab/blob/master/code/lab2/kern/mm/default_pmm.c">https://github.com/chyyuu/ucore_lab/blob/master/code/lab2/kern/mm/default_pmm.c</a>
+<br />
+<br />232 p2 = p0 + 1;
+<br />
+233 free_page(p0);
+<br />
+234 free_pages(p1, 3);
+<br />
+235 assert(PageProperty(p0) &amp;&amp; p0-&gt;property == 1);
+<br />
+236 assert(PageProperty(p1) &amp;&amp; p1-&gt;property == 3);
+<br />
+237
+<br />
+238 assert((p0 = alloc_page()) == p2 - 1);
+<br />
+239 free_page(p0);
+<br />
+240 assert((p0 = alloc_pages(2)) == p2 + 1);
+<br />
+241
+<br />
+242 free_pages(p0, 2);
+<br />
+243 free_page(p2);
+<br />
+<br />为何我感觉贴上来的代码和github上的不一样呢？
+<br />
+<br /><br /><br />2012/11/23 Yu Chen &lt;chyyuu_at_gmail.com&gt;
+<br />
+<br /><em class="quotelev1">&gt; ---------- 已转发邮件 ----------
+</em><br />
+<em class="quotelev1">&gt; 发件人： sunsea &lt;sunsea1026_at_gmail.com&gt;
+</em><br />
+<em class="quotelev1">&gt; 日期： 2012年11月21日 下午5:44
+</em><br />
+<em class="quotelev1">&gt; 主题： Re: Lab2 ex1的一个assert错了？（上一post发错了）
+</em><br />
+<em class="quotelev1">&gt; 收件人： oscourse_at_googlegroups.com
+</em><br />
+<em class="quotelev1">&gt; 抄送： chyh1990_at_gmail.com
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 我的理解和你分析的一致，感觉p0 和 p2 - 1相等，但是我运行时，assert((p0 = alloc_page()) == p2 -
+</em><br />
+<em class="quotelev1">&gt; 1);该行报错，我跟踪debug，打印信息却是p0 和p2 + 1的一样，这是为什么呢？
+</em><br />
+<em class="quotelev1">&gt; ucore-debug: p0 = 0xc011dbb0
+</em><br />
+<em class="quotelev1">&gt; ucore-debug: p2 - 1 = 0xc011db88, p2 + 1 = 0xc011dbb0
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 在 2012年3月11日星期日UTC+8下午1时19分42秒，Yuheng Chen写道：
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 根据题目要求和default_pmm.c:default_check的assert序列要求，似乎是要实现address order
+</em><br />
+<em class="quotelev2">&gt; &gt; first-fit算法
+</em><br />
+<em class="quotelev2">&gt; &gt; 这个算法需要保持地址有序，每次分配都从最低地址拿一个符合要求的block
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 但line146 assert((p0 = alloc_page()) == p2 + 1);好像不对啊
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 125     list_entry_t free_list_store = free_list;
+</em><br />
+<em class="quotelev2">&gt; &gt; 126     list_init(&amp;free_list);
+</em><br />
+<em class="quotelev2">&gt; &gt; 127     assert(list_empty(&amp;free_list));
+</em><br />
+<em class="quotelev2">&gt; &gt; 128     assert(alloc_page() == NULL);
+</em><br />
+<em class="quotelev2">&gt; &gt; 129
+</em><br />
+<em class="quotelev2">&gt; &gt; 130     unsigned int nr_free_store = nr_free;
+</em><br />
+<em class="quotelev2">&gt; &gt; 131     nr_free = 0;
+</em><br />
+<em class="quotelev2">&gt; &gt; 132
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 以上建立一个空free_list
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 133     free_pages(p0 + 2, 3);
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 此时前五页为
+</em><br />
+<em class="quotelev2">&gt; &gt; | 0 | 0 | 1 | 1 | 1 |
+</em><br />
+<em class="quotelev2">&gt; &gt; 1=空，0=占用
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 134     assert(alloc_pages(4) == NULL);
+</em><br />
+<em class="quotelev2">&gt; &gt; 135     assert(PageProperty(p0 + 2) &amp;&amp; p0[2].property == 3);
+</em><br />
+<em class="quotelev2">&gt; &gt; 136     assert((p1 = alloc_pages(3)) != NULL);
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 此时前五页为
+</em><br />
+<em class="quotelev2">&gt; &gt; | 0 | 0 | 0 | 0 | 0 |
+</em><br />
+<em class="quotelev2">&gt; &gt;    |       |
+</em><br />
+<em class="quotelev2">&gt; &gt;    p0     p1
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 137     assert(alloc_page() == NULL);
+</em><br />
+<em class="quotelev2">&gt; &gt; 138     assert(p0 + 2 == p1);
+</em><br />
+<em class="quotelev2">&gt; &gt; 139
+</em><br />
+<em class="quotelev2">&gt; &gt; 140     p2 = p0 + 1;
+</em><br />
+<em class="quotelev2">&gt; &gt; 141     free_page(p0);
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; | 1 | 0 | 0 | 0 | 0 |
+</em><br />
+<em class="quotelev2">&gt; &gt;   |    |    |
+</em><br />
+<em class="quotelev2">&gt; &gt;   p0 p2  p1
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 142     free_pages(p1, 3);
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; | 1 | 0 | 1 | 1 | 1 |
+</em><br />
+<em class="quotelev2">&gt; &gt;   |    |    |
+</em><br />
+<em class="quotelev2">&gt; &gt;   p0 p2  p1
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 143     assert(PageProperty(p0) &amp;&amp; p0-&gt;property == 1);
+</em><br />
+<em class="quotelev2">&gt; &gt; 144     assert(PageProperty(p1) &amp;&amp; p1-&gt;property == 3);
+</em><br />
+<em class="quotelev2">&gt; &gt; 145
+</em><br />
+<em class="quotelev2">&gt; &gt; 146     assert((p0 = alloc_page()) == p2 + 1);
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; line146 buggy？
+</em><br />
+<em class="quotelev2">&gt; &gt; 按照first-fit，p0即第一个单元以空，地址最低
+</em><br />
+<em class="quotelev2">&gt; &gt; 此时alloc_page()用第一个Page即可
+</em><br />
+<em class="quotelev2">&gt; &gt; p0==p2-1，不应该是p2 + 1吧
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 难道我理解错了？
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; 【提醒】要取消订阅此论坛，请用你收到此邮件列表的电子邮件地址发送一个题目和内容为空的电子邮件至
+</em><br />
+<em class="quotelev1">&gt; oscourse+unsubscribe_at_googlegroups.com 即可。所有OS Labs的 src codes and
+</em><br />
+<em class="quotelev1">&gt; docs位于<a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+</em><br />
+<em class="quotelev1">&gt; ---
+</em><br />
+<em class="quotelev1">&gt; You received this message because you are subscribed to the Google
+</em><br />
+<em class="quotelev1">&gt; Groups &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev1">&gt; Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; Best Regards
+</em><br />
+<em class="quotelev1">&gt; ==============================================
+</em><br />
+<em class="quotelev1">&gt; Yu Chen
+</em><br />
+<em class="quotelev1">&gt; Ph.D.  Associate Professor
+</em><br />
+<em class="quotelev1">&gt; System Software&amp;Software Engineering Group,
+</em><br />
+<em class="quotelev1">&gt; Laboratory of Pervasive Computing,
+</em><br />
+<em class="quotelev1">&gt; Dept. of Computer Science and Technology
+</em><br />
+<em class="quotelev1">&gt; Tsinghua University, Beijing 100084, P.R. China
+</em><br />
+<em class="quotelev1">&gt; E-Mail: mailto:yuchen_at_tsinghua.edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+</em><br />
+<em class="quotelev1">&gt; ==============================================
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><br /><br /><pre>
+-- 
+Object Ho
+Email: objectkuan_at_gmail.com
+Mobile Phone: (+86)15120000892
+Zip Code: 100086
+Department: School of Software, Tsinghua University, Beijing, China
+Address: Research Center of Operating Systems and Middlewares, Research
+Institute of Information Technology, Tsinghua University, Beijing, China
+
+-- 
+【提醒】要取消订阅此论坛，请用你收到此邮件列表的电子邮件地址发送一个题目和内容为空的电子邮件至 oscourse+unsubscribe_at_googlegroups.com  即可。所有OS Labs的 src codes and docs位于<a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+--- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:26:42 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start655">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0656.html" title="Next message in the list">Google+ &#23567;&#32452;: "Google+ &#19978;&#24744;&#21487;&#33021;&#35748;&#35782;&#30340; 6 &#20010;&#20154;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0654.html" title="Previous message in the list">wangyulj_at_sina.com: "&#26377;&#20851;&#20363;&#20250;&#20107;&#23452;&#36890;&#30693;"</a></li>
+<li><dfn>Maybe in reply to</dfn>: <a href="0110.html" title="Message to which this message replies">Yuheng Chen: "Lab2 ex1&#30340;&#19968;&#20010;assert&#38169;&#20102;&#65311;&#65288;&#19978;&#19968;post&#21457;&#38169;&#20102;&#65289;"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg655" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg655" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg655" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg655" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

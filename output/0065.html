@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: LAB1在kvm里运行有bug? from Yu Chen on 2012-02-28 (gmail.mbox)</title>
+<meta name="Author" content="Yu Chen (chyyuu_at_gmail.com)" />
+<meta name="Subject" content="Re: LAB1在kvm里运行有bug?" />
+<meta name="Date" content="2012-02-28" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: LAB1在kvm里运行有bug?</h1>
+<!-- received="Wed May 15 21:23:33 2013" -->
+<!-- isoreceived="20130515172333" -->
+<!-- sent="Tue, 28 Feb 2012 22:21:00 +0800" -->
+<!-- isosent="20120228142100" -->
+<!-- name="Yu Chen" -->
+<!-- email="chyyuu_at_gmail.com" -->
+<!-- subject="Re: LAB1在kvm里运行有bug?" -->
+<!-- id="CAAdffVGXR9t5cDqvXAj+vSwhU75o24-ASpB0xv76zr2JjxVbUw_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- inreplyto="5696deb9-b636-4287-87cd-5b2d9ffbaac5_at_t16g2000yqt.googlegroups.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start65" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0066.html" accesskey="d" title="Yu Chen: &quot;Re: gcc&#39640;&#29256;&#26412;&#29983;&#25104;bootblock&#36807;&#22823;&#30340;&#35299;&#20915;&#21150;&#27861;&quot;">Next message</a> ]
+[ <a href="0064.html" title="Yuheng Chen: &quot;Re: lab1 proj2&quot;">Previous message</a> ]
+[ <a href="0061.html" title="Yuheng Chen: &quot;LAB1&#22312;kvm&#37324;&#36816;&#34892;&#26377;bug?&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg65" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg65" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg65" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg65" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yu Chen &lt;<a href="mailto:chyyuu_at_gmail.com?Subject=Re%3A%20LAB1在kvm里运行有bug%3F">chyyuu_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 28 Feb 2012 22:21:00 +0800</span><br />
+</address>
+<br />
+kvm 修改了qemu作为它的device (当然也是模拟的)，与qemu也许有些不同。
+<br />
+ox2f中断可能是其模拟的某个设备产生的。ucore收到这个中断认为是错误，其实可以简单的修改ucore，即不把0x2f中断的产生当成错误，而是丢掉不管。
+<br />
+<br />总而言之，如果这个中断是kvm模拟的硬件环境中的某个外设产生的，ucore不处理其实没啥。
+<br />
+在 2012年2月28日 下午9:19，Yuheng Chen &lt;chyh1990_at_gmail.com&gt; 写道：
+<br />
+<em class="quotelev1">&gt; 基本把Lab1+challenge实现了一下，发现了一个问题：
+</em><br />
+<em class="quotelev1">&gt; 用qemu纯软件模拟时没有问题。
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 但用一台带虚拟化技术的CPU+kvm模块（qemu会自动检测使用kvm）
+</em><br />
+<em class="quotelev1">&gt; 运行时貌似有bug？
+</em><br />
+<em class="quotelev1">&gt; 开启kvm
+</em><br />
+<em class="quotelev1">&gt; proj3.1什么都不改时，make grade命令根本不会返回
+</em><br />
+<em class="quotelev1">&gt; （是Makefile脚本的问题？）
+</em><br />
+<em class="quotelev1">&gt; rmmod kvm-intel ;rmmod kvm;后一切正常。
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; proj4加上基本的中断初始化（0-255 -&gt; trap）
+</em><br />
+<em class="quotelev1">&gt; 在print system footprint后会触发
+</em><br />
+<em class="quotelev1">&gt; 1 ++ setup timer interrupts
+</em><br />
+<em class="quotelev1">&gt;  2 trapframe at 0x7b80
+</em><br />
+<em class="quotelev1">&gt;  3   edi  0x00000000
+</em><br />
+<em class="quotelev1">&gt;  4   esi  0x00010094
+</em><br />
+<em class="quotelev1">&gt;  5   ebp  0x00007be8
+</em><br />
+<em class="quotelev1">&gt;  6   oesp 0x00007ba0
+</em><br />
+<em class="quotelev1">&gt;  7   ebx  0x00010094
+</em><br />
+<em class="quotelev1">&gt;  8   edx  0x000000a1
+</em><br />
+<em class="quotelev1">&gt;  9   ecx  0x00000000
+</em><br />
+<em class="quotelev1">&gt;  10   eax  0x000000ff
+</em><br />
+<em class="quotelev1">&gt;  11   es   0x----0010
+</em><br />
+<em class="quotelev1">&gt;  12   ds   0x----0010
+</em><br />
+<em class="quotelev1">&gt;  13   trap 0x0000002f Hardware Interrupt
+</em><br />
+<em class="quotelev1">&gt;  14   err  0x00000000
+</em><br />
+<em class="quotelev1">&gt;  15   eip  0x001016a9
+</em><br />
+<em class="quotelev1">&gt;  16   cs   0x----0008
+</em><br />
+<em class="quotelev1">&gt;  17   flag 0x00000206 PF,IF,IOPL=0
+</em><br />
+<em class="quotelev1">&gt;  18 kernel panic at kern/trap/trap.c:240:
+</em><br />
+<em class="quotelev1">&gt;  19     unexpected trap in kernel.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;  trap 0x0000002f Hardware Interrupt 这个中断在无kvm时不会发生。。
+</em><br />
+<em class="quotelev1">&gt; 另外，中断时eip  0x001016a9，在initr_enable里，sti后两条指令。
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 这个是因为kvm把host的硬件中断调度到虚拟机里面了？
+</em><br />
+<em class="quotelev1">&gt; 还是什么原因呢？
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 总而言之，硬件虚拟话貌似会改变系统运行情况。。???
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev1">&gt; To post to this group, send email to oscourse_at_googlegroups&#46;<!--nospam-->com.
+</em><br />
+<em class="quotelev1">&gt; To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups&#46;<!--nospam-->com.
+</em><br />
+<em class="quotelev1">&gt; For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><br /><br /><pre>
+-- 
+Best Regards
+==============================================
+Chen Yu
+Ph.D.  Associate Professor
+System Software&amp;Software Engineering Group,
+Laboratory of Pervasive Computing,
+Dept. of Computer Science and Technology
+Tsinghua University, Beijing 100084, P.R. China
+E-Mail: mailto:yuchen_at_tsinghua.edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+==============================================
+
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups&#46;<!--nospam-->com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups&#46;<!--nospam-->com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:23:33 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start65">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0066.html" title="Next message in the list">Yu Chen: "Re: gcc&#39640;&#29256;&#26412;&#29983;&#25104;bootblock&#36807;&#22823;&#30340;&#35299;&#20915;&#21150;&#27861;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0064.html" title="Previous message in the list">Yuheng Chen: "Re: lab1 proj2"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0061.html" title="Message to which this message replies">Yuheng Chen: "LAB1&#22312;kvm&#37324;&#36816;&#34892;&#26377;bug?"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg65" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg65" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg65" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg65" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

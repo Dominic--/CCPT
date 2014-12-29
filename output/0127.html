@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>关于lab2的补充帮助信息1 from Yu Chen on 2012-03-13 (gmail.mbox)</title>
+<meta name="Author" content="Yu Chen (chyyuu_at_gmail.com)" />
+<meta name="Subject" content="关于lab2的补充帮助信息1" />
+<meta name="Date" content="2012-03-13" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>关于lab2的补充帮助信息1</h1>
+<!-- received="Wed May 15 21:23:51 2013" -->
+<!-- isoreceived="20130515172351" -->
+<!-- sent="Tue, 13 Mar 2012 22:24:14 +0800" -->
+<!-- isosent="20120313142414" -->
+<!-- name="Yu Chen" -->
+<!-- email="chyyuu_at_gmail.com" -->
+<!-- subject="关于lab2的补充帮助信息1" -->
+<!-- id="CAAdffVES6dG89_WL5E0ELy_ZGL9rG-ppzOFRv4pgBZPfbP=bgw_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start127" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0128.html" accesskey="d" title="Yu Chen: &quot;&#12304;&#25552;&#37266;&#12305;&#36873;&#25321;&#22823;&#23454;&#39564;&#30340;&#21516;&#23398;&#20063;&#38656;&#23436;&#25104;&#24120;&#35268;&#23454;&#39564;&#30340;&#24120;&#35268;&#32451;&#20064;&quot;">Next message</a> ]
+[ <a href="0126.html" title="Meijia Hou: &quot;Re: &#20363;&#20250;&#25552;&#37266;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="0158.html" accesskey="t" title="Junpeng Qiu: &quot;Re: &#20851;&#20110;lab2&#30340;&#34917;&#20805;&#24110;&#21161;&#20449;&#24687;1&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg127" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg127" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg127" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg127" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yu Chen &lt;<a href="mailto:chyyuu_at_gmail.com?Subject=Re%3A%20%FF赜趌ab2的%FF%FF%FF�%FF镏畔%FF1">chyyuu_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 13 Mar 2012 22:24:14 +0800</span><br />
+</address>
+<br />
+lab2其实是才算是OS课的正式开始，而它的实现与各位同学之前学习的编程有较大的区别，需要尽量了解ucore的整体，需要使用一些在OS内比较常见但在应用开发比较罕见的编程技巧或方法。
+<br />
+为了让部分觉得lab2比较难的同学能够更容易的完成lab2的实验，我们会不定期地收集相关学生问题（希望从maillist上看到学生的提问），并回答。
+<br />
+下面的信息不是标准，只是便于大家完成lab2的参考。觉得自己编程还不错的同学可直接忽略下面的内容。
+<br />
+<br />----------------------------------------------------------------------------------------------------------------------------------------------------
+<br />
+lab2的第一部分是完成first_fit的分配算法。原理上first_fit很简单，但要在ucore中实现，需要充分了解和利用ucore已有的数据结构和相关操作、关键的一些全局变量等。
+<br />
+<br />first_fit分配算法需要维护一个查找有序（地址按从小到大排列）空闲块（以页为最小单位的连续地址空间）的数据结构，而双向链表是一个很好的选择。
+<br />
+libs/list.h定义了可挂接任意元素的通用双向链表结构和对应的操作，所以需要了解如何使用这个文件提供的各种函数，从而可以完成对双向链表的初始化/插入/删除等。
+<br />
+kern/mm/memlayout.h中定义了一个 free_area_t 数据结构，包含成员结构
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;list_entry_t free_list;         // the list header   空闲块双向链表的头
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned int nr_free;           // # of free pages in this free
+<br />
+list  空闲块的总数（以页为单位）
+<br />
+<br />显然，我们可以通过此数据结构来完成对空闲块的管理。而default_pmm.c中定义的free_area变量就是干这个事情的。
+<br />
+<br />kern/mm/pmm.h中定义了一个通用的分配算法的函数列表，用pmm_manager 表示
+<br />
+// pmm_manager is a physical memory management class. A special pmm
+<br />
+manager - XXX_pmm_manager
+<br />
+// only needs to implement the methods in pmm_manager class, then
+<br />
+XXX_pmm_manager can be used
+<br />
+// by ucore to manage the total physical memory space.
+<br />
+struct pmm_manager {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;const char *name;                                 // XXX_pmm_manager's name
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;void (*init)(void);                               // initialize
+<br />
+internal description&amp;management data structure
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// (free block
+<br />
+list, number of free block) of XXX_pmm_manager
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;void (*init_memmap)(struct Page *base, size_t n); // setup
+<br />
+description&amp;management data structcure according to
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// the initial
+<br />
+free physical memory space
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;struct Page *(*alloc_pages)(size_t n);            // allocate &gt;=n
+<br />
+pages, depend on the allocation algorithm
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;void (*free_pages)(struct Page *base, size_t n);  // free &gt;=n
+<br />
+pages with &quot;base&quot; addr of Page descriptor structures(memlayout.h)
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;size_t (*nr_free_pages)(void);                    // return the
+<br />
+number of free pages
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;void (*check)(void);                              // check the
+<br />
+correctness of XXX_pmm_manager
+<br />
+};
+<br />
+<br />上述的英文注释比较详细了。可进一步说明的是
+<br />
+init函数就是用来初始化free_area变量的, first_fit分配算法可直接重用default_ini函数t的实现。
+<br />
+init_memmap函数需要根据现有的内存情况构建空闲块列表的初始状态。何时应该执行这个函数呢？
+<br />
+通过分析代码，可以知道：
+<br />
+kern_init --&gt; pmm_init--&gt;page_init--&gt;init_memmap--&gt; pmm_manager-&gt;init_memmap
+<br />
+<br />所以，default_init_memmap需要根据page_init函数中传递过来的参数（某个连续地址的空闲块的起始页，页个数）来建立一个空闲块的双向链表。
+<br />
+这里有一个假定page_init函数是按地址从小到大的顺序传来的空闲块的。（需要确认？？？）
+<br />
+链表头是free_area.free_list，链表项是Page数据结构的base-&gt;page_link。这样我们就依靠Page数据结构中的成员变量page_link形成了一的空闲块列表。
+<br />
+Page数据结构中的成员变量property 是一个整型，在这里我们可以把它用来记录某空闲块的大小（即页个数）。
+<br />
+Page数据结构中的成员变量flags可以有各种特殊的需求，比如SetPageProperty(page)，即把page-&gt;flags的PG_property位设置为1，表示成员变量property
+<br />
+有效；ClearPageProperty(page)，即把page-&gt;flags的PG_property位设置为0，表示成员变量property
+<br />
+无效。
+<br />
+Page数据结构中的成员变量ref 是一个整型，我们可以用它来记录这个空闲块是否被用了，如果0，free；如果1，malloced
+<br />
+<br />所以default_init_memmap可大致实现如下：
+<br />
+<br />default_init_memmap(struct Page *base, size_t n) {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;struct Page *p = base;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;for (; p != base + n; p ++) {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p-&gt;flags = p-&gt;property = 0;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set_page_ref(p, 0);
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;base-&gt;property = n;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;SetPageProperty(base);
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;nr_free += n;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;list_add(&amp;free_list, &amp;(base-&gt;page_link));
+<br />
+}
+<br />
+<br /><br />如果要分配一个页，那要考虑哪些呢？这里就需要考虑实现default_alloc_pages函数，注意参数n表示要分配n个页。
+<br />
+另外，需要注意实现时尽量多考虑一些边界情况，这样确保软件的鲁棒性。比如
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if (n &gt; nr_free) {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return NULL;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+这样可以确保分配不会超出范围。
+<br />
+<br />也可加一些 assert函数，在有错误出现时，能够迅速发现。
+<br />
+比如 n应该大于0，我们就可以加上
+<br />
+&nbsp;&nbsp;&nbsp;assert(n &gt; 0);
+<br />
+这样在n&lt;=0的情况下，ucore会迅速报错
+<br />
+<br />firstfit需要从空闲链表头开始查找最小的地址，通过list_next找到下一个空闲块元素，通过le2page宏可以更加链表元素获得对应的Page指针p
+<br />
+通过p-&gt;property可以了解此空闲块的大小。如果&gt;=n，这就找到了！如果&lt;n，则list_next，继续查找。直到list_next
+<br />
+== &amp;free_list，这表示找完了一遍了。
+<br />
+找到后，就要从新组织空闲块，然后把找到的page返回。所以default_alloc_pages可大致实现如下：
+<br />
+<br />static struct Page *
+<br />
+default_alloc_pages(size_t n) {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if (n &gt; nr_free) {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return NULL;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;struct Page *page = NULL;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;list_entry_t *le = &amp;free_list;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;while ((le = list_next(le)) != &amp;free_list) {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct Page *p = le2page(le, page_link);
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (p-&gt;property &gt;= n) {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page = p;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if (page != NULL) {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list_del(&amp;(page-&gt;page_link));
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (page-&gt;property &gt; n) {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct Page *p = page + n;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p-&gt;property = page-&gt;property - n;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list_add(&amp;free_list, &amp;(p-&gt;page_link));
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nr_free -= n;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ClearPageProperty(page);
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return page;
+<br />
+}
+<br />
+<br />default_free_pages函数的实现其实是default_alloc_pages的逆过程，不过需要考虑空闲块的合并问题。这里就不再细讲了。希望同学能够顺利完成lab2的第一部分。
+<br />
+<br /><pre>
+-- 
+Best Regards
+==============================================
+Chen Yu
+Ph.D.  Associate Professor
+System Software&amp;Software Engineering Group,
+Laboratory of Pervasive Computing,
+Dept. of Computer Science and Technology
+Tsinghua University, Beijing 100084, P.R. China
+E-Mail: mailto:yuchen_at_tsinghua.edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+==============================================
+
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups&#46;<!--nospam-->com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:23:51 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start127">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0128.html" title="Next message in the list">Yu Chen: "&#12304;&#25552;&#37266;&#12305;&#36873;&#25321;&#22823;&#23454;&#39564;&#30340;&#21516;&#23398;&#20063;&#38656;&#23436;&#25104;&#24120;&#35268;&#23454;&#39564;&#30340;&#24120;&#35268;&#32451;&#20064;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0126.html" title="Previous message in the list">Meijia Hou: "Re: &#20363;&#20250;&#25552;&#37266;"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0158.html" title="Next message in this discussion thread">Junpeng Qiu: "Re: &#20851;&#20110;lab2&#30340;&#34917;&#20805;&#24110;&#21161;&#20449;&#24687;1"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0158.html" title="Message sent in reply to this message">Junpeng Qiu: "Re: &#20851;&#20110;lab2&#30340;&#34917;&#20805;&#24110;&#21161;&#20449;&#24687;1"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg127" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg127" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg127" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg127" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

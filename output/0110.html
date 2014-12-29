@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Lab2 ex1的一个assert错了？（上一post发错了） from Yuheng Chen on 2012-03-11 (gmail.mbox)</title>
+<meta name="Author" content="Yuheng Chen (chyh1990_at_gmail.com)" />
+<meta name="Subject" content="Lab2 ex1的一个assert错了？（上一post发错了）" />
+<meta name="Date" content="2012-03-11" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Lab2 ex1的一个assert错了？（上一post发错了）</h1>
+<!-- received="Wed May 15 21:23:45 2013" -->
+<!-- isoreceived="20130515172345" -->
+<!-- sent="Sat, 10 Mar 2012 21:19:42 -0800 (PST)" -->
+<!-- isosent="20120311051942" -->
+<!-- name="Yuheng Chen" -->
+<!-- email="chyh1990_at_gmail.com" -->
+<!-- subject="Lab2 ex1的一个assert错了？（上一post发错了）" -->
+<!-- id="c399814b-02d6-4bf4-9b3a-d392d6398d05_at_rv2g2000pbc.googlegroups.com" -->
+<!-- charset="GB2312" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start110" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0111.html" accesskey="d" title="Yu Chen: &quot;Re: Lab2 ex1&#30340;&#19968;&#20010;assert&#38169;&#20102;&#65311;&#65288;&#19978;&#19968;post&#21457;&#38169;&#20102;&#65289;&quot;">Next message</a> ]
+[ <a href="0109.html" title="Yuheng Chen: &quot;Lab2 ex1&#30340;&#19968;&#20010;assert&#38169;&#20102;&#65311;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="0111.html" accesskey="t" title="Yu Chen: &quot;Re: Lab2 ex1&#30340;&#19968;&#20010;assert&#38169;&#20102;&#65311;&#65288;&#19978;&#19968;post&#21457;&#38169;&#20102;&#65289;&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg110" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg110" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg110" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg110" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yuheng Chen &lt;<a href="mailto:chyh1990_at_gmail.com?Subject=Re%3A%20Lab2%20ex1的�%FF%FF鯽ssert%FF砹�%FF%FF%FF%FF上�%FFpost%FF%FF%FF砹�%FF%FF">chyh1990_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sat, 10 Mar 2012 21:19:42 -0800 (PST)</span><br />
+</address>
+<br />
+根据题目要求和default_pmm.c:default_check的assert序列要求，似乎是要实现address order
+<br />
+first-fit算法
+<br />
+这个算法需要保持地址有序，每次分配都从最低地址拿一个符合要求的block
+<br />
+<br />但line146 assert((p0 = alloc_page()) == p2 + 1);好像不对啊
+<br />
+<br /><br />125     list_entry_t free_list_store = free_list;
+<br />
+126     list_init(&amp;free_list);
+<br />
+127     assert(list_empty(&amp;free_list));
+<br />
+128     assert(alloc_page() == NULL);
+<br />
+129
+<br />
+130     unsigned int nr_free_store = nr_free;
+<br />
+131     nr_free = 0;
+<br />
+132
+<br />
+<br />以上建立一个空free_list
+<br />
+<br />133     free_pages(p0 + 2, 3);
+<br />
+<br />此时前五页为
+<br />
+| 0 | 0 | 1 | 1 | 1 |
+<br />
+1=空，0=占用
+<br />
+<br />134     assert(alloc_pages(4) == NULL);
+<br />
+135     assert(PageProperty(p0 + 2) &amp;&amp; p0[2].property == 3);
+<br />
+136     assert((p1 = alloc_pages(3)) != NULL);
+<br />
+<br />此时前五页为
+<br />
+| 0 | 0 | 0 | 0 | 0 |
+<br />
+&nbsp;&nbsp;&nbsp;|       |
+<br />
+&nbsp;&nbsp;&nbsp;p0     p1
+<br />
+<br />137     assert(alloc_page() == NULL);
+<br />
+138     assert(p0 + 2 == p1);
+<br />
+139
+<br />
+140     p2 = p0 + 1;
+<br />
+141     free_page(p0);
+<br />
+<br />| 1 | 0 | 0 | 0 | 0 |
+<br />
+&nbsp;&nbsp;|    |    |
+<br />
+&nbsp;&nbsp;p0 p2  p1
+<br />
+<br />142     free_pages(p1, 3);
+<br />
+<br />| 1 | 0 | 1 | 1 | 1 |
+<br />
+&nbsp;&nbsp;|    |    |
+<br />
+&nbsp;&nbsp;p0 p2  p1
+<br />
+<br /><br />143     assert(PageProperty(p0) &amp;&amp; p0-&gt;property == 1);
+<br />
+144     assert(PageProperty(p1) &amp;&amp; p1-&gt;property == 3);
+<br />
+145
+<br />
+146     assert((p0 = alloc_page()) == p2 + 1);
+<br />
+<br />line146 buggy？
+<br />
+按照first-fit，p0即第一个单元以空，地址最低
+<br />
+此时alloc_page()用第一个Page即可
+<br />
+p0==p2-1，不应该是p2 + 1吧
+<br />
+<br />难道我理解错了？
+<br />
+<br /><pre>
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:23:45 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start110">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0111.html" title="Next message in the list">Yu Chen: "Re: Lab2 ex1&#30340;&#19968;&#20010;assert&#38169;&#20102;&#65311;&#65288;&#19978;&#19968;post&#21457;&#38169;&#20102;&#65289;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0109.html" title="Previous message in the list">Yuheng Chen: "Lab2 ex1&#30340;&#19968;&#20010;assert&#38169;&#20102;&#65311;"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0111.html" title="Next message in this discussion thread">Yu Chen: "Re: Lab2 ex1&#30340;&#19968;&#20010;assert&#38169;&#20102;&#65311;&#65288;&#19978;&#19968;post&#21457;&#38169;&#20102;&#65289;"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0111.html" title="Message sent in reply to this message">Yu Chen: "Re: Lab2 ex1&#30340;&#19968;&#20010;assert&#38169;&#20102;&#65311;&#65288;&#19978;&#19968;post&#21457;&#38169;&#20102;&#65289;"</a></li>
+<li><dfn>Reply</dfn>: <a href="0652.html" title="Message sent in reply to this message">sunsea: "Re: Lab2 ex1&#30340;&#19968;&#20010;assert&#38169;&#20102;&#65311;&#65288;&#19978;&#19968;post&#21457;&#38169;&#20102;&#65289;"</a></li>
+<li><dfn>Maybe reply</dfn>: <a href="0655.html" title="Message sent in reply to this message">Object Ho: "Re: Lab2 ex1&#30340;&#19968;&#20010;assert&#38169;&#20102;&#65311;&#65288;&#19978;&#19968;post&#21457;&#38169;&#20102;&#65289;"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg110" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg110" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg110" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg110" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

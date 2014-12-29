@@ -1,0 +1,75 @@
+- - - 
+Challenge 
+-----------------------
+对于challenge部分内容(题目叙述不太明确，这里认为就是切换特权级的switch_to_kernel和switch_to_user两个函数的实现)。
+
+我采用中断方式进行特权级切换。
+
+首先对switch_to_user和switch_to_kernel两个函数，嵌入汇编直接调用中断120和121。如下：
+
+        static void
+        switch_to_user(void) {
+	        // TODO
+	        asm volatile ("int $120");
+        }
+
+        static void
+        switch_to_kernel(void) {
+	        // TODO
+	        asm volatile ("int $121");
+        }
+
+然后在设置IDT时注意对两者的处理，要把T_SWITCH_TOK设置为用户态权限。
+
+之后的工作就是在实际的中断处理程序trap_dispatch中处理相应两个中断。
+
+切换的方式是构造一个trap_frame以替换原有的trap_frame，这样在从中断返回时即完成了特权级的切换。
+
+对于从user到kernel的转换较为简单，核心代码如下：
+
+        ptmp = (struct trapframe *)(tf->tf_esp - sizeof(struct trapframe) + 8);
+		memmove(ptmp, tf, sizeof(struct trapframe) - 8);
+		ptmp->tf_cs = KERNEL_CS;
+		ptmp->tf_ds = 
+		ptmp->tf_es = KERNEL_DS;
+		tf = ptmp;
+
+其中ptmp是一个trapframe的指针，首先通过esp找到相应的位置（这部分将在kernel切换到user的部分详细说明），
+然后将现在栈中的trapframe复制到ptmp所指位置，正常trapframe大小其实是sizeof(struct trapframe) - 8，最后的8个
+byte只在进入ring3的特权级切换中起作用。之后就是设置trapframe中断cs，ds，es的值，以使得从中断处理返回后返回到相应的位置。
+最后将tf设为ptmp用于伪装成原来的trapframe。这里c函数的写法并不会带回tf的值，类比trapentry.S中的方法：
+
+	    # pop the pushed stack pointer
+	    popl %esp
+
+此方法实际从栈中读出trap函数的local变量tf值，赋予esp。我在trap函数的最后添加了如下的代码
+
+    	asm volatile ("popl %0":"=m"(tf));
+
+利用栈读出trap_dispatch中已经改动过的tf值，赋给trap函数中的tf，借此传递给esp。
+
+可以看到这里并没有显式设定ss,esp等的值，切换过程是在trapentry.S中最后的iret处实际完成的。
+这一步利用栈中(trapframe中)的值更改cs和eip，发现特权级由3转为0，从task-state segment中读出相应的ss0以及esp0，从而实现特权级的切换。
+
+另外需要说明的是此处kernel态和user态实际的代码和栈空间都是共享的，虽然cs与ds值不同，实际却是指向同样内存空间的。这是保护模式下的特点，之前没有足够关注，因此有很多不太理解。
+
+接下来说kernel到user的切换，核心代码如下：
+
+		tmp = *tf;
+		tmp.tf_esp = &(tf->tf_esp);
+		//(unsigned int)tf + sizeof(struct trapframe) - 8;
+		tmp.tf_cs = USER_CS;
+		tmp.tf_ss =
+		tmp.tf_ds = 
+		tmp.tf_es = USER_DS;
+		tmp.tf_eflags = tmp.tf_eflags | FL_IOPL_MASK;
+		tf = &tmp;
+
+tmp是一个trapframe类型的变量。可以看到首先将现在的trapframe复制了一份，然后设置其中的cs，ss，ds，es等都很好理解。设置eflags是
+为了在用户态能够正常使用IO输出信息。最后将tf设为tmp的地址切换trapframe页（实际上这样使用内存好像不太安全，但对于现在的例子足够了）。
+
+这段的关键是设置新trapframe页的esp。我们需要知道的是，实际上user态和kernel态的栈空间是共享的。此处不同与ring3到ring0从TTS中读取信息，而是使用栈中的信息来保存转到ring3后新的ss和esp的。（一般使用是我们在用户态调用系统功能，这时先将返回处的ss，esp压栈，然后系统调用，系统调用从ring0返回ring3时使用栈中的信息来恢复ss，esp这是很自然的事情。但是这个例子里是从kernel态切换到user态再切换回来不太正常，因此有些违背直觉。）
+
+再来说为什么设置tf_esp是那个位置，实际上两个栈空间是共享的，因此我们来看它从kernel返回时应该返回到什么地方。我们知道只有在从kernel到user切换时用到了trapframe的最后8个byte，所以tf->tf_esp的地址(即下一行注释中写的(unsigned int)tf + sizeof(struct trapframe) - 8)就是弹出当前trapframe(改变前的tf，即从kernel态调用switch_to_user中断时压入的trapframe)之后栈顶位置，从这个中断返回后栈顶应该在的位置。
+
+

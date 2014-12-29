@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: 有关trapframe的相关信息 from Yijing Li on 2012-04-10 (gmail.mbox)</title>
+<meta name="Author" content="Yijing Li (strivinggene_at_gmail.com)" />
+<meta name="Subject" content="Re: 有关trapframe的相关信息" />
+<meta name="Date" content="2012-04-10" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: 有关trapframe的相关信息</h1>
+<!-- received="Wed May 15 21:24:26 2013" -->
+<!-- isoreceived="20130515172426" -->
+<!-- sent="Tue, 10 Apr 2012 08:38:04 +0800" -->
+<!-- isosent="20120410003804" -->
+<!-- name="Yijing Li" -->
+<!-- email="strivinggene_at_gmail.com" -->
+<!-- subject="Re: 有关trapframe的相关信息" -->
+<!-- id="CAFQVe-RwjnJUDmw9gQtNTCoo2HAQBzV4wA1Onshvfxjw3BXppg_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- inreplyto="CAAdffVFgyxQd0yHbFeosYXieky0g_6mrfVAABcy_yxgjmv_LMQ_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start253" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0254.html" accesskey="d" title="Wang Naizheng: &quot;Re: &#20851;&#20110;lab2&#25991;&#26723;&#30340;&#19968;&#20010;&#38169;&#35823;&#25551;&#36848;&quot;">Next message</a> ]
+[ <a href="0252.html" title="Zhongxing Ming: &quot;&#26412;&#21608;&#20363;&#20250;&quot;">Previous message</a> ]
+[ <a href="0249.html" title="Yu Chen: &quot;Re: &#26377;&#20851;trapframe&#30340;&#30456;&#20851;&#20449;&#24687;&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg253" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg253" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg253" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg253" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yijing Li &lt;<a href="mailto:strivinggene_at_gmail.com?Subject=Re%3A%20有%FF豻rapframe的相%FF匦畔%FF">strivinggene_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 10 Apr 2012 08:38:04 +0800</span><br />
+</address>
+<br />
+感谢老师的详细介绍！
+<br />
+祝好
+<br />
+<br />在 2012年4月9日 下午9:29，Yu Chen &lt;chyyuu_at_gmail.com&gt;写道：
+<br />
+<br /><em class="quotelev1">&gt; 下面是我的解释，不知是否说清楚了。
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; -------------------------------------------------------------------------------------------
+</em><br />
+<em class="quotelev1">&gt; 0 ucore在内核不会被抢占，ucore采用FIFO or RR调度算法 （这是ucore当前的设计）
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 1 ucore创建进程A，B。当ucore调度器让A执行时，会设置Task Segment（简称TS）
+</em><br />
+<em class="quotelev1">&gt; TS.esp0=A.kstack+KSTACKSIZE
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 2 如果某进程A在用户态调用syscall sleep(sleep 0.01秒)，会执行int 0x80，这样硬件设置ss和esp，
+</em><br />
+<em class="quotelev1">&gt; ss=TS.ss0
+</em><br />
+<em class="quotelev1">&gt; esp=TS.esp0
+</em><br />
+<em class="quotelev1">&gt; 然后CPU会把用户态的cs,eip+n(n=sizeof(int 0x80指令），即int 0x80之后的下一条指令)
+</em><br />
+<em class="quotelev1">&gt; ，eflags压栈，接着ucore也会进一步压栈，都压完栈后
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; esp=TS.esp0+KSTACKSIZE-sizeof(trapframe)=A.kstack+KSTACKSIZE-sizeof(trapframe)
+</em><br />
+<em class="quotelev1">&gt; 这时A的内核栈中已经压了一个trapframe，且A继续执行，也许还要调用几个函数，导致此时A的内核esp=0xXXXX，满足条件
+</em><br />
+<em class="quotelev1">&gt; A.kstack &lt; A.esp &lt; A.kstack+KSTACKSIZE-sizeof(trapframe)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 3 然后调度器让A（即prev） sleep，即A.state=SLEEPING，切换进程B（即next）继续执行，
+</em><br />
+<em class="quotelev1">&gt; 在proc_run（B）函数中会执行
+</em><br />
+<em class="quotelev1">&gt; load_esp0(next-&gt;kstack + KSTACKSIZE);
+</em><br />
+<em class="quotelev1">&gt; 所以TS.esp0=B.kstack+KSTACKSIZE
+</em><br />
+<em class="quotelev1">&gt; 当进一步执行完switch_to(&amp;(prev-&gt;context), &amp;(next-&gt;context)); 后
+</em><br />
+<em class="quotelev1">&gt; A.context.esp=A.esp
+</em><br />
+<em class="quotelev1">&gt; 然后B继续执行，也许回到用户态继续执行，直到时间片到，才会有陷入到内核中，假定在此期间A
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; sleep的时间到了，这A.state=RUNNABLE,但A并不能马上被调度，并占用CPU执行。只有等到B结束，B主动sleep，B时间片到（采用RR调度算法）后，才会得到调度并占用CPU执行的机会。
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 4 假定当进程B的时间片结束后轮到进程A执行时，在执行proc_run(A)时，执行load_esp0(next-&gt;kstack +
+</em><br />
+<em class="quotelev1">&gt; KSTACKSIZE);
+</em><br />
+<em class="quotelev1">&gt; 这时 T.esp0=A.kstack+KSTACKSIZE
+</em><br />
+<em class="quotelev1">&gt; 当进一步执行完switch_to(&amp;(prev-&gt;context), &amp;(next-&gt;context)); 后
+</em><br />
+<em class="quotelev1">&gt; esp=  A.context.esp 也就是A上次被切换保存的esp内容
+</em><br />
+<em class="quotelev1">&gt; A的内核态执行现场（内核上下文）恢复完毕，即sys_sleep在内核中要干的事情结束了。
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 5a  A继续在内核执行，当执行完iret后，A的用户态执行现场恢复完毕，从int 0x80的后一条指令继续执行。
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 5b
+</em><br />
+<em class="quotelev1">&gt; A继续在内核执行，但又发生了一个中断（比如时钟中断），这是是在内核中发送的中断，特权级不会发生变化。由于是同特权级产生的中断，esp不会从新赋值，那么硬件和软件在当前esp处（即A的当前内核栈处）一样要压栈一个trapframe，此时
+</em><br />
+<em class="quotelev1">&gt; A.kstack &lt; A.esp &lt; A.kstack+KSTACKSIZE-2*sizeof(trapframe)
+</em><br />
+<em class="quotelev1">&gt; 当执行完iret ( for 时钟中断)后，A的内核态执行现场恢复完毕，
+</em><br />
+<em class="quotelev1">&gt; 当再执行完一个iret （for sys_sleep）后，A的用户态执行现场恢复完毕，从int 0x80的后一条指令继续执行。
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; -------------------------------------------------------------------------------------------------
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 在 2012年4月9日 下午7:42，Yijing Li &lt;strivinggene_at_gmail.com&gt; 写道：
+</em><br />
+<em class="quotelev2">&gt; &gt; 老师，您介绍的内容是发生中断时trapframe相关的内容。但是，在switch_to中的:
+</em><br />
+<em class="quotelev2">&gt; &gt; 设置任务状态段ts 中特权态0 下的栈顶指针esp0 为next 内核线程initproc 的内核栈的栈顶，即
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; next-&gt;kstack + KSTACKSIZE
+</em><br />
+<em class="quotelev2">&gt; &gt; 是在进程切换时调用的。
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev1">&gt; 请问，在进程切换时确实应该改变ts中esp0的值以保证新进程在发生中断时能找到内核栈。但是，如果某进程A已经在内核态处理syscall，这时A的内核栈中已经压了一个trapframe。然后，由于调度器进程A被终止了，改为进程B执行。当进程B的时间片结束后轮到进程A执行时，如果按照上一个语句把esp0赋值为：next-&gt;kstack
+</em><br />
+<em class="quotelev2">&gt; &gt; + KSTACKSIZE的话，那么进程A的内核栈指针espA就不等于esp0了（esp0-espA =
+</em><br />
+<em class="quotelev2">&gt; &gt; sizeof(trapframe)）。这样的话不会出问题吗？
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 在 2012年4月9日 下午5:47，Yu Chen &lt;chyyuu_at_gmail.com&gt;写道：
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 在lab4中，每个内核线程有一个trapframe，用于保存由于中断（或异常）产生后被打断的执行现场。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; topaddr=next-&gt;kstack + KSTACKSIZE 是用户进程/内核线程的内核栈栈顶，
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; tf=topaddr-sizeof(struct trapframe) 是用户进程/内核线程的proc_struct-&gt;tf指向的地方。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; (tf, topaddr)这段内存空间，放了用户进程/内核线程的trapframe内容。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 若某内核线程执行，则CPU是在特权态0（在lab4中会出现），如果发生了中断/异常/系统调用，CPU会继续保持在特权态0，且CPU
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 会从当前内核栈指针esp
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; 所指的位置开始压栈保存被中断/异常/系统调用打断的内核态执行现场。当处理完中断/异常/系统调用后，最后通过执行iret指令，CPU会把esp中指向的以前保存的cs,
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; eip,eflags等恢复，则CPU继续在内核态。且CPU又回到了内核态的内核线程被打断的地方继续执行。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; 若某用户进程执行，则CPU是在特权态3（当然在lab4中不会出现，但在lab5中会出现），如果发生了中断/异常/系统调用，CPU会切换到特权态0（设置CS的低两位为0），且会查找TS（Task
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Segment）中的域esp0，把这个域esp0保存的值赋给esp，然后把cs,
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; eip,eflags等压入esp指向的栈中，其实就是给此此用户进程的进程控制块proc_struct中的trapframe赋值。当处理完中断/异常/系统调用后，最后通过执行iret指令，CPU会把esp中指向的以前保存的cs,
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; eip,eflags等恢复，则CPU又回到了用户态的用户进程被打断的地方继续执行。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 在 2012年4月9日 下午4:46，jimmyyao &lt;jimmyyao_at_163.com&gt; 写道：
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 在lab4 的manual的第7页中 介绍了switch_to 函数完成两个执行现场的切换的具体流程，
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 其中  2． 设置任务状态段ts 中特权态0 下的栈顶指针esp0 为next 内核线程initproc 的内核栈的栈顶，即
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; next-&gt;kstack + KSTACKSIZE ；
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 这一步没看懂，而且next-&gt;kstack + KSTACKSIZE ；这个公式的由来没搞清楚，老师能否讲解一下~
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 谢谢老师~
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; --
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Best Regards
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; ==============================================
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Chen Yu
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Ph.D.  Associate Professor
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; System Software&amp;Software Engineering Group,
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Laboratory of Pervasive Computing,
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Dept. of Computer Science and Technology
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Tsinghua University, Beijing 100084, P.R. China
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; E-Mail: mailto:yuchen_at_tsinghua.edu.cn  chyyuu_at_gmail.com
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; ==============================================
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; --
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; You received this message because you are subscribed to the Google
+</em><br />
+<em class="quotelev1">&gt; Groups
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; To post to this group, send email to oscourse_at_googlegroups.com.
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; To unsubscribe from this group, send email to
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; oscourse+unsubscribe_at_googlegroups.com.
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; For more options, visit this group at
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; --
+</em><br />
+<em class="quotelev2">&gt; &gt; You received this message because you are subscribed to the Google Groups
+</em><br />
+<em class="quotelev2">&gt; &gt; &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev2">&gt; &gt; To post to this group, send email to oscourse_at_googlegroups.com.
+</em><br />
+<em class="quotelev2">&gt; &gt; To unsubscribe from this group, send email to
+</em><br />
+<em class="quotelev2">&gt; &gt; oscourse+unsubscribe_at_googlegroups.com.
+</em><br />
+<em class="quotelev2">&gt; &gt; For more options, visit this group at
+</em><br />
+<em class="quotelev2">&gt; &gt; <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; Best Regards
+</em><br />
+<em class="quotelev1">&gt; ==============================================
+</em><br />
+<em class="quotelev1">&gt; Chen Yu
+</em><br />
+<em class="quotelev1">&gt; Ph.D.  Associate Professor
+</em><br />
+<em class="quotelev1">&gt; System Software&amp;Software Engineering Group,
+</em><br />
+<em class="quotelev1">&gt; Laboratory of Pervasive Computing,
+</em><br />
+<em class="quotelev1">&gt; Dept. of Computer Science and Technology
+</em><br />
+<em class="quotelev1">&gt; Tsinghua University, Beijing 100084, P.R. China
+</em><br />
+<em class="quotelev1">&gt; E-Mail: mailto:yuchen_at_tsinghua.edu.cn  chyyuu_at_gmail.com
+</em><br />
+<em class="quotelev1">&gt; ==============================================
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; You received this message because you are subscribed to the Google Groups
+</em><br />
+<em class="quotelev1">&gt; &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev1">&gt; To post to this group, send email to oscourse_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; To unsubscribe from this group, send email to
+</em><br />
+<em class="quotelev1">&gt; oscourse+unsubscribe_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; For more options, visit this group at
+</em><br />
+<em class="quotelev1">&gt; <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+
+<br />
+<pre>
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:24:26 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start253">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0254.html" title="Next message in the list">Wang Naizheng: "Re: &#20851;&#20110;lab2&#25991;&#26723;&#30340;&#19968;&#20010;&#38169;&#35823;&#25551;&#36848;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0252.html" title="Previous message in the list">Zhongxing Ming: "&#26412;&#21608;&#20363;&#20250;"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0249.html" title="Message to which this message replies">Yu Chen: "Re: &#26377;&#20851;trapframe&#30340;&#30456;&#20851;&#20449;&#24687;"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg253" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg253" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg253" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg253" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

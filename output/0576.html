@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: lab5问题 from Yu Chen on 2012-10-07 (gmail.mbox)</title>
+<meta name="Author" content="Yu Chen (chyyuu_at_gmail.com)" />
+<meta name="Subject" content="Re: lab5问题" />
+<meta name="Date" content="2012-10-07" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: lab5问题</h1>
+<!-- received="Wed May 15 21:26:08 2013" -->
+<!-- isoreceived="20130515172608" -->
+<!-- sent="Sun, 7 Oct 2012 08:43:04 +0800" -->
+<!-- isosent="20121007004304" -->
+<!-- name="Yu Chen" -->
+<!-- email="chyyuu_at_gmail.com" -->
+<!-- subject="Re: lab5问题" -->
+<!-- id="CAAdffVEpD_ZmTC6U98LDhpNshQui04194kwR3aB160oEbuH=pQ_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- inreplyto="fe08ca.3ba5.13a3018a32c.Coremail.xiaoqixue_1_at_163.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start576" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0577.html" accesskey="d" title="Yu Chen: &quot;Re: [Lab 7] Questions on two assertions&quot;">Next message</a> ]
+[ <a href="0575.html" title="Yu Chen: &quot;Re: [Lab 7] doc unfinished&quot;">Previous message</a> ]
+[ <a href="0569.html" title="xiaoqixue_1: &quot;lab5&#38382;&#39064;&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg576" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg576" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg576" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg576" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yu Chen &lt;<a href="mailto:chyyuu_at_gmail.com?Subject=Re%3A%20lab5问题">chyyuu_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sun, 7 Oct 2012 08:43:04 +0800</span><br />
+</address>
+<br />
+内核线程不用考虑proc_struct的成员变量mm，而用户进程有用户内存空间，需要考虑mm。请回顾lab3中对mm的思考和设计。
+<br />
+<br />2012/10/5 xiaoqixue_1 &lt;xiaoqixue_1_at_163.com&gt;:
+<br />
+<em class="quotelev1">&gt;  lab5中，通过完成其中的练习，可以正常运行hello，但运行其他包含do_fork（）调用的用户态程序时出现错误，
+</em><br />
+<em class="quotelev1">&gt; 错误提示如下：
+</em><br />
+<em class="quotelev1">&gt; count is 0, total is 6
+</em><br />
+<em class="quotelev1">&gt; check_swap() succeeded!
+</em><br />
+<em class="quotelev1">&gt; ++ setup timer interrupts
+</em><br />
+<em class="quotelev1">&gt; 100 ticks
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; not valid addr 20, and  can not find it in vma
+</em><br />
+<em class="quotelev1">&gt; trapframe at 0xc0606fb4
+</em><br />
+<em class="quotelev1">&gt;   edi  0x00000000
+</em><br />
+<em class="quotelev1">&gt;   esi  0xafffffa8
+</em><br />
+<em class="quotelev1">&gt;   ebp  0xafffff5c
+</em><br />
+<em class="quotelev1">&gt;   oesp 0xc0606fd4
+</em><br />
+<em class="quotelev1">&gt;   ebx  0x00000000
+</em><br />
+<em class="quotelev1">&gt;   edx  0xafffff78
+</em><br />
+<em class="quotelev1">&gt;   ecx  0x008002da
+</em><br />
+<em class="quotelev1">&gt;   eax  0x00000000
+</em><br />
+<em class="quotelev1">&gt;   ds   0x----0023
+</em><br />
+<em class="quotelev1">&gt;   es   0x----0023
+</em><br />
+<em class="quotelev1">&gt;   fs   0x----0000
+</em><br />
+<em class="quotelev1">&gt;   gs   0x----0000
+</em><br />
+<em class="quotelev1">&gt;   trap 0x0000000e Page Fault
+</em><br />
+<em class="quotelev1">&gt;   err  0x00000004
+</em><br />
+<em class="quotelev1">&gt;   eip  0x008001e5
+</em><br />
+<em class="quotelev1">&gt;   cs   0x----001b
+</em><br />
+<em class="quotelev1">&gt;   flag 0x00000202 IF,IOPL=0
+</em><br />
+<em class="quotelev1">&gt;   esp  0x00000020
+</em><br />
+<em class="quotelev1">&gt;   ss   0x----0023
+</em><br />
+<em class="quotelev1">&gt; killed by kernel.
+</em><br />
+<em class="quotelev1">&gt; kernel panic at kern/trap/trap.c:220:
+</em><br />
+<em class="quotelev1">&gt;     handle user mode pgfault failed. ret=-3
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 我猜测是用户态do_fork时设置有问题，请问用户态do_fork 和 内核态do_fork有哪些区别？
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+</em><br />
+<em class="quotelev1">&gt; ---
+</em><br />
+<em class="quotelev1">&gt; You received this message because you are subscribed to the Google Groups
+</em><br />
+<em class="quotelev1">&gt; &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev1">&gt; To post to this group, send email to oscourse_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; To unsubscribe from this group, send email to
+</em><br />
+<em class="quotelev1">&gt; oscourse+unsubscribe_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><br /><br /><pre>
+-- 
+Best Regards
+==============================================
+Yu Chen
+Ph.D.  Associate Professor
+System Software&amp;Software Engineering Group,
+Laboratory of Pervasive Computing,
+Dept. of Computer Science and Technology
+Tsinghua University, Beijing 100084, P.R. China
+E-Mail: mailto:yuchen_at_tsinghua.edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+==============================================
+-- 
+All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+--- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:26:08 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start576">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0577.html" title="Next message in the list">Yu Chen: "Re: [Lab 7] Questions on two assertions"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0575.html" title="Previous message in the list">Yu Chen: "Re: [Lab 7] doc unfinished"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0569.html" title="Message to which this message replies">xiaoqixue_1: "lab5&#38382;&#39064;"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg576" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg576" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg576" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg576" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

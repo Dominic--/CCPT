@@ -1,0 +1,170 @@
+diff --git a/proj1/Makefile b/proj1/Makefile
+index 3efba21..deb9e6d 100644
+--- a/proj1/Makefile
++++ b/proj1/Makefile
+@@ -101,7 +101,7 @@ bootblock = $(call totarget,bootblock)
+ 
+ $(bootblock): $(call toobj,$(bootfiles)) | $(call totarget,sign)
+ 	@echo + ld $@
+-	$(V)$(LD) $(LDFLAGS) -N -e start -Ttext 0x7C00 $^ -o $(call toobj,bootblock)
++	$(V)$(LD) $(LDFLAGS) -N -T tools/boot.ld $^ -o $(call toobj,bootblock)
+ 	@$(OBJDUMP) -S $(call objfile,bootblock) > $(call asmfile,bootblock)
+ 	@$(OBJCOPY) -S -O binary $(call objfile,bootblock) $(call outfile,bootblock)
+ 	@$(call totarget,sign) $(call outfile,bootblock) $(bootblock)
+diff --git a/proj1/tools/boot.ld b/proj1/tools/boot.ld
+new file mode 100644
+index 0000000..dc732b0
+--- /dev/null
++++ b/proj1/tools/boot.ld
+@@ -0,0 +1,15 @@
++OUTPUT_FORMAT("elf32-i386")
++OUTPUT_ARCH(i386)
++
++SECTIONS {
++    . = 0x7C00;
++
++    .startup : {
++        *bootasm.o(.text)
++    }
++
++    .text : { *(.text) }
++    .data : { *(.data .rodata) }
++    
++    /DISCARD/ : { *(.eh_*) }
++}
+diff --git a/proj2/Makefile b/proj2/Makefile
+index 3efba21..deb9e6d 100644
+--- a/proj2/Makefile
++++ b/proj2/Makefile
+@@ -101,7 +101,7 @@ bootblock = $(call totarget,bootblock)
+ 
+ $(bootblock): $(call toobj,$(bootfiles)) | $(call totarget,sign)
+ 	@echo + ld $@
+-	$(V)$(LD) $(LDFLAGS) -N -e start -Ttext 0x7C00 $^ -o $(call toobj,bootblock)
++	$(V)$(LD) $(LDFLAGS) -N -T tools/boot.ld $^ -o $(call toobj,bootblock)
+ 	@$(OBJDUMP) -S $(call objfile,bootblock) > $(call asmfile,bootblock)
+ 	@$(OBJCOPY) -S -O binary $(call objfile,bootblock) $(call outfile,bootblock)
+ 	@$(call totarget,sign) $(call outfile,bootblock) $(bootblock)
+diff --git a/proj2/tools/boot.ld b/proj2/tools/boot.ld
+new file mode 100644
+index 0000000..dc732b0
+--- /dev/null
++++ b/proj2/tools/boot.ld
+@@ -0,0 +1,15 @@
++OUTPUT_FORMAT("elf32-i386")
++OUTPUT_ARCH(i386)
++
++SECTIONS {
++    . = 0x7C00;
++
++    .startup : {
++        *bootasm.o(.text)
++    }
++
++    .text : { *(.text) }
++    .data : { *(.data .rodata) }
++    
++    /DISCARD/ : { *(.eh_*) }
++}
+diff --git a/proj3.1/Makefile b/proj3.1/Makefile
+index 9c484c9..41532d1 100644
+--- a/proj3.1/Makefile
++++ b/proj3.1/Makefile
+@@ -147,7 +147,7 @@ bootblock = $(call totarget,bootblock)
+ 
+ $(bootblock): $(call toobj,$(bootfiles)) | $(call totarget,sign)
+ 	@echo + ld $@
+-	$(V)$(LD) $(LDFLAGS) -N -e start -Ttext 0x7C00 $^ -o $(call toobj,bootblock)
++	$(V)$(LD) $(LDFLAGS) -N -T tools/boot.ld $^ -o $(call toobj,bootblock)
+ 	@$(OBJDUMP) -S $(call objfile,bootblock) > $(call asmfile,bootblock)
+ 	@$(OBJCOPY) -S -O binary $(call objfile,bootblock) $(call outfile,bootblock)
+ 	@$(call totarget,sign) $(call outfile,bootblock) $(bootblock)
+diff --git a/proj3.1/tools/boot.ld b/proj3.1/tools/boot.ld
+new file mode 100644
+index 0000000..dc732b0
+--- /dev/null
++++ b/proj3.1/tools/boot.ld
+@@ -0,0 +1,15 @@
++OUTPUT_FORMAT("elf32-i386")
++OUTPUT_ARCH(i386)
++
++SECTIONS {
++    . = 0x7C00;
++
++    .startup : {
++        *bootasm.o(.text)
++    }
++
++    .text : { *(.text) }
++    .data : { *(.data .rodata) }
++    
++    /DISCARD/ : { *(.eh_*) }
++}
+diff --git a/proj3/Makefile b/proj3/Makefile
+index a3e521e..22873d2 100644
+--- a/proj3/Makefile
++++ b/proj3/Makefile
+@@ -133,7 +133,7 @@ bootblock = $(call totarget,bootblock)
+ 
+ $(bootblock): $(call toobj,$(bootfiles)) | $(call totarget,sign)
+ 	@echo + ld $@
+-	$(V)$(LD) $(LDFLAGS) -N -e start -Ttext 0x7C00 $^ -o $(call toobj,bootblock)
++	$(V)$(LD) $(LDFLAGS) -N -T tools/boot.ld $^ -o $(call toobj,bootblock)
+ 	@$(OBJDUMP) -S $(call objfile,bootblock) > $(call asmfile,bootblock)
+ 	@$(OBJCOPY) -S -O binary $(call objfile,bootblock) $(call outfile,bootblock)
+ 	@$(call totarget,sign) $(call outfile,bootblock) $(bootblock)
+diff --git a/proj3/tools/boot.ld b/proj3/tools/boot.ld
+new file mode 100644
+index 0000000..dc732b0
+--- /dev/null
++++ b/proj3/tools/boot.ld
+@@ -0,0 +1,15 @@
++OUTPUT_FORMAT("elf32-i386")
++OUTPUT_ARCH(i386)
++
++SECTIONS {
++    . = 0x7C00;
++
++    .startup : {
++        *bootasm.o(.text)
++    }
++
++    .text : { *(.text) }
++    .data : { *(.data .rodata) }
++    
++    /DISCARD/ : { *(.eh_*) }
++}
+diff --git a/proj4/Makefile b/proj4/Makefile
+index a828239..e7e29b1 100644
+--- a/proj4/Makefile
++++ b/proj4/Makefile
+@@ -150,7 +150,7 @@ bootblock = $(call totarget,bootblock)
+ 
+ $(bootblock): $(call toobj,$(bootfiles)) | $(call totarget,sign)
+ 	@echo + ld $@
+-	$(V)$(LD) $(LDFLAGS) -N -e start -Ttext 0x7C00 $^ -o $(call toobj,bootblock)
++	$(V)$(LD) $(LDFLAGS) -N -T tools/boot.ld $^ -o $(call toobj,bootblock)
+ 	@$(OBJDUMP) -S $(call objfile,bootblock) > $(call asmfile,bootblock)
+ 	@$(OBJCOPY) -S -O binary $(call objfile,bootblock) $(call outfile,bootblock)
+ 	@$(call totarget,sign) $(call outfile,bootblock) $(bootblock)
+diff --git a/proj4/tools/boot.ld b/proj4/tools/boot.ld
+new file mode 100644
+index 0000000..dc732b0
+--- /dev/null
++++ b/proj4/tools/boot.ld
+@@ -0,0 +1,15 @@
++OUTPUT_FORMAT("elf32-i386")
++OUTPUT_ARCH(i386)
++
++SECTIONS {
++    . = 0x7C00;
++
++    .startup : {
++        *bootasm.o(.text)
++    }
++
++    .text : { *(.text) }
++    .data : { *(.data .rodata) }
++    
++    /DISCARD/ : { *(.eh_*) }
++}

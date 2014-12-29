@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>lab6中del_timer的时机 from Yijing Li on 2012-04-26 (gmail.mbox)</title>
+<meta name="Author" content="Yijing Li (strivinggene_at_gmail.com)" />
+<meta name="Subject" content="lab6中del_timer的时机" />
+<meta name="Date" content="2012-04-26" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>lab6中del_timer的时机</h1>
+<!-- received="Wed May 15 21:24:44 2013" -->
+<!-- isoreceived="20130515172444" -->
+<!-- sent="Thu, 26 Apr 2012 15:46:06 +0800" -->
+<!-- isosent="20120426074606" -->
+<!-- name="Yijing Li" -->
+<!-- email="strivinggene_at_gmail.com" -->
+<!-- subject="lab6中del_timer的时机" -->
+<!-- id="CAFQVe-RUqpLhOp2PuSr+CooevGqmMz+fhV2Hf1Dc=pZyztR0FQ_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start313" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0314.html" accesskey="d" title="Yong Xiang: &quot;Fwd: &#25552;&#37266; - &#25805;&#20316;&#31995;&#32479;&#35838;&#31572;&#30097;&#21644;&#35838;&#31243;&#35774;&#35745;&#20132;&#27969;&#23433;&#25490; &#26102;&#38388;&#65306;&#21608;&#20845;&#19978;&#21320;10&#28857;&#33267;12&#28857; &#22320;&#28857;&#65306;FIT 4-308&#23460;&quot;">Next message</a> ]
+[ <a href="0312.html" title="&#26472;&#26415;: &quot;Re: &#26149;&#28216;&#29031;&#29255;&#12289;&#36153;&#29992;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="0317.html" accesskey="t" title="Wang Naizheng: &quot;Re: lab6&#20013;del_timer&#30340;&#26102;&#26426;&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg313" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg313" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg313" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg313" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yijing Li &lt;<a href="mailto:strivinggene_at_gmail.com?Subject=Re%3A%20lab6中del_timer的�%FF%FF�">strivinggene_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 26 Apr 2012 15:46:06 +0800</span><br />
+</address>
+<br />
+老师好！
+<br />
+我在看lab6代码的过程中有个疑问：
+<br />
+proc.c/do_sleep中，给进程add_timer(timer)后，就调用schedule。当某个时钟中断调用run_timer_list()后，sched.c/run_timer_list会把timer-&gt;expire--后检查timer-&gt;expire是否为0，如是0就唤醒对应的进程，然后删掉timer。而对应进程恢复执行后，应该从do_sleep中的schedule()语句后开始执行，然后下一句语句又是一个删掉timer。请问这两次删除timer是不是重复了？
+<br />
+
+<br />
+<pre>
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:24:44 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start313">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0314.html" title="Next message in the list">Yong Xiang: "Fwd: &#25552;&#37266; - &#25805;&#20316;&#31995;&#32479;&#35838;&#31572;&#30097;&#21644;&#35838;&#31243;&#35774;&#35745;&#20132;&#27969;&#23433;&#25490; &#26102;&#38388;&#65306;&#21608;&#20845;&#19978;&#21320;10&#28857;&#33267;12&#28857; &#22320;&#28857;&#65306;FIT 4-308&#23460;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0312.html" title="Previous message in the list">&#26472;&#26415;: "Re: &#26149;&#28216;&#29031;&#29255;&#12289;&#36153;&#29992;"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0317.html" title="Next message in this discussion thread">Wang Naizheng: "Re: lab6&#20013;del_timer&#30340;&#26102;&#26426;"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0317.html" title="Message sent in reply to this message">Wang Naizheng: "Re: lab6&#20013;del_timer&#30340;&#26102;&#26426;"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg313" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg313" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg313" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg313" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

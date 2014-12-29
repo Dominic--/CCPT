@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>【talk】Scaling addressing spaces and improving integer security in Linux from Yu Chen on 2012-03-22 (gmail.mbox)</title>
+<meta name="Author" content="Yu Chen (chyyuu_at_gmail.com)" />
+<meta name="Subject" content="【talk】Scaling addressing spaces and improving integer security in Linux" />
+<meta name="Date" content="2012-03-22" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>【talk】Scaling addressing spaces and improving integer security in Linux</h1>
+<!-- received="Wed May 15 21:24:06 2013" -->
+<!-- isoreceived="20130515172406" -->
+<!-- sent="Thu, 22 Mar 2012 12:06:09 +0800" -->
+<!-- isosent="20120322040609" -->
+<!-- name="Yu Chen" -->
+<!-- email="chyyuu_at_gmail.com" -->
+<!-- subject="【talk】Scaling addressing spaces and improving integer security in Linux" -->
+<!-- id="CAAdffVFRz5=_C-Fg5KhS8LRDAjkQjtBCY1aooW_UHcoh-+o7Nw_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start177" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0178.html" accesskey="d" title="Mingwei Xu: &quot;Fw: CFP - ACM CoNEXT 2012&quot;">Next message</a> ]
+[ <a href="0176.html" title="Yu Chen: &quot;&#12298;&#35266;&#27490;-&#24494;&#36719;&#21019;&#24314;NT&#21644;&#26410;&#26469;&#30340;&#22842;&#21629;&#29378;&#22868;&#12299;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg177" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg177" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg177" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg177" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yu Chen &lt;<a href="mailto:chyyuu_at_gmail.com?Subject=Re%3A%20%FF%FFtalk%FF%FFScaling%20addressing%20spaces%20and%20improving%20integer%20security%20in%20Linux">chyyuu_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 22 Mar 2012 12:06:09 +0800</span><br />
+</address>
+<br />
+刘老师，您好：
+<br />
+请转发如下技术报告信息。谢谢！
+<br />
+----------------------------------------------------------------------------------------------------
+<br />
+Title: Scaling addressing spaces and improving integer security in Linux
+<br />
+Time: 15:10 - 17:00, March 27th
+<br />
+Meeting Room: FIT 1-312
+<br />
+Speaker: Frans Kaashoek and Nickolai Zeldovich  (MIT CSAIL)
+<br />
+<br />Abstract: We will describe two recents results that we have implemented
+<br />
+in the Linux operating system.  First, we describe a new design for a virtual
+<br />
+memory system, inspired by RCU, that allows address space operations
+<br />
+to scale well to many cores.  Our changes improve the scalability of
+<br />
+a multi-core MapReduce library on an 80-core machine from 22x to 75x.
+<br />
+Second, we describe a tool, KINT, for finding integer errors that can
+<br />
+lead to security exploits.  KINT helped us find and fix nearly 100
+<br />
+such bugs in the Linux kernel.
+<br />
+<br />Joint work with: Austin Clements, Xi Wang, and Haogang Chen
+<br />
+<br />papers of this talk:
+<br />
+&quot; Concurrent address spaces using RCU balanced trees.&quot; In ASPLOS 2012,
+<br />
+<a href="http://people.csail.mit.edu/nickolai/papers/clements-bonsai.pdf">http://people.csail.mit.edu/nickolai/papers/clements-bonsai.pdf</a>
+<br />
+&quot;Linux kernel vulnerabilities: State-of-the-art defenses and open
+<br />
+problems.&quot;In APSYS 2011
+<br />
+<a href="http://people.csail.mit.edu/nickolai/papers/chen-kbugs.pdf">http://people.csail.mit.edu/nickolai/papers/chen-kbugs.pdf</a>
+<br />
+<br /><br />M. Frans Kaashoek is a full professor in MIT's EECS department and a member of
+<br />
+Computer Science and Artificial Intelligence Laboratory, where he coleads the
+<br />
+parallel and distributed operating systems group
+<br />
+(<a href="http://www.pdos.csail.mit.edu/">http://www.pdos.csail.mit.edu/</a>). He received a PhD (1992) from the Vrije
+<br />
+Universiteit (Amsterdam, The Netherlands) for his work on group communication in
+<br />
+the Amoeba distributed operating system, under the supervision of
+<br />
+A.S. Tanenbaum. Frans's principal field of interest is designing and building
+<br />
+computer systems. In collaboration with students and colleagues, his past
+<br />
+contributions include the exokernel operating system, the Click modular router,
+<br />
+the RON overlay, the self-certifying file system, the Chord distributed hash
+<br />
+table, and the Asbestos/Flume secure operating system.  Frans is a member of the
+<br />
+National Academy of Engineering and the recipient of several awards, including
+<br />
+the inaugural ACM SIGOPS Mark Weiser award and the 2011 ACM-Infosys Foundation
+<br />
+award.
+<br />
+<br />Nickolai Zeldovich is an Associate Professor at MIT's department of Electrical
+<br />
+Engineering and Computer Science, and a member of the Computer Science and
+<br />
+Artificial Intelligence Laboratory. His research interests are in building
+<br />
+practical secure systems, from operating systems and hardware to programming
+<br />
+languages and security analysis tools. He received his PhD from Stanford
+<br />
+University in 2008, where he developed HiStar, an operating system designed to
+<br />
+minimize the amount of trusted code by controlling information flow. In 2005,
+<br />
+he co-founded MokaFive, a company focused on improving desktop management and
+<br />
+mobility using x86 virtualization. Prof. Zeldovich received a Sloan fellowship
+<br />
+&nbsp;in 2010, and an NSF CAREER award in 2011.
+<br />
+<br /><br /><pre>
+-- 
+Best Regards
+==============================================
+Chen Yu
+Ph.D.  Associate Professor
+System Software&amp;Software Engineering Group,
+Laboratory of Pervasive Computing,
+Dept. of Computer Science and Technology
+Tsinghua University, Beijing 100084, P.R. China
+E-Mail: mailto:yuchen_at_tsinghua.edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+==============================================
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:24:06 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start177">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0178.html" title="Next message in the list">Mingwei Xu: "Fw: CFP - ACM CoNEXT 2012"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0176.html" title="Previous message in the list">Yu Chen: "&#12298;&#35266;&#27490;-&#24494;&#36719;&#21019;&#24314;NT&#21644;&#26410;&#26469;&#30340;&#22842;&#21629;&#29378;&#22868;&#12299;"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg177" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg177" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg177" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg177" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

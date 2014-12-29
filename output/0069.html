@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>virtualbox的磁盘镜像中linux的root进入方式 from Yu Chen on 2012-02-29 (gmail.mbox)</title>
+<meta name="Author" content="Yu Chen (chyyuu_at_gmail.com)" />
+<meta name="Subject" content="virtualbox的磁盘镜像中linux的root进入方式" />
+<meta name="Date" content="2012-02-29" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>virtualbox的磁盘镜像中linux的root进入方式</h1>
+<!-- received="Wed May 15 21:23:34 2013" -->
+<!-- isoreceived="20130515172334" -->
+<!-- sent="Wed, 29 Feb 2012 09:17:11 +0800" -->
+<!-- isosent="20120229011711" -->
+<!-- name="Yu Chen" -->
+<!-- email="chyyuu_at_gmail.com" -->
+<!-- subject="virtualbox的磁盘镜像中linux的root进入方式" -->
+<!-- id="CAAdffVEDHSmB9Mj2v+SR6OOoVUn4s5=m-sSfMCzoaLdogJ5Z+Q_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start69" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0070.html" accesskey="d" title="Meijia Hou: &quot;Re: &#26412;&#21608;&#20363;&#20250;&quot;">Next message</a> ]
+[ <a href="0068.html" title="Zhongxing Ming: &quot;&#24464;&#32769;&#24072;&#20363;&#20250;&#30340;PPT + &#26412;&#21608;&#20363;&#20250;&#30340;&#65288;paper + slides&#65289;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg69" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg69" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg69" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg69" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yu Chen &lt;<a href="mailto:chyyuu_at_gmail.com?Subject=Re%3A%20virtualbox的%FF排�%FF迪裰衛inux的root%FF�%FF%FF�%FF">chyyuu_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 29 Feb 2012 09:17:11 +0800</span><br />
+</address>
+<br />
+按道理执行如下命令就可以进入root
+<br />
+sudo su
+<br />
+<br />在 2012年2月28日 下午11:22，毛佳昕 &lt;maojiaxin_at_gmail&#46;<!--nospam-->com&gt; 写道：
+<br />
+<em class="quotelev1">&gt; 老师您好！我想请问一下这个镜像的root密码是？
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 在 2012年2月28日 下午6:36，Yu Chen &lt;chyyuu_at_gmail&#46;<!--nospam-->com&gt; 写道：
+</em><br />
+<em class="quotelev2">&gt;&gt; 这种现象主要是由于GCC照成的。新版本的GCC在生成执行代码时产生了更多的数据，导致bootloader的size超过了510字节。
+</em><br />
+<em class="quotelev2">&gt;&gt; 建议的解决方法：
+</em><br />
+<em class="quotelev2">&gt;&gt; 1 在Makfile中增加gcc的编译选项 -Os  ， 目的是做空间优化，减少生成代码的size。
+</em><br />
+<em class="quotelev2">&gt;&gt; 2 用老版本的gcc, 比如gcc 4.3等，我记得fedora和ubuntu中也可以安装老版本的gcc软件包
+</em><br />
+<em class="quotelev2">&gt;&gt; 3 用 virtualbox <a href="http://www.virtualbox.org">http://www.virtualbox.org</a> 和做好的磁盘镜像 （
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="http://os.cs.tsinghua.edu.cn/oscourse/OS2011?action=AttachFile&amp;do=get&amp;target=lab4student2011.7z">http://os.cs.tsinghua.edu.cn/oscourse/OS2011?action=AttachFile&amp;do=get&amp;target=lab4student2011.7z</a>
+</em><br />
+<em class="quotelev2">&gt;&gt; ）。磁盘镜像中的ubuntu linux包含了编译和运行labs需要的各种软件。
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 在 2012年2月28日 下午6:23，Near Song &lt;nearsy.h_at_gmail&#46;<!--nospam-->com&gt; 写道：
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 陈老师：
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;        我在做elf解析那部分的时候发现proj2的ucore.img编译过程中会发生错误。错误是ld
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 生成出来的bootblock..out的大小是560字节超过了510字节......
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;        我想是不是我的编译工具的版本不对还是别的问题。
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;        我的环境是Fedora16, gcc 4.6.2 , ld 2.21.53.0.1-6.fc16
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;        proj1生成的bootblock.out的大小是456字节，如果这个也和标准结果不一样那就很有可能是环境的问题。
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 祝好!
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; --
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 宋一行(Near)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 清华大学计算机系92班
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; CS&amp;T,  Tsinghua University
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; --
+</em><br />
+<em class="quotelev2">&gt;&gt; Best Regards
+</em><br />
+<em class="quotelev2">&gt;&gt; ==============================================
+</em><br />
+<em class="quotelev2">&gt;&gt; Chen Yu
+</em><br />
+<em class="quotelev2">&gt;&gt; Ph.D.  Associate Professor
+</em><br />
+<em class="quotelev2">&gt;&gt; System Software&amp;Software Engineering Group,
+</em><br />
+<em class="quotelev2">&gt;&gt; Laboratory of Pervasive Computing,
+</em><br />
+<em class="quotelev2">&gt;&gt; Dept. of Computer Science and Technology
+</em><br />
+<em class="quotelev2">&gt;&gt; Tsinghua University, Beijing 100084, P.R. China
+</em><br />
+<em class="quotelev2">&gt;&gt; E-Mail: mailto:yuchen_at_tsinghua.edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+</em><br />
+<em class="quotelev2">&gt;&gt; ==============================================
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; --
+</em><br />
+<em class="quotelev2">&gt;&gt; You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev2">&gt;&gt; To post to this group, send email to oscourse_at_googlegroups&#46;<!--nospam-->com.
+</em><br />
+<em class="quotelev2">&gt;&gt; To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups&#46;<!--nospam-->com.
+</em><br />
+<em class="quotelev2">&gt;&gt; For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; 毛佳昕
+</em><br />
+<em class="quotelev1">&gt; _at_THU CS&amp;T
+</em><br />
+<em class="quotelev1">&gt; cell:  +86 15210588612
+</em><br />
+<em class="quotelev1">&gt; e-mail: maojiaxin_at_gmail.com
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev1">&gt; To post to this group, send email to oscourse_at_googlegroups&#46;<!--nospam-->com.
+</em><br />
+<em class="quotelev1">&gt; To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups&#46;<!--nospam-->com.
+</em><br />
+<em class="quotelev1">&gt; For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><br /><br /><pre>
+-- 
+Best Regards
+==============================================
+Chen Yu
+Ph.D.  Associate Professor
+System Software&amp;Software Engineering Group,
+Laboratory of Pervasive Computing,
+Dept. of Computer Science and Technology
+Tsinghua University, Beijing 100084, P.R. China
+E-Mail: mailto:yuchen_at_tsinghua&#46;<!--nospam-->edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+==============================================
+
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups&#46;<!--nospam-->com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups&#46;<!--nospam-->com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:23:34 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start69">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0070.html" title="Next message in the list">Meijia Hou: "Re: &#26412;&#21608;&#20363;&#20250;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0068.html" title="Previous message in the list">Zhongxing Ming: "&#24464;&#32769;&#24072;&#20363;&#20250;&#30340;PPT + &#26412;&#21608;&#20363;&#20250;&#30340;&#65288;paper + slides&#65289;"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg69" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg69" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg69" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg69" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

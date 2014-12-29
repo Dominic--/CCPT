@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: lab7 怎么检查结果是否正确？ from Yong Xiang on 2012-05-02 (gmail.mbox)</title>
+<meta name="Author" content="Yong Xiang (xyongcn_at_gmail.com)" />
+<meta name="Subject" content="Re: lab7 怎么检查结果是否正确？" />
+<meta name="Date" content="2012-05-02" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: lab7 怎么检查结果是否正确？</h1>
+<!-- received="Wed May 15 21:24:45 2013" -->
+<!-- isoreceived="20130515172445" -->
+<!-- sent="Wed, 2 May 2012 13:32:30 +0800" -->
+<!-- isosent="20120502053230" -->
+<!-- name="Yong Xiang" -->
+<!-- email="xyongcn_at_gmail.com" -->
+<!-- subject="Re: lab7 怎么检查结果是否正确？" -->
+<!-- id="8D319C18-5078-438F-9B38-4B8F40C8DB0D_at_gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- inreplyto="tencent_099723FB1170C5224B56690F_at_qq.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start318" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0319.html" accesskey="d" title="Yong Xiang: &quot;Fwd: &#25552;&#37266; - &#25805;&#20316;&#31995;&#32479;&#35838;&#31572;&#30097;&#21644;&#35838;&#31243;&#35774;&#35745;&#20132;&#27969;&#23433;&#25490; &#26102;&#38388;&#65306;&#21608;&#20845;&#19978;&#21320;10&#28857;&#33267;12&#28857; &#22320;&#28857;&#65306;&#19996;&#20027;&#27004;10&#21306;109&#20250;&#35758;&#23460;&quot;">Next message</a> ]
+[ <a href="0317.html" title="Wang Naizheng: &quot;Re: lab6&#20013;del_timer&#30340;&#26102;&#26426;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg318" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg318" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg318" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg318" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yong Xiang &lt;<a href="mailto:xyongcn_at_gmail.com?Subject=Re%3A%20lab7%20怎�%FF%FF�%FF�%FF�%FF�%FF裾%FF%FF%FF">xyongcn_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 2 May 2012 13:32:30 +0800</span><br />
+</address>
+<br />
+user/matrix.c中的矩阵计算并不检查同步算法的正确性，它的作用就是在系统中产生一些负载；所有的检查都是在kern/sync/check_sync.c中的check_sync()函数中进行的。你可以在该函数中加入你想要进行的测试。
+<br />
+
+<br />
+--向勇
+<br />
+
+<br />
+在 2012-4-25，下午5:05， carelife 写道：
+<br />
+
+<br />
+<em class="quotelev1">&gt; 向老师您好 我运行 make run-matrix后发现难以检查结果是否正确，不知道是否有另外的办法来检查？
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; ------------------
+</em><br />
+<em class="quotelev1">&gt; FR  陈朱伟
+</em><br />
+<em class="quotelev1">&gt; Chen Zhu Wei
+</em><br />
+<em class="quotelev1">&gt; THU -- CST
+</em><br />
+<em class="quotelev1">&gt; Address: Building Zijing 2# 309B,
+</em><br />
+<em class="quotelev1">&gt; Tsinghua University Beijing 100084
+</em><br />
+<em class="quotelev1">&gt; P.R.CHINA
+</em><br />
+<em class="quotelev1">&gt; Tel: +86-15210590964
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; ------------------ 原始邮件 ------------------
+</em><br />
+<em class="quotelev1">&gt; 发件人: &quot;Yu Chen&quot;&lt;chyyuu_at_gmail.com&gt;;
+</em><br />
+<em class="quotelev1">&gt; 发送时间: 2012年4月25日(星期三) 下午3:43
+</em><br />
+<em class="quotelev1">&gt; 收件人: &quot;oscourse&quot;&lt;oscourse_at_googlegroups.com&gt;;
+</em><br />
+<em class="quotelev1">&gt; 主题: Re: pdf的字体太差
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; 好的。谢谢提醒！
+</em><br />
+<em class="quotelev1">&gt; 听说楷体_GB2312比较好看，目前用楷体_GB2312生成了lab6/7文档，看看是否入眼？
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 在 2012年4月25日 下午2:45，张超 &lt;313249726_at_qq.com&gt; 写道：
+</em><br />
+<em class="quotelev2">&gt; &gt; 老师您好，
+</em><br />
+<em class="quotelev2">&gt; &gt; lab6和lab7的实验文档的字体不是很好，看起来很难受，希望以后能改进一下。
+</em><br />
+<em class="quotelev2">&gt; &gt; 张超
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; --
+</em><br />
+<em class="quotelev2">&gt; &gt; You received this message because you are subscribed to the Google Groups
+</em><br />
+<em class="quotelev2">&gt; &gt; &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev2">&gt; &gt; To post to this group, send email to oscourse_at_googlegroups.com.
+</em><br />
+<em class="quotelev2">&gt; &gt; To unsubscribe from this group, send email to
+</em><br />
+<em class="quotelev2">&gt; &gt; oscourse+unsubscribe_at_googlegroups.com.
+</em><br />
+<em class="quotelev2">&gt; &gt; For more options, visit this group at
+</em><br />
+<em class="quotelev2">&gt; &gt; <a href="http://groups.google.com/group/oscourse?hl=en.">http://groups.google.com/group/oscourse?hl=en.</a>
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; -- 
+</em><br />
+<em class="quotelev1">&gt; Best Regards
+</em><br />
+<em class="quotelev1">&gt; ==============================================
+</em><br />
+<em class="quotelev1">&gt; Chen Yu
+</em><br />
+<em class="quotelev1">&gt; Ph.D.  Associate Professor
+</em><br />
+<em class="quotelev1">&gt; System Software&amp;Software Engineering Group,
+</em><br />
+<em class="quotelev1">&gt; Laboratory of Pervasive Computing,
+</em><br />
+<em class="quotelev1">&gt; Dept. of Computer Science and Technology
+</em><br />
+<em class="quotelev1">&gt; Tsinghua University, Beijing 100084, P.R. China
+</em><br />
+<em class="quotelev1">&gt; E-Mail: mailto:yuchen_at_tsinghua.edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+</em><br />
+<em class="quotelev1">&gt; ==============================================
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; -- 
+</em><br />
+<em class="quotelev1">&gt; You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev1">&gt; To post to this group, send email to oscourse_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en.">http://groups.google.com/group/oscourse?hl=en.</a>
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+
+<br />
+<pre>
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:24:45 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start318">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0319.html" title="Next message in the list">Yong Xiang: "Fwd: &#25552;&#37266; - &#25805;&#20316;&#31995;&#32479;&#35838;&#31572;&#30097;&#21644;&#35838;&#31243;&#35774;&#35745;&#20132;&#27969;&#23433;&#25490; &#26102;&#38388;&#65306;&#21608;&#20845;&#19978;&#21320;10&#28857;&#33267;12&#28857; &#22320;&#28857;&#65306;&#19996;&#20027;&#27004;10&#21306;109&#20250;&#35758;&#23460;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0317.html" title="Previous message in the list">Wang Naizheng: "Re: lab6&#20013;del_timer&#30340;&#26102;&#26426;"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg318" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg318" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg318" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg318" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

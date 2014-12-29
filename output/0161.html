@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: 关于lab2的补充帮助信息1 from Junpeng Qiu on 2012-03-18 (gmail.mbox)</title>
+<meta name="Author" content="Junpeng Qiu (qjpchmail_at_gmail.com)" />
+<meta name="Subject" content="Re: 关于lab2的补充帮助信息1" />
+<meta name="Date" content="2012-03-18" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: 关于lab2的补充帮助信息1</h1>
+<!-- received="Wed May 15 21:24:01 2013" -->
+<!-- isoreceived="20130515172401" -->
+<!-- sent="Sun, 18 Mar 2012 14:43:43 +0800" -->
+<!-- isosent="20120318064343" -->
+<!-- name="Junpeng Qiu" -->
+<!-- email="qjpchmail_at_gmail.com" -->
+<!-- subject="Re: 关于lab2的补充帮助信息1" -->
+<!-- id="CAKzohgLFFHe7REBR1t2kyYrHehOEwSQ3QbhnfizGkpQjvbcT0A_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- inreplyto="CAEwsUfHHFJejJLtYWLjoduoeOmfozrscBL9kp_h1z8Aev-5VSQ_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start161" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0162.html" accesskey="d" title="Near Song: &quot;Re: &#20851;&#20110;lab2&#30340;&#34917;&#20805;&#24110;&#21161;&#20449;&#24687;1&quot;">Next message</a> ]
+[ <a href="0160.html" title="Chang Lan: &quot;Re: &#20851;&#20110;line146 &#21152;&#20943;&#21495;&#30340;&#38382;&#39064;&quot;">Previous message</a> ]
+[ <a href="0159.html" title="Near Song: &quot;Re: &#20851;&#20110;lab2&#30340;&#34917;&#20805;&#24110;&#21161;&#20449;&#24687;1&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="0162.html" accesskey="t" title="Near Song: &quot;Re: &#20851;&#20110;lab2&#30340;&#34917;&#20805;&#24110;&#21161;&#20449;&#24687;1&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg161" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg161" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg161" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg161" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Junpeng Qiu &lt;<a href="mailto:qjpchmail_at_gmail.com?Subject=Re%3A%20%FF赜趌ab2的%FF%FF%FF�%FF镏畔%FF1">qjpchmail_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sun, 18 Mar 2012 14:43:43 +0800</span><br />
+</address>
+<br />
+实际上老师这封邮件给出的default_alloc_pages是实现了first-order的，也可以通过check。做法是：老师在这封邮件给出的“大致”的代码不要修改，然后也不要修改原来的assert，只要你把free操作实现为和示例的alloc代码类似，每次将free的块放到free_list的头部，是可以全部通过测试的。
+<br />
+<br />我的想法和chyh1990_at_gmail.com上封邮件类似，就是你如何定义这个链表的顺序。我觉得如果按照示例代码应该是将空块放到前头。在这个方法下，不要强制“address
+<br />
+order”的话，原有的代码都没有错。不过既然现在“标准”的assert已经改成要求address
+<br />
+order的了，也就是那句话应该是（按照我的理解）有点问题的。
+<br />
+<br />关于要不要设置Property位，我想通过check应该不是写代码考虑的问题，按照正确做法我觉得应该设置。实际上不设置照样能通过check。
+<br />
+<br /><br />在 2012年3月18日 下午1:40，Near Song &lt;nearsy.h_at_gmail.com&gt;写道：
+<br />
+<br /><em class="quotelev1">&gt; default_alloc_pages这个函数原本的实现是不能通过check的,但它能通过basic_check.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 第一个问题：你还没有实现这个函数，它本来就没有实现first-order，我觉得只是起一个引导的作用。何来错不错这一说。
+</em><br />
+<em class="quotelev1">&gt; 第二个问题：没有设置pageproperty也是因为这只是一个仅供参考的初始版本。你的实现如果要通过check的话就要设置property
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 在 2012年3月18日 下午1:15，Junpeng Qiu &lt;qjpchmail_at_gmail.com&gt; 写道：
+</em><br />
+<em class="quotelev2">&gt; &gt; 陈老师给的default_alloc_pages函数的大致实现有几个地方没理解：
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 部分代码：
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;    if (page != NULL) {
+</em><br />
+<em class="quotelev2">&gt; &gt;        list_del(&amp;(page-&gt;page_link));
+</em><br />
+<em class="quotelev2">&gt; &gt;        if (page-&gt;property &gt; n) {
+</em><br />
+<em class="quotelev2">&gt; &gt;            struct Page *p = page + n;
+</em><br />
+<em class="quotelev2">&gt; &gt;            p-&gt;property = page-&gt;property - n;
+</em><br />
+<em class="quotelev2">&gt; &gt;            list_add(&amp;free_list, &amp;(p-&gt;page_link));
+</em><br />
+<em class="quotelev2">&gt; &gt;        }
+</em><br />
+<em class="quotelev2">&gt; &gt;        nr_free -= n;
+</em><br />
+<em class="quotelev2">&gt; &gt;        ClearPageProperty(page);
+</em><br />
+<em class="quotelev2">&gt; &gt;    }
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 1.
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev1">&gt; 这应该是将大于n的多出来的页存起来，但是后来把这个页放到了free_list的头部，也就是说默认是将free的块放到头部？如果default_free_pages函数也用相同的思路实现的话，那么之前列表中讨论的assert((p0
+</em><br />
+<em class="quotelev2">&gt; &gt; = alloc_page()) == p2 + 1);也不用改成assert((p0 = alloc_page()) == p2 -
+</em><br />
+<em class="quotelev2">&gt; &gt; 1);因为按照代码的顺序：
+</em><br />
+<em class="quotelev2">&gt; &gt;     p2 = p0 + 1;
+</em><br />
+<em class="quotelev2">&gt; &gt;     free_page(p0);
+</em><br />
+<em class="quotelev2">&gt; &gt;     free_pages(p1, 3);
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev1">&gt; 后面释放的p1对应的三块此时被放到了free_list的头部，而查找时是按照双向链表的顺序进行的，所以从free_list开始将首先找到p1对应的大小为3的块，所以原来的不修改的assert可以通过（但这不符合address
+</em><br />
+<em class="quotelev2">&gt; &gt; order的假设，实际应该是不行。）
+</em><br />
+<em class="quotelev2">&gt; &gt; 实际上按照课件和老师之前的说法，如果是一个address
+</em><br />
+<em class="quotelev2">&gt; &gt; order的链表，是不能将空闲块直接插到链表头部的，否则就乱序了，所以应该是list_add(&amp;free_list,
+</em><br />
+<em class="quotelev2">&gt; &gt; &amp;(p-&gt;page_link));这句错了？
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 2. 似乎上面的代码没有将p设置SetPageProperty？
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; --
+</em><br />
+<em class="quotelev2">&gt; &gt; 丘骏鹏
+</em><br />
+<em class="quotelev2">&gt; &gt; Qiu Junpeng
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 清华大学计算机科学与技术系
+</em><br />
+<em class="quotelev2">&gt; &gt; Department of Computer Science and Technology,
+</em><br />
+<em class="quotelev2">&gt; &gt; Tsinghua University
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; 在 2012年3月13日 下午10:24，Yu Chen &lt;chyyuu_at_gmail.com&gt;写道：
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; lab2其实是才算是OS课的正式开始，而它的实现与各位同学之前学习的编程有较大的区别，需要尽量了解ucore的整体，需要使用一些在OS内比较常见但在应用开发比较罕见的编程技巧或方法。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; 为了让部分觉得lab2比较难的同学能够更容易的完成lab2的实验，我们会不定期地收集相关学生问题（希望从maillist上看到学生的提问），并回答。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 下面的信息不是标准，只是便于大家完成lab2的参考。觉得自己编程还不错的同学可直接忽略下面的内容。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; ----------------------------------------------------------------------------------------------------------------------------------------------------
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; lab2的第一部分是完成first_fit的分配算法。原理上first_fit很简单，但要在ucore中实现，需要充分了解和利用ucore已有的数据结构和相关操作、关键的一些全局变量等。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; first_fit分配算法需要维护一个查找有序（地址按从小到大排列）空闲块（以页为最小单位的连续地址空间）的数据结构，而双向链表是一个很好的选择。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; libs/list.h定义了可挂接任意元素的通用双向链表结构和对应的操作，所以需要了解如何使用这个文件提供的各种函数，从而可以完成对双向链表的初始化/插入/删除等。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; kern/mm/memlayout.h中定义了一个 free_area_t 数据结构，包含成员结构
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    list_entry_t free_list;         // the list header   空闲块双向链表的头
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    unsigned int nr_free;           // # of free pages in this free
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; list  空闲块的总数（以页为单位）
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 显然，我们可以通过此数据结构来完成对空闲块的管理。而default_pmm.c中定义的free_area变量就是干这个事情的。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; kern/mm/pmm.h中定义了一个通用的分配算法的函数列表，用pmm_manager 表示
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; // pmm_manager is a physical memory management class. A special pmm
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; manager - XXX_pmm_manager
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; // only needs to implement the methods in pmm_manager class, then
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; XXX_pmm_manager can be used
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; // by ucore to manage the total physical memory space.
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; struct pmm_manager {
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    const char *name;                                 //
+</em><br />
+<em class="quotelev1">&gt; XXX_pmm_manager's
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; name
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    void (*init)(void);                               // initialize
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; internal description&amp;management data structure
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;                                                      // (free block
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; list, number of free block) of XXX_pmm_manager
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    void (*init_memmap)(struct Page *base, size_t n); // setup
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; description&amp;management data structcure according to
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;                                                      // the initial
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; free physical memory space
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    struct Page *(*alloc_pages)(size_t n);            // allocate &gt;=n
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; pages, depend on the allocation algorithm
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    void (*free_pages)(struct Page *base, size_t n);  // free &gt;=n
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; pages with &quot;base&quot; addr of Page descriptor structures(memlayout.h)
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    size_t (*nr_free_pages)(void);                    // return the
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; number of free pages
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    void (*check)(void);                              // check the
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; correctness of XXX_pmm_manager
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; };
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 上述的英文注释比较详细了。可进一步说明的是
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; init函数就是用来初始化free_area变量的, first_fit分配算法可直接重用default_ini函数t的实现。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; init_memmap函数需要根据现有的内存情况构建空闲块列表的初始状态。何时应该执行这个函数呢？
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 通过分析代码，可以知道：
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; kern_init --&gt; pmm_init--&gt;page_init--&gt;init_memmap--&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; pmm_manager-&gt;init_memmap
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; 所以，default_init_memmap需要根据page_init函数中传递过来的参数（某个连续地址的空闲块的起始页，页个数）来建立一个空闲块的双向链表。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 这里有一个假定page_init函数是按地址从小到大的顺序传来的空闲块的。（需要确认？？？）
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; 链表头是free_area.free_list，链表项是Page数据结构的base-&gt;page_link。这样我们就依靠Page数据结构中的成员变量page_link形成了一的空闲块列表。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Page数据结构中的成员变量property 是一个整型，在这里我们可以把它用来记录某空闲块的大小（即页个数）。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; Page数据结构中的成员变量flags可以有各种特殊的需求，比如SetPageProperty(page)，即把page-&gt;flags的PG_property位设置为1，表示成员变量property
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 有效；ClearPageProperty(page)，即把page-&gt;flags的PG_property位设置为0，表示成员变量property
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 无效。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Page数据结构中的成员变量ref 是一个整型，我们可以用它来记录这个空闲块是否被用了，如果0，free；如果1，malloced
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 所以default_init_memmap可大致实现如下：
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; default_init_memmap(struct Page *base, size_t n) {
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    struct Page *p = base;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    for (; p != base + n; p ++) {
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;        p-&gt;flags = p-&gt;property = 0;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;        set_page_ref(p, 0);
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    }
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    base-&gt;property = n;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    SetPageProperty(base);
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    nr_free += n;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    list_add(&amp;free_list, &amp;(base-&gt;page_link));
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; }
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 如果要分配一个页，那要考虑哪些呢？这里就需要考虑实现default_alloc_pages函数，注意参数n表示要分配n个页。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 另外，需要注意实现时尽量多考虑一些边界情况，这样确保软件的鲁棒性。比如
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    if (n &gt; nr_free) {
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;        return NULL;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    }
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 这样可以确保分配不会超出范围。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 也可加一些 assert函数，在有错误出现时，能够迅速发现。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 比如 n应该大于0，我们就可以加上
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;   assert(n &gt; 0);
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 这样在n&lt;=0的情况下，ucore会迅速报错
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; firstfit需要从空闲链表头开始查找最小的地址，通过list_next找到下一个空闲块元素，通过le2page宏可以更加链表元素获得对应的Page指针p
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 通过p-&gt;property可以了解此空闲块的大小。如果&gt;=n，这就找到了！如果&lt;n，则list_next，继续查找。直到list_next
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; == &amp;free_list，这表示找完了一遍了。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; 找到后，就要从新组织空闲块，然后把找到的page返回。所以default_alloc_pages可大致实现如下：
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; static struct Page *
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; default_alloc_pages(size_t n) {
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    if (n &gt; nr_free) {
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;        return NULL;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    }
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    struct Page *page = NULL;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    list_entry_t *le = &amp;free_list;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    while ((le = list_next(le)) != &amp;free_list) {
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;        struct Page *p = le2page(le, page_link);
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;        if (p-&gt;property &gt;= n) {
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;            page = p;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;            break;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;        }
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    }
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    if (page != NULL) {
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;        list_del(&amp;(page-&gt;page_link));
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;        if (page-&gt;property &gt; n) {
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;            struct Page *p = page + n;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;            p-&gt;property = page-&gt;property - n;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;            list_add(&amp;free_list, &amp;(p-&gt;page_link));
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;        }
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;        nr_free -= n;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;        ClearPageProperty(page);
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    }
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;    return page;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; }
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; default_free_pages函数的实现其实是default_alloc_pages的逆过程，不过需要考虑空闲块的合并问题。这里就不再细讲了。希望同学能够顺利完成lab2的第一部分。
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; --
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Best Regards
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; ==============================================
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Chen Yu
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Ph.D.  Associate Professor
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; System Software&amp;Software Engineering Group,
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Laboratory of Pervasive Computing,
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Dept. of Computer Science and Technology
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Tsinghua University, Beijing 100084, P.R. China
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; E-Mail: mailto:yuchen_at_tsinghua.edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; ==============================================
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; --
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; You received this message because you are subscribed to the Google
+</em><br />
+<em class="quotelev1">&gt; Groups
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; To post to this group, send email to oscourse_at_googlegroups.com.
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; To unsubscribe from this group, send email to
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; oscourse+unsubscribe_at_googlegroups.com.
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; For more options, visit this group at
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; --
+</em><br />
+<em class="quotelev2">&gt; &gt; You received this message because you are subscribed to the Google Groups
+</em><br />
+<em class="quotelev2">&gt; &gt; &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev2">&gt; &gt; To post to this group, send email to oscourse_at_googlegroups.com.
+</em><br />
+<em class="quotelev2">&gt; &gt; To unsubscribe from this group, send email to
+</em><br />
+<em class="quotelev2">&gt; &gt; oscourse+unsubscribe_at_googlegroups.com.
+</em><br />
+<em class="quotelev2">&gt; &gt; For more options, visit this group at
+</em><br />
+<em class="quotelev2">&gt; &gt; <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; 宋一行(Near)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 清华大学计算机系92班
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; CS&amp;T,  Tsinghua University
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; You received this message because you are subscribed to the Google Groups
+</em><br />
+<em class="quotelev1">&gt; &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev1">&gt; To post to this group, send email to oscourse_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; To unsubscribe from this group, send email to
+</em><br />
+<em class="quotelev1">&gt; oscourse+unsubscribe_at_googlegroups.com.
+</em><br />
+<em class="quotelev1">&gt; For more options, visit this group at
+</em><br />
+<em class="quotelev1">&gt; <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+
+<br />
+<pre>
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:24:01 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start161">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0162.html" title="Next message in the list">Near Song: "Re: &#20851;&#20110;lab2&#30340;&#34917;&#20805;&#24110;&#21161;&#20449;&#24687;1"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0160.html" title="Previous message in the list">Chang Lan: "Re: &#20851;&#20110;line146 &#21152;&#20943;&#21495;&#30340;&#38382;&#39064;"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0159.html" title="Message to which this message replies">Near Song: "Re: &#20851;&#20110;lab2&#30340;&#34917;&#20805;&#24110;&#21161;&#20449;&#24687;1"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0162.html" title="Next message in this discussion thread">Near Song: "Re: &#20851;&#20110;lab2&#30340;&#34917;&#20805;&#24110;&#21161;&#20449;&#24687;1"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0162.html" title="Message sent in reply to this message">Near Song: "Re: &#20851;&#20110;lab2&#30340;&#34917;&#20805;&#24110;&#21161;&#20449;&#24687;1"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg161" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg161" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg161" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg161" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

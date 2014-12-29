@@ -1,0 +1,69 @@
+jQuery(document).ready(function(){
+	//公告栏轮显效果
+	(function(){
+		$("#prev").click(function(){
+			$(".gonggao span:visible").animate({height:'toggle',opacity:'toggle'},400, 
+			function() {
+				if ($(this).prev().is("span")) {
+					$(this).prev().animate({height:'toggle',opacity:'toggle'},200);
+				} else {
+					$(".gonggao span:last").animate({height:'toggle',opacity:'toggle'},200);
+				}
+			});
+		});
+		$("#next").click(function(){
+			$(".gonggao span:visible").animate({height:'toggle',opacity:'toggle'},400, 
+			function(){
+				if ($(this).next().is("span")) {
+					$(this).next().animate({height:'toggle',opacity:'toggle'},200);
+				} else {
+					$(".gonggao span:first").animate({height:'toggle',opacity:'toggle'},200);
+				}
+			});
+		});
+		var b,
+		a = function(){
+			$("#next").trigger("click");
+			b = setTimeout(a, 4000);
+		};
+		$(".gonggao").hover(function(){
+			clearTimeout(b);
+			$("#prev,#next").fadeIn("fast");
+		},
+		function(){
+			b = setTimeout(a, 4000);
+			$("#prev,#next").fadeOut("fast");
+		});
+		b = setTimeout(a, 4000);
+	})();
+
+	(function(){
+		$('#tab-title span').mouseover(function(){
+			$(this).addClass("selected").siblings().removeClass("selected");
+			$("."+$(this).attr("id")).show().siblings().hide();
+		});
+	})();
+	(function(){//滚动
+		$('a.s_t, a.s_b, a.s_c, a.s_r').click(function(){
+			var mubiao, height=0,
+			this_class = $(this).attr('class').split(/\ /)[0],
+			$body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body'); // opera fix 这行是 Opera 的补丁, 少了它 Opera 是直接用跳的而且画面闪烁 by willin
+			// alert(this_class);return false;
+			if (this_class == 's_t')
+			{
+				mubiao = '#header';
+			} else if(this_class == 's_b'){
+				mubiao = '#footer';
+			} else if(this_class == 's_c'){
+				mubiao = '#comments';height=25;
+			} else if(this_class == 's_r'){
+				mubiao = '#respond';
+			} else{
+				return false;
+			}
+			$body.animate({scrollTop: $(mubiao).offset().top - height},1000);
+			height=0;
+			return false;
+		});
+	})();
+	})	//End jQuery

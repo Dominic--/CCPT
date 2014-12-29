@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>有关trapframe的相关信息 from Yu Chen on 2012-04-09 (gmail.mbox)</title>
+<meta name="Author" content="Yu Chen (chyyuu_at_gmail.com)" />
+<meta name="Subject" content="有关trapframe的相关信息" />
+<meta name="Date" content="2012-04-09" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>有关trapframe的相关信息</h1>
+<!-- received="Wed May 15 21:24:24 2013" -->
+<!-- isoreceived="20130515172424" -->
+<!-- sent="Mon, 9 Apr 2012 17:47:39 +0800" -->
+<!-- isosent="20120409094739" -->
+<!-- name="Yu Chen" -->
+<!-- email="chyyuu_at_gmail.com" -->
+<!-- subject="有关trapframe的相关信息" -->
+<!-- id="CAAdffVGOzpULV2Oc4K-2gS2E1SxMw=PeHdH0x3ERw+ZtQcMKCg_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start246" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0247.html" accesskey="d" title="Yu Chen: &quot;Re:Re:&#20851;&#20110;lab2&#25991;&#26723;&#30340;&#19968;&#20010;&#38169;&#35823;&#25551;&#36848;&quot;">Next message</a> ]
+[ <a href="0245.html" title="Yong Xiang: &quot;Re: Wiki&#19981;&#33021;&#35775;&#38382;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="0248.html" accesskey="t" title="Yijing Li: &quot;Re: &#26377;&#20851;trapframe&#30340;&#30456;&#20851;&#20449;&#24687;&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg246" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg246" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg246" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg246" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yu Chen &lt;<a href="mailto:chyyuu_at_gmail.com?Subject=Re%3A%20有%FF豻rapframe的相%FF匦畔%FF">chyyuu_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 9 Apr 2012 17:47:39 +0800</span><br />
+</address>
+<br />
+在lab4中，每个内核线程有一个trapframe，用于保存由于中断（或异常）产生后被打断的执行现场。
+<br />
+<br />topaddr=next-&gt;kstack + KSTACKSIZE 是用户进程/内核线程的内核栈栈顶，
+<br />
+<br />tf=topaddr-sizeof(struct trapframe) 是用户进程/内核线程的proc_struct-&gt;tf指向的地方。
+<br />
+<br />(tf, topaddr)这段内存空间，放了用户进程/内核线程的trapframe内容。
+<br />
+<br />若某内核线程执行，则CPU是在特权态0（在lab4中会出现），如果发生了中断/异常/系统调用，CPU会继续保持在特权态0，且CPU
+<br />
+会从当前内核栈指针esp 所指的位置开始压栈保存被中断/异常/系统调用打断的内核态执行现场。当处理完中断/异常/系统调用后，最后通过执行iret指令，CPU会把esp中指向的以前保存的cs,
+<br />
+eip,eflags等恢复，则CPU继续在内核态。且CPU又回到了内核态的内核线程被打断的地方继续执行。
+<br />
+<br />若某用户进程执行，则CPU是在特权态3（当然在lab4中不会出现，但在lab5中会出现），如果发生了中断/异常/系统调用，CPU会切换到特权态0（设置CS的低两位为0），且会查找TS（Task
+<br />
+Segment）中的域esp0，把这个域esp0保存的值赋给esp，然后把cs,
+<br />
+eip,eflags等压入esp指向的栈中，其实就是给此此用户进程的进程控制块proc_struct中的trapframe赋值。当处理完中断/异常/系统调用后，最后通过执行iret指令，CPU会把esp中指向的以前保存的cs,
+<br />
+eip,eflags等恢复，则CPU又回到了用户态的用户进程被打断的地方继续执行。
+<br />
+<br />在 2012年4月9日 下午4:46，jimmyyao &lt;jimmyyao_at_163&#46;<!--nospam-->com&gt; 写道：
+<br />
+<em class="quotelev1">&gt; 在lab4 的manual的第7页中 介绍了switch_to 函数完成两个执行现场的切换的具体流程，
+</em><br />
+<em class="quotelev1">&gt; 其中  2． 设置任务状态段ts 中特权态0 下的栈顶指针esp0 为next 内核线程initproc 的内核栈的栈顶，即
+</em><br />
+<em class="quotelev1">&gt; next-&gt;kstack + KSTACKSIZE ；
+</em><br />
+<em class="quotelev1">&gt; 这一步没看懂，而且next-&gt;kstack + KSTACKSIZE ；这个公式的由来没搞清楚，老师能否讲解一下~
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 谢谢老师~
+</em><br />
+<br /><br /><br /><br /><pre>
+-- 
+Best Regards
+==============================================
+Chen Yu
+Ph.D.  Associate Professor
+System Software&amp;Software Engineering Group,
+Laboratory of Pervasive Computing,
+Dept. of Computer Science and Technology
+Tsinghua University, Beijing 100084, P.R. China
+E-Mail: mailto:yuchen_at_tsinghua&#46;<!--nospam-->edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+==============================================
+
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups&#46;<!--nospam-->com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups&#46;<!--nospam-->com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:24:24 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start246">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0247.html" title="Next message in the list">Yu Chen: "Re:Re:&#20851;&#20110;lab2&#25991;&#26723;&#30340;&#19968;&#20010;&#38169;&#35823;&#25551;&#36848;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0245.html" title="Previous message in the list">Yong Xiang: "Re: Wiki&#19981;&#33021;&#35775;&#38382;"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0248.html" title="Next message in this discussion thread">Yijing Li: "Re: &#26377;&#20851;trapframe&#30340;&#30456;&#20851;&#20449;&#24687;"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0248.html" title="Message sent in reply to this message">Yijing Li: "Re: &#26377;&#20851;trapframe&#30340;&#30456;&#20851;&#20449;&#24687;"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg246" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg246" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg246" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg246" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

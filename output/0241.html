@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>关于lab2文档的一个错误描述 from Yu Chen on 2012-04-08 (gmail.mbox)</title>
+<meta name="Author" content="Yu Chen (chyyuu_at_gmail.com)" />
+<meta name="Subject" content="关于lab2文档的一个错误描述" />
+<meta name="Date" content="2012-04-08" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>关于lab2文档的一个错误描述</h1>
+<!-- received="Wed May 15 21:24:23 2013" -->
+<!-- isoreceived="20130515172423" -->
+<!-- sent="Sun, 8 Apr 2012 19:39:23 +0800" -->
+<!-- isosent="20120408113923" -->
+<!-- name="Yu Chen" -->
+<!-- email="chyyuu_at_gmail.com" -->
+<!-- subject="关于lab2文档的一个错误描述" -->
+<!-- id="CAAdffVE47rWdP-32T5t5iPBBmGqbFf0BPb9GoQMugXWkqvG1Aw_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start241" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0242.html" accesskey="d" title="&#20113;&#20113;&#32593;: &quot;&#40644;&#28009;&#26234;&#36992;&#35831;&#24744;&#27880;&#20876;&#20113;&#20113;&#32593;&quot;">Next message</a> ]
+[ <a href="0240.html" title="Yong Xiang: &quot;Re: Wiki&#19981;&#33021;&#35775;&#38382;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="0247.html" accesskey="t" title="Yu Chen: &quot;Re:Re:&#20851;&#20110;lab2&#25991;&#26723;&#30340;&#19968;&#20010;&#38169;&#35823;&#25551;&#36848;&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg241" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg241" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg241" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg241" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yu Chen &lt;<a href="mailto:chyyuu_at_gmail.com?Subject=Re%3A%20%FF赜趌ab2文档的�%FF%FF�%FF砦竺枋�">chyyuu_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sun, 8 Apr 2012 19:39:23 +0800</span><br />
+</address>
+<br />
+在lab2文档的第七页（大约倒数第三段的结束部分）的内容：
+<br />
+&quot;页表的空间大小取决与页表要管理的物理页数n，一个页表项（32位，即4字节）可管理一个物理页，页表需要占n/256个物理页空间。这样页目录表和页表所占的总大小为4096+1024*n字节。&quot;
+<br />
+有误，应该是
+<br />
+&quot;页表的空间大小取决与页表要管理的物理页数n
+<br />
+（n&gt;0），一个页表项（32位，即4字节）可管理一个物理页，页表需要占((n-1)/1024)+1个物理页空间。这样页目录表和页表所占的总大小为(1
+<br />
++ ((n-1)/1024+1)) *4096字节。&quot;
+<br />
+解释如下：
+<br />
+一个二级页表占4KB，一个页表项占4B，故一个二级页表有1024个页表项，每个页表项描述了一个物理页的映射信息。如果系统有n个物理页，如果0&lt;n&lt;1024，则需要1个物理页空间。general化，则为((n-1)/1024)+1。由于总有一个页目录表，所以页目录表和二级页表所占的总大小为(1
+<br />
++ ((n-1)/1024+1)) *4096字节。
+<br />
+<br />感谢洪燕辉同学指出的错误。欢迎更多的同学提出问题、意见和建议。
+<br />
+<br /><pre>
+-- 
+Best Regards
+==============================================
+Chen Yu
+Ph.D.  Associate Professor
+System Software&amp;Software Engineering Group,
+Laboratory of Pervasive Computing,
+Dept. of Computer Science and Technology
+Tsinghua University, Beijing 100084, P.R. China
+E-Mail: mailto:yuchen_at_tsinghua&#46;<!--nospam-->edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+==============================================
+
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups&#46;<!--nospam-->com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:24:23 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start241">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0242.html" title="Next message in the list">&#20113;&#20113;&#32593;: "&#40644;&#28009;&#26234;&#36992;&#35831;&#24744;&#27880;&#20876;&#20113;&#20113;&#32593;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0240.html" title="Previous message in the list">Yong Xiang: "Re: Wiki&#19981;&#33021;&#35775;&#38382;"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0247.html" title="Next message in this discussion thread">Yu Chen: "Re:Re:&#20851;&#20110;lab2&#25991;&#26723;&#30340;&#19968;&#20010;&#38169;&#35823;&#25551;&#36848;"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Maybe reply</dfn>: <a href="0247.html" title="Message sent in reply to this message">Yu Chen: "Re:Re:&#20851;&#20110;lab2&#25991;&#26723;&#30340;&#19968;&#20010;&#38169;&#35823;&#25551;&#36848;"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg241" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg241" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg241" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg241" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

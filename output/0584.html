@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>gdb 如何查看cr3，cr2等寄存器 from xiaoqixue_1 on 2012-10-07 (gmail.mbox)</title>
+<meta name="Author" content="xiaoqixue_1 (xiaoqixue_1_at_163.com)" />
+<meta name="Subject" content="gdb 如何查看cr3，cr2等寄存器" />
+<meta name="Date" content="2012-10-07" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>gdb 如何查看cr3，cr2等寄存器</h1>
+<!-- received="Wed May 15 21:26:10 2013" -->
+<!-- isoreceived="20130515172610" -->
+<!-- sent="Sun, 7 Oct 2012 19:10:12 +0800 (CST)" -->
+<!-- isosent="20121007111012" -->
+<!-- name="xiaoqixue_1" -->
+<!-- email="xiaoqixue_1_at_163.com" -->
+<!-- subject="gdb 如何查看cr3，cr2等寄存器" -->
+<!-- id="d74f387.28cd.13a3aeb0914.Coremail.xiaoqixue_1_at_163.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start584" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0585.html" accesskey="d" title="&#26472;&#22372;: &quot;Re: gdb &#22914;&#20309;&#26597;&#30475;cr3&#65292;cr2&#31561;&#23492;&#23384;&#22120;&quot;">Next message</a> ]
+[ <a href="0583.html" title="xiaoqixue_1: &quot;Re:Re: &#36827;&#31243;&#20999;&#25442;&#38382;&#39064;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="0585.html" accesskey="t" title="&#26472;&#22372;: &quot;Re: gdb &#22914;&#20309;&#26597;&#30475;cr3&#65292;cr2&#31561;&#23492;&#23384;&#22120;&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg584" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg584" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg584" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg584" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: xiaoqixue_1 &lt;<a href="mailto:xiaoqixue_1_at_163.com?Subject=Re%3A%20gdb%20�%FF%FF�%FF%FF�%FF%FF�%FF%FFcr3�%FF%FFcr2�%FF%FF�%FF%FF�%FF%FF�%FF%FF">xiaoqixue_1_at_163.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sun, 7 Oct 2012 19:10:12 +0800 (CST)</span><br />
+</address>
+<br />
+&nbsp;RT，
+<br />
+我google了下，查看寄存器命令有info reg, info all-reg,但都不能查看cr3等。
+<br />
+谢谢。
+<br />
+<br /><pre>
+-- 
+All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+--- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:26:10 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start584">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0585.html" title="Next message in the list">&#26472;&#22372;: "Re: gdb &#22914;&#20309;&#26597;&#30475;cr3&#65292;cr2&#31561;&#23492;&#23384;&#22120;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0583.html" title="Previous message in the list">xiaoqixue_1: "Re:Re: &#36827;&#31243;&#20999;&#25442;&#38382;&#39064;"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0585.html" title="Next message in this discussion thread">&#26472;&#22372;: "Re: gdb &#22914;&#20309;&#26597;&#30475;cr3&#65292;cr2&#31561;&#23492;&#23384;&#22120;"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0585.html" title="Message sent in reply to this message">&#26472;&#22372;: "Re: gdb &#22914;&#20309;&#26597;&#30475;cr3&#65292;cr2&#31561;&#23492;&#23384;&#22120;"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg584" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg584" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg584" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg584" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

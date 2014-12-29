@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>lab5问题 from xiaoqixue_1 on 2012-10-05 (gmail.mbox)</title>
+<meta name="Author" content="xiaoqixue_1 (xiaoqixue_1_at_163.com)" />
+<meta name="Subject" content="lab5问题" />
+<meta name="Date" content="2012-10-05" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>lab5问题</h1>
+<!-- received="Wed May 15 21:26:07 2013" -->
+<!-- isoreceived="20130515172607" -->
+<!-- sent="Fri, 5 Oct 2012 16:44:11 +0800 (CST)" -->
+<!-- isosent="20121005084411" -->
+<!-- name="xiaoqixue_1" -->
+<!-- email="xiaoqixue_1_at_163.com" -->
+<!-- subject="lab5问题" -->
+<!-- id="fe08ca.3ba5.13a3018a32c.Coremail.xiaoqixue_1_at_163.com" -->
+<!-- charset="GB2312" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start569" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0570.html" accesskey="d" title="Yu Chen: &quot;Re: Doc problem&quot;">Next message</a> ]
+[ <a href="0568.html" title="Object Ho: &quot;[Lab 7] doc unfinished&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="0576.html" accesskey="t" title="Yu Chen: &quot;Re: lab5&#38382;&#39064;&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg569" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg569" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg569" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg569" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: xiaoqixue_1 &lt;<a href="mailto:xiaoqixue_1_at_163.com?Subject=Re%3A%20lab5问题">xiaoqixue_1_at_163.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 5 Oct 2012 16:44:11 +0800 (CST)</span><br />
+</address>
+<br />
+&nbsp;lab5中，通过完成其中的练习，可以正常运行hello，但运行其他包含do_fork（）调用的用户态程序时出现错误，
+<br />
+错误提示如下：
+<br />
+count is 0, total is 6
+<br />
+check_swap() succeeded!
+<br />
+++ setup timer interrupts
+<br />
+100 ticks
+<br />
+<br />not valid addr 20, and  can not find it in vma
+<br />
+trapframe at 0xc0606fb4
+<br />
+&nbsp;&nbsp;edi  0x00000000
+<br />
+&nbsp;&nbsp;esi  0xafffffa8
+<br />
+&nbsp;&nbsp;ebp  0xafffff5c
+<br />
+&nbsp;&nbsp;oesp 0xc0606fd4
+<br />
+&nbsp;&nbsp;ebx  0x00000000
+<br />
+&nbsp;&nbsp;edx  0xafffff78
+<br />
+&nbsp;&nbsp;ecx  0x008002da
+<br />
+&nbsp;&nbsp;eax  0x00000000
+<br />
+&nbsp;&nbsp;ds   0x----0023
+<br />
+&nbsp;&nbsp;es   0x----0023
+<br />
+&nbsp;&nbsp;fs   0x----0000
+<br />
+&nbsp;&nbsp;gs   0x----0000
+<br />
+&nbsp;&nbsp;trap 0x0000000e Page Fault
+<br />
+&nbsp;&nbsp;err  0x00000004
+<br />
+&nbsp;&nbsp;eip  0x008001e5
+<br />
+&nbsp;&nbsp;cs   0x----001b
+<br />
+&nbsp;&nbsp;flag 0x00000202 IF,IOPL=0
+<br />
+&nbsp;&nbsp;esp  0x00000020
+<br />
+&nbsp;&nbsp;ss   0x----0023
+<br />
+killed by kernel.
+<br />
+kernel panic at kern/trap/trap.c:220:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;handle user mode pgfault failed. ret=-3
+<br />
+<br />我猜测是用户态do_fork时设置有问题，请问用户态do_fork 和 内核态do_fork有哪些区别？
+<br />
+<br /><br /><pre>
+-- 
+All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+--- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:26:07 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start569">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0570.html" title="Next message in the list">Yu Chen: "Re: Doc problem"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0568.html" title="Previous message in the list">Object Ho: "[Lab 7] doc unfinished"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0576.html" title="Next message in this discussion thread">Yu Chen: "Re: lab5&#38382;&#39064;"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0576.html" title="Message sent in reply to this message">Yu Chen: "Re: lab5&#38382;&#39064;"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg569" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg569" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg569" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg569" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

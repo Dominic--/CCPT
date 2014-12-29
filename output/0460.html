@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: Lab1 - About trap from Yu Chen on 2012-09-03 (gmail.mbox)</title>
+<meta name="Author" content="Yu Chen (chyyuu_at_gmail.com)" />
+<meta name="Subject" content="Re: Lab1 - About trap" />
+<meta name="Date" content="2012-09-03" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: Lab1 - About trap</h1>
+<!-- received="Wed May 15 21:25:35 2013" -->
+<!-- isoreceived="20130515172535" -->
+<!-- sent="Tue, 4 Sep 2012 01:16:19 +0800" -->
+<!-- isosent="20120903171619" -->
+<!-- name="Yu Chen" -->
+<!-- email="chyyuu_at_gmail.com" -->
+<!-- subject="Re: Lab1 - About trap" -->
+<!-- id="CAAdffVEQw0szeTUUQEDg3AYKTsgMRgm91VPdB7hubJZadFECSA_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- inreplyto="CAH5fjeNDdLishGaCO0WrvKuK0rHmxVUqW95TjtibHzpme5abqg_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start460" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0461.html" accesskey="d" title="Yu Chen: &quot;Re: Lab2 Doc&quot;">Next message</a> ]
+[ <a href="0459.html" title="Object Ho: &quot;Lab2 Doc&quot;">Previous message</a> ]
+[ <a href="0458.html" title="Object Ho: &quot;Lab1 - About trap&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg460" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg460" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg460" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg460" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Yu Chen &lt;<a href="mailto:chyyuu_at_gmail.com?Subject=Re%3A%20Lab1%20-%20About%20trap">chyyuu_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 4 Sep 2012 01:16:19 +0800</span><br />
+</address>
+<br />
+There are 3 types of gate in 80386
+<br />
+1：trapgate            (内部异常门)
+<br />
+0：intererupgate  （外部中断门）
+<br />
+异常是cpu引起的，中断是外设发出的。
+<br />
+<br />其实还有一个callgate，目前没有用到。
+<br />
+<br />2012/9/3 Object Ho &lt;objectkuan_at_gmail.com&gt;:
+<br />
+<em class="quotelev1">&gt; I suddenly can't understand something in Lab 1
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ./kern/trap/trap.c idt_init(void)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; When I initialize the IDT, I use SETGATE according to the comments in the
+</em><br />
+<em class="quotelev1">&gt; function. What is the second parameter &quot;istrap&quot; ?
+</em><br />
+<em class="quotelev1">&gt; This is the codes I submitted
+</em><br />
+<em class="quotelev1">&gt;     int i = 0;
+</em><br />
+<em class="quotelev1">&gt;     for(i = 0; i &lt; 256; i++) {
+</em><br />
+<em class="quotelev1">&gt;         SETGATE(idt[i], 0, GD_KTEXT, __vectors[i], DPL_KERNEL);
+</em><br />
+<em class="quotelev1">&gt;     }
+</em><br />
+<em class="quotelev1">&gt;     SETGATE(idt[T_SYSCALL], 1, GD_KTEXT, __vectors[T_SYSCALL], DPL_USER);
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; But when I change it to
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     int i = 0;
+</em><br />
+<em class="quotelev1">&gt;     for(i = 0; i &lt; 256; i++) {
+</em><br />
+<em class="quotelev1">&gt;         SETGATE(idt[i], 1, GD_KTEXT, __vectors[i], DPL_KERNEL);
+</em><br />
+<em class="quotelev1">&gt;     }
+</em><br />
+<em class="quotelev1">&gt;     SETGATE(idt[T_SYSCALL], 1, GD_KTEXT, __vectors[T_SYSCALL], DPL_USER);
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; or
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     int i = 0;
+</em><br />
+<em class="quotelev1">&gt;     for(i = 0; i &lt; 256; i++) {
+</em><br />
+<em class="quotelev1">&gt;         SETGATE(idt[i], 0, GD_KTEXT, __vectors[i], DPL_KERNEL);
+</em><br />
+<em class="quotelev1">&gt;     }
+</em><br />
+<em class="quotelev1">&gt;     SETGATE(idt[T_SYSCALL], 0, GD_KTEXT, __vectors[T_SYSCALL], DPL_USER);
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; or even
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     int i = 0;
+</em><br />
+<em class="quotelev1">&gt;     for(i = 0; i &lt; 256; i++) {
+</em><br />
+<em class="quotelev1">&gt;         SETGATE(idt[i], 1, GD_KTEXT, __vectors[i], DPL_KERNEL);
+</em><br />
+<em class="quotelev1">&gt;     }
+</em><br />
+<em class="quotelev1">&gt;     SETGATE(idt[T_SYSCALL], 0, GD_KTEXT, __vectors[T_SYSCALL], DPL_USER);
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Everything goes well...
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><br /><br /><pre>
+-- 
+Best Regards
+==============================================
+Yu Chen
+Ph.D.  Associate Professor
+System Software&amp;Software Engineering Group,
+Laboratory of Pervasive Computing,
+Dept. of Computer Science and Technology
+Tsinghua University, Beijing 100084, P.R. China
+E-Mail: mailto:yuchen_at_tsinghua.edu.cn  chyyuu_at_gmail&#46;<!--nospam-->com
+==============================================
+-- 
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:25:35 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start460">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0461.html" title="Next message in the list">Yu Chen: "Re: Lab2 Doc"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0459.html" title="Previous message in the list">Object Ho: "Lab2 Doc"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0458.html" title="Message to which this message replies">Object Ho: "Lab1 - About trap"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg460" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg460" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg460" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg460" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

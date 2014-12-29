@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Instereting and Boring Issues on UCore from Object Ho on 2012-08-30 (gmail.mbox)</title>
+<meta name="Author" content="Object Ho (objectkuan_at_gmail.com)" />
+<meta name="Subject" content="Instereting and Boring Issues on UCore" />
+<meta name="Date" content="2012-08-30" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Instereting and Boring Issues on UCore</h1>
+<!-- received="Wed May 15 21:25:33 2013" -->
+<!-- isoreceived="20130515172533" -->
+<!-- sent="Fri, 31 Aug 2012 00:37:41 +0800" -->
+<!-- isosent="20120830163741" -->
+<!-- name="Object Ho" -->
+<!-- email="objectkuan_at_gmail.com" -->
+<!-- subject="Instereting and Boring Issues on UCore" -->
+<!-- id="CAH5fjeMa6kGYY=mi2pm6ZVduKhjfeHWUaPWbEO6dxnO-dMdP3g_at_mail.gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start449" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0450.html" accesskey="d" title="Yu Chen: &quot;Re: Instereting and Boring Issues on UCore&quot;">Next message</a> ]
+[ <a href="0448.html" title="000webhost.com: &quot;Thanks for signup&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="0450.html" accesskey="t" title="Yu Chen: &quot;Re: Instereting and Boring Issues on UCore&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg449" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg449" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg449" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg449" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Object Ho &lt;<a href="mailto:objectkuan_at_gmail.com?Subject=Re%3A%20Instereting%20and%20Boring%20Issues%20on%20UCore">objectkuan_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 31 Aug 2012 00:37:41 +0800</span><br />
+</address>
+<br />
+(1)A boring one
+<br />
+./doc/lab0.pdf
+<br />
+Part 2.2
+<br />
+&quot;通过虚拟机使用 LinuxLinux Linux实验环境&quot; has a link, but the link covers &quot;过虚拟机使用
+<br />
+LinuxLinux Linux实验环境&quot; but not &quot;通&quot;
+<br />
+<br />(2)A boring one
+<br />
+./doc/lab0.pdf
+<br />
+Page 8
+<br />
+The link &quot;PDF - UNIX Commands: A Quick Reference Card&quot; is invalid.
+<br />
+<br />(3)
+<br />
+./doc/lab0.pdf
+<br />
+Page 15
+<br />
+In my version, singlestep is not followed with 0 or other numbers, but with
+<br />
+on/off
+<br />
+<br />(4)
+<br />
+./doc/lab1.pdf
+<br />
+Page 7
+<br />
+以Intel 80386为例， 计算机加电后例， 计算机加电后CPU从物理地址0xFFFFFFF0(由初始化的
+<br />
+CS：EIP确定，此时CS和IP的值分别是0xF000 和 0xFFF0)
+<br />
+Why from 0xFFFFFFF0 but not from 0xFFFF0
+<br />
+I try &quot;x/i 0xFFFFFFF0&quot; that's not the expected instruction.
+<br />
+<br />(5)
+<br />
+./code/lab1/boot/bootasm.S
+<br />
+The code after seta20.1:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;movb $0xd1, %al                                 # 0xd1 -&gt; port 0x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;outb %al, $0x64
+<br />
+Why should we output 0xd1? Can we output another value which can make
+<br />
+everything work normally?
+<br />
+And the code after seta20.2:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;movb $0xdf, %al                                 # 0xdf -&gt; port 0x60
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;outb %al, $0x60
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;movb $0xdf, %al                                    # 0xdf -&gt; port 0x60
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;outb %al, $0x60
+<br />
+The same question, why should we output 0xdf?
+<br />
+And besides, why should we output the value twice?
+<br />
+<br /><pre>
+-- 
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:25:33 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start449">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0450.html" title="Next message in the list">Yu Chen: "Re: Instereting and Boring Issues on UCore"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0448.html" title="Previous message in the list">000webhost.com: "Thanks for signup"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0450.html" title="Next message in this discussion thread">Yu Chen: "Re: Instereting and Boring Issues on UCore"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0450.html" title="Message sent in reply to this message">Yu Chen: "Re: Instereting and Boring Issues on UCore"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg449" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg449" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg449" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg449" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

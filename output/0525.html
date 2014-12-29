@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>请问这个函数是什么意思？ from xiaoqixue_1  on 2012-09-26 (gmail.mbox)</title>
+<meta name="Author" content="xiaoqixue_1  (xiaoqixue_1_at_163.com)" />
+<meta name="Subject" content="请问这个函数是什么意思？" />
+<meta name="Date" content="2012-09-26" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>请问这个函数是什么意思？</h1>
+<!-- received="Wed May 15 21:25:55 2013" -->
+<!-- isoreceived="20130515172555" -->
+<!-- sent="Wed, 26 Sep 2012 09:38:52 +0800 (CST)" -->
+<!-- isosent="20120926013852" -->
+<!-- name="xiaoqixue_1 " -->
+<!-- email="xiaoqixue_1_at_163.com" -->
+<!-- subject="请问这个函数是什么意思？" -->
+<!-- id="6947664f.14ff0.13a003a02ac.Coremail.xiaoqixue_1_at_163.com" -->
+<!-- charset="GB2312" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start525" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0526.html" accesskey="d" title="Yang Yang: &quot;Re: &#35831;&#38382;&#36825;&#20010;&#20989;&#25968;&#26159;&#20160;&#20040;&#24847;&#24605;&#65311;&quot;">Next message</a> ]
+[ <a href="0524.html" title="liusenlin: &quot;9&#21306;402&#32771;&#21220;&#65288;2012.9.17-2012.9.23&#65289;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="0526.html" accesskey="t" title="Yang Yang: &quot;Re: &#35831;&#38382;&#36825;&#20010;&#20989;&#25968;&#26159;&#20160;&#20040;&#24847;&#24605;&#65311;&quot;">Next in thread</a> ]
+ [ <a href="#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg525" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg525" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg525" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg525" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: xiaoqixue_1  &lt;<a href="mailto:xiaoqixue_1_at_163.com?Subject=Re%3A%20请问这%FF龊%FF数是�%FF�%FF意�%FF%FF%FF">xiaoqixue_1_at_163.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 26 Sep 2012 09:38:52 +0800 (CST)</span><br />
+</address>
+<br />
+请问这个函数是什么意思？
+<br />
+<br />&nbsp;#define ROUNDDOWN(a, n) ({                                          \
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size_t __a = (size_t)(a);                               \
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(typeof(a))(__a - __a % (n));                           \
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})
+<br />
+<br />google上查了一下，貌似是取整的意思，但还是不是很理解？
+<br />
+如果a = 10,n = 2.那么：
+<br />
+ROUNDDOWN（10，2） =
+<br />
+{
+<br />
+_a =10;
+<br />
+10 - 10%2
+<br />
+}
+<br />
+&nbsp;= 10
+<br />
+对吗？
+<br />
+<br /><br /><pre>
+-- 
+All lab's codes and docs are in <a href="https://github.com/chyyuu/ucore_pub">https://github.com/chyyuu/ucore_pub</a>
+--- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+Visit this group at <a href="http://groups.google.com/group/oscourse?hl=en-US">http://groups.google.com/group/oscourse?hl=en-US</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:25:55 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start525">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0526.html" title="Next message in the list">Yang Yang: "Re: &#35831;&#38382;&#36825;&#20010;&#20989;&#25968;&#26159;&#20160;&#20040;&#24847;&#24605;&#65311;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0524.html" title="Previous message in the list">liusenlin: "9&#21306;402&#32771;&#21220;&#65288;2012.9.17-2012.9.23&#65289;"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0526.html" title="Next message in this discussion thread">Yang Yang: "Re: &#35831;&#38382;&#36825;&#20010;&#20989;&#25968;&#26159;&#20160;&#20040;&#24847;&#24605;&#65311;"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0526.html" title="Message sent in reply to this message">Yang Yang: "Re: &#35831;&#38382;&#36825;&#20010;&#20989;&#25968;&#26159;&#20160;&#20040;&#24847;&#24605;&#65311;"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg525" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg525" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg525" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg525" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

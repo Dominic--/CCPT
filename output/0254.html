@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="generator" content="hypermail 2.3.0, see http://www.hypermail-project.org/" />
+<title>Re: 关于lab2文档的一个错误描述 from Wang Naizheng on 2012-04-10 (gmail.mbox)</title>
+<meta name="Author" content="Wang Naizheng (wnzheng_at_gmail.com)" />
+<meta name="Subject" content="Re: 关于lab2文档的一个错误描述" />
+<meta name="Date" content="2012-04-10" />
+<style type="text/css">
+/*<![CDATA[*/
+/* To be incorporated in the main stylesheet, don't code it in hypermail! */
+body {color: black; background: #ffffff}
+dfn {font-weight: bold;}
+pre { background-color:inherit;}
+.head { border-bottom:1px solid black;}
+.foot { border-top:1px solid black;}
+th {font-style:italic;}
+table { margin-left:2em;}map ul {list-style:none;}
+#mid { font-size:0.9em;}
+#received { float:right;}
+address { font-style:inherit ;}
+/*]]>*/
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+.period {font-weight: bold}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Re: 关于lab2文档的一个错误描述</h1>
+<!-- received="Wed May 15 21:24:26 2013" -->
+<!-- isoreceived="20130515172426" -->
+<!-- sent="Tue, 10 Apr 2012 09:09:03 +0800" -->
+<!-- isosent="20120410010903" -->
+<!-- name="Wang Naizheng" -->
+<!-- email="wnzheng_at_gmail.com" -->
+<!-- subject="Re: 关于lab2文档的一个错误描述" -->
+<!-- id="567EEC9117AD4EDC96BB65361E35D48C_at_gmail.com" -->
+<!-- charset="GB2312" -->
+<!-- inreplyto="CAAdffVHaF-c+zM5x8UgGNuase4y9cy8zCpjr377przbPsN-u_g_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="#start254" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="#options2">top</a>, <a href="#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0255.html" accesskey="d" title="Yu Chen: &quot;lab6 released&quot;">Next message</a> ]
+[ <a href="0253.html" title="Yijing Li: &quot;Re: &#26377;&#20851;trapframe&#30340;&#30456;&#20851;&#20449;&#24687;&quot;">Previous message</a> ]
+[ <a href="0247.html" title="Yu Chen: &quot;Re:Re:&#20851;&#20110;lab2&#25991;&#26723;&#30340;&#19968;&#20010;&#38169;&#35823;&#25551;&#36848;&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg254" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg254" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg254" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg254" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Wang Naizheng &lt;<a href="mailto:wnzheng_at_gmail.com?Subject=Re%3A%20%FF赜趌ab2文档的�%FF%FF�%FF砦竺枋�">wnzheng_at_gmail.com</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 10 Apr 2012 09:09:03 +0800</span><br />
+</address>
+<br />
+关于浮点数，补充两句可以吗。
+<br />
+<br />忘了在哪儿看过一个文档，大概意思是说：
+<br />
+<br />1. 浮点寄存器不是随便就能使用的，而是在硬件上 flags 上有一个 bit 表示是否可以使用 浮点寄存器。当这个 bit 没有设置的时候，如果直接使用了浮点寄存器，就会产生一个异常，进入内核。而内核就知道该用户程序打算进行浮点计算，然后在 PCB 里面做一些标记。并设置好 flag 状态返回，然后用户程序就可以正常使用浮点寄存器了。这有点儿像内存管理，先标记，再使用。
+<br />
+2. 而应用程序通常会频繁进出内核或者进行进程切换。如果内核使用浮点寄存器或者内核不知道用户程序浮点寄存器的使用状态的话，那么每次 mode switch 和 进程间切换，都需要像 trapframe 中其他通用寄存器一样对浮点寄存器进行保存。看 intel 手册就知道，这堆寄存器还是挺多的，通常也很大。
+<br />
+3. 所以通常内核设计成不使用（也就不会污染）浮点寄存器。这样，如果一个用户程序进入内核，并由内核返回原用户程序的话，这个 mode switch 过程，内核就不会改浮点寄存器状态，进而整个过程就不需要保存了，从而降低了 mode switch 开销。显然，程序执行过程中，mode switch 数量很可观，比如 syscall，（而且远比进程切换频繁的多）。  
+<br />
+4. 当发生进程切换的时候，内核会检查 PCB 里面之前记录的状态，从而知道刚才的进程是否使用过浮点寄存器，从而选择是否对浮点寄存器进行保存和恢复。
+<br />
+<br />现在的代码里面加入浮点寄存器的支持很容易，有兴趣的可以试试看。
+<br />
+<br />--  
+<br />
+Wang Naizheng
+<br />
+<br />On Monday, April 9, 2012 at 5:55 PM, Yu Chen wrote:
+<br />
+<em class="quotelev1">&gt; 感谢张檬的评论！
+</em><br />
+<em class="quotelev1">&gt; 看来大家还需对课堂上和实验中讲解的二级页表，自映射等有关物理内存分页管理的实现加强理解！
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; 在 2012年4月9日 下午5:07，ZHANG Meng &lt;zmlarry_at_foxmail.com (mailto:zmlarry_at_foxmail&#46;<!--nospam-->com)&gt; 写道：
+</em><br />
+<em class="quotelev2">&gt; &gt; 陈老师：
+</em><br />
+<em class="quotelev2">&gt; &gt;  
+</em><br />
+<em class="quotelev2">&gt; &gt; 您好！我觉得首先最好明确解释一下n所代表的量。n是指&quot;页表要管理的物理页数&quot;，从结论看，页目录表和二级页表不包含其中。页目录表不属于&quot;页表要管理的&quot;比较明显；而二级页表也不属于&quot;页表要管理的&quot;，在我们的概念中它属于&quot;页目录表要管理的&quot;，换言之，&quot;页目录表&quot;不属于这里所讲的&quot;页表&quot;的范畴。
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; 我认为：n是指&quot;页表要管理的物理内存的页数&quot;，但页表本身也在此物理内存中。所以页目录表和二级页表包含在其中。
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev2">&gt; &gt;  
+</em><br />
+<em class="quotelev2">&gt; &gt; 其次，我认为得出这个结论的解释有点瑕疵。最好解释为&quot;（在前面定义的n的含义下）如果0&lt;n≤1024，则需要1个二级页表管理。一般化，则需要((n-1)/1024)+1个二级页表管理。&quot;否则的话，如果取0&lt;n&lt;1024，为什么不一般化为(n/1024)+1呢？因此我觉得解释时考虑这个边界情况可以更好地理解这个问题。顺便一提，这里除号代表的是计算机界的整数除法也是比较郁闷的事情......在这个上下文中，把((n-1)/1024)+1写为ceil(n/1024.0)或许是更直观的表达。
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; 对，我用的是计算机界的整数除法，需要注意，在OS里面的主要部分基本上看不到浮点运算，原因是考虑性能优化。即使要用浮点计算，也是尽量通过整数运算来模拟浮点计算。
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev2">&gt; &gt;  
+</em><br />
+<em class="quotelev2">&gt; &gt; 敬请
+</em><br />
+<em class="quotelev2">&gt; &gt; 教安
+</em><br />
+<em class="quotelev2">&gt; &gt;  
+</em><br />
+<em class="quotelev2">&gt; &gt; 计94 张檬
+</em><br />
+<em class="quotelev2">&gt; &gt;  
+</em><br />
+<em class="quotelev2">&gt; &gt;  
+</em><br />
+<em class="quotelev2">&gt; &gt; ------------------ Original ------------------
+</em><br />
+<em class="quotelev2">&gt; &gt; From: &quot;陈渝&quot;&lt;chyyuu_at_gmail.com (mailto:chyyuu_at_gmail&#46;<!--nospam-->com)&gt;;
+</em><br />
+<em class="quotelev2">&gt; &gt; Date: Sun, Apr 8, 2012 07:39 PM
+</em><br />
+<em class="quotelev2">&gt; &gt; To: &quot;os-course&quot;&lt;oscourse_at_googlegroups.com (mailto:oscourse_at_googlegroups.com)&gt;;
+</em><br />
+<em class="quotelev2">&gt; &gt; &quot;yos-course&quot;&lt;yos-course_at_googlegroups.com (mailto:yos-course_at_googlegroups&#46;<!--nospam-->com)&gt;;
+</em><br />
+<em class="quotelev2">&gt; &gt; Subject: 关于lab2文档的一个错误描述
+</em><br />
+<em class="quotelev2">&gt; &gt;  
+</em><br />
+<em class="quotelev2">&gt; &gt; 在lab2文档的第七页（大约倒数第三段的结束部分）的内容：
+</em><br />
+<em class="quotelev2">&gt; &gt; &quot;页表的空间大小取决与页表要管理的物理页数n，一个页表项（32位，即4字节）可管理一个物理页，页表需要占n/256个物理页空间。这样页目录表和页表所占的总大小为4096+1024*n字节。&quot;
+</em><br />
+<em class="quotelev2">&gt; &gt; 有误，应该是
+</em><br />
+<em class="quotelev2">&gt; &gt; &quot;页表的空间大小取决与页表要管理的物理页数n
+</em><br />
+<em class="quotelev2">&gt; &gt; （n&gt;0），一个页表项（32位，即4字节）可管理一个物理页，页表需要占((n-1)/1024)+1个物理页空间。这样页目录表和页表所占的总大小为(1
+</em><br />
+<em class="quotelev2">&gt; &gt; + ((n-1)/1024+1)) *4096字节。&quot;
+</em><br />
+<em class="quotelev2">&gt; &gt; 解释如下：
+</em><br />
+<em class="quotelev2">&gt; &gt; 一个二级页表占4KB，一个页表项占4B，故一个二级页表有1024个页表项，每个页表项描述了一个物理页的映射信息。如果系统有n个物理页，如果0&lt;n&lt;1024，则需要1个物理页空间。general化，则为((n-1)/1024)+1。由于总有一个页目录表，所以页目录表和二级页表所占的总大小为(1
+</em><br />
+<em class="quotelev2">&gt; &gt; + ((n-1)/1024+1)) *4096字节。
+</em><br />
+<em class="quotelev2">&gt; &gt;  
+</em><br />
+<em class="quotelev2">&gt; &gt; 感谢洪燕辉同学指出的错误。欢迎更多的同学提出问题、意见和建议。
+</em><br />
+<em class="quotelev2">&gt; &gt;  
+</em><br />
+<em class="quotelev2">&gt; &gt; --
+</em><br />
+<em class="quotelev2">&gt; &gt; Best Regards
+</em><br />
+<em class="quotelev2">&gt; &gt; ==============================================
+</em><br />
+<em class="quotelev2">&gt; &gt; Chen Yu
+</em><br />
+<em class="quotelev2">&gt; &gt; Ph.D. Associate Professor
+</em><br />
+<em class="quotelev2">&gt; &gt; System Software&amp;Software Engineering Group,
+</em><br />
+<em class="quotelev2">&gt; &gt; Laboratory of Pervasive Computing,
+</em><br />
+<em class="quotelev2">&gt; &gt; Dept. of Computer Science and Technology
+</em><br />
+<em class="quotelev2">&gt; &gt; Tsinghua University, Beijing 100084, P.R. China
+</em><br />
+<em class="quotelev2">&gt; &gt; E-Mail: mailto:yuchen_at_tsinghua.edu.cn chyyuu_at_gmail.com (mailto:chyyuu_at_gmail&#46;<!--nospam-->com)
+</em><br />
+<em class="quotelev2">&gt; &gt; ==============================================
+</em><br />
+<em class="quotelev2">&gt; &gt;  
+</em><br />
+<em class="quotelev2">&gt; &gt; --
+</em><br />
+<em class="quotelev2">&gt; &gt; You received this message because you are subscribed to the Google Groups
+</em><br />
+<em class="quotelev2">&gt; &gt; &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev2">&gt; &gt; To post to this group, send email to oscourse_at_googlegroups.com (mailto:oscourse_at_googlegroups&#46;<!--nospam-->com).
+</em><br />
+<em class="quotelev2">&gt; &gt; To unsubscribe from this group, send email to
+</em><br />
+<em class="quotelev2">&gt; &gt; oscourse+unsubscribe_at_googlegroups.com (mailto:oscourse+unsubscribe_at_googlegroups.com).
+</em><br />
+<em class="quotelev2">&gt; &gt; For more options, visit this group at
+</em><br />
+<em class="quotelev2">&gt; &gt; <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</em><br />
+<em class="quotelev2">&gt; &gt;  
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; Best Regards
+</em><br />
+<em class="quotelev1">&gt; ==============================================
+</em><br />
+<em class="quotelev1">&gt; Chen Yu
+</em><br />
+<em class="quotelev1">&gt; Ph.D. Associate Professor
+</em><br />
+<em class="quotelev1">&gt; System Software&amp;Software Engineering Group,
+</em><br />
+<em class="quotelev1">&gt; Laboratory of Pervasive Computing,
+</em><br />
+<em class="quotelev1">&gt; Dept. of Computer Science and Technology
+</em><br />
+<em class="quotelev1">&gt; Tsinghua University, Beijing 100084, P.R. China
+</em><br />
+<em class="quotelev1">&gt; E-Mail: mailto:yuchen_at_tsinghua.edu.cn chyyuu_at_gmail&#46;<!--nospam-->com (mailto:chyyuu_at_gmail&#46;<!--nospam-->com)
+</em><br />
+<em class="quotelev1">&gt; ==============================================
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; --  
+</em><br />
+<em class="quotelev1">&gt; You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+</em><br />
+<em class="quotelev1">&gt; To post to this group, send email to oscourse_at_googlegroups.com (mailto:oscourse_at_googlegroups.com).
+</em><br />
+<em class="quotelev1">&gt; To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com (mailto:oscourse+unsubscribe_at_googlegroups&#46;<!--nospam-->com).
+</em><br />
+<em class="quotelev1">&gt; For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<br /><br /><pre>
+-- 
+You received this message because you are subscribed to the Google Groups &quot;os-course&quot; group.
+To post to this group, send email to oscourse_at_googlegroups.com.
+To unsubscribe from this group, send email to oscourse+unsubscribe_at_googlegroups.com.
+For more options, visit this group at <a href="http://groups.google.com/group/oscourse?hl=en">http://groups.google.com/group/oscourse?hl=en</a>.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 21:24:26 MSD</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="#start254">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0255.html" title="Next message in the list">Yu Chen: "lab6 released"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0253.html" title="Previous message in the list">Yijing Li: "Re: &#26377;&#20851;trapframe&#30340;&#30456;&#20851;&#20449;&#24687;"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0247.html" title="Message to which this message replies">Yu Chen: "Re:Re:&#20851;&#20110;lab2&#25991;&#26723;&#30340;&#19968;&#20010;&#38169;&#35823;&#25551;&#36848;"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg254" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg254" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg254" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg254" title="Contemporary messages by author">by author</a> ] [ <a href="attachment.html" title="Contemporary messages by attachment">by messages with attachments</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<p><small><em>
+This archive was generated by <a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>
+: Wed May 15 2013 - 21:28:52 MSD
+</em></small></p>
+</body>
+</html>

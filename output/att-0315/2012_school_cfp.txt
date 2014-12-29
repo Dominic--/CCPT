@@ -1,0 +1,158 @@
+- Apr. 26, 2012 by Hajime Tazaki (ver. 09)
+============================================================================
+       Call for Papers: AsiaFI 2012 Summer School
+                  Aug 21-23, 2012
+           Kyoto University, Kyoto, Japan.
+       http://asiafi.net/meeting/2012/summerschool/
+
+
+The Internet is becoming the global digital infrastructure, however, its
+design still faces many challenges. Many of these issues arose due to the
+technology advances and drastic changes of the environment which bring
+fundamental changes in the requirements. The Future Internet has become the
+research theme for the global networking community to creating a better
+digital environment for the future.
+
+AsiaFI was established in 2008 for Future Internet research in Asia,
+focusing on young researchers, especially those in the Asia Pacific region,
+to be able to collaborate as we work toward this challenging topic. AsiaFI
+is going to hold the AsiaFI Summer School, primarily for students in PhD
+programs. The school provides opportunities for learning from world experts
+about leading-edge technical topics, professional development (including
+sessions on research and experimentation methodologies, writing and
+presentation skills, etc.), and interpersonal networking. The school also
+offers an excellent opportunity for young researchers to improve their
+cross-cultural communication skills.
+
+
+
+AsiaFI 2012 Summer School solicits papers that have obtained good results,
+are posing questions, or are work-in-progress. Possible topics include, but
+are not limited to:
+
+- Architectures, protocols, and algorithms for Trust/Security Network,
+Wired Network, Mobile/Wireless Network
+- Modeling, measurement and simulation of networks
+- Routing, Forwarding, Addressing, Identification and location
+- Network management, Trust/Security management
+- Mobile ad hoc and sensor networks/ Multi-hop wireless networks
+- Delay (or Disruption) tolerant networks
+- Wireless mesh networks and protocols
+- Service and application management for Future Internet
+- Implementations and experimental testbeds for Future Internet
+
+[School Date]
+August 21-23, 2012
+
+[Venue]
+Kyoto University, Kyoto, Japan
+
+[Registration fee (including School and Workshop)]
+- 20,000 JPY (about 240 US dollars) for general
+- 10,000 JPY (about 120 US dollars) for a full-time student
+
+
+[Who should attend]
+Researchers including Ph.D. students, young researchers who have
+recently earned their Ph.D.s and advanced master course students who
+are interested in Future Internet technologies are welcome. You will
+be able to obtain supportive/productive comments and suggestions by
+world-leading professors. These professors usually will not be
+involved in the students' Ph.D. defense, allowing students to interact
+freely, with fewer barriers.  While we welcome quality paper
+submission, work-in-progress or even work-to-be-done type of
+presentations are welcome as well provided they are interesting.
+
+
+
+[Fellowship]
+We will provide fellowship for best papers and for selected students
+from developing countries; either full support or partial support. The
+full support roughly covers airfare, room and board, and registration
+fee, while the partial support covers only room and board and
+registration fee.
+
+We expect about 10 students to be rewarded but the exact number
+depends on the available funding.
+
+
+[How to Submit]
+Paper submission and review will be done through EasyChair on the following link:
+
+ http://www.easychair.org/conferences/?conf=asiafi2012
+ Only electronic submissions in PDF format will be considered.
+
+ Paper submission has three categories:
+  Work-in-progress papers (4 pages),
+  Extended Abstract papers (2 pages).
+
+Authors should state with their category of submission. Note that
+Extended abstract papers will be assigned to lightning talk session
+and poster session in the school. Other papers will be assigned to
+presentation session.
+
+Papers must be in two-column 10pt format.  Please use the following
+LaTeX2e or MS Word templates.
+http://conferences.sigcomm.org/sigcomm/2010/sig-alternate-10pt.cls
+http://conferences.sigcomm.org/sigcomm/2010/sig-proc-word-10pt.doc
+
+Authors who will be accepted full or work-in-progress paper are encouraged
+to submit poster session to extend discussion of your research.
+
+
+[Proceedings]
+The proceedings will be available on the web (and no paper version will
+be provided).  The AsiaFI Forum allows authors to retain copyright of their
+submitted work to encourage early submission of work.
+
+
+[Important Dates]
+Paper submission due                 May 14, 2012 (extended)
+Paper acceptance notification        June 1, 2012
+The fellowship notification          June 1, 2012
+Final manuscript submission due      July 31, 2012
+AsiaFI Summer School                 August 21-23, 2012
+
+Summer School General Chair:
+    Yasuo Okabe (Kyoto University, Japan)
+
+Summer School TPC Chair(s)
+    Hajime Tazaki (NICT, Japan)
+    Kideok Cho (SNU, Korea)
+    Bingyang Liu (Tsinghua University, China) 
+
+Summer School Technical Program Committee:
+    Hitoshi Asaeda (Keio University, Japan)
+    Jun Bi (Tsinghua University, China)
+    Kenjiro Cho (IIJ, Japan)
+    Nakjung Choi (Bell Lab., Korea)
+    Serge Fdida (UPMC, France)
+    Jian Gong (Southeast University, China)
+    Xiaohong Huang (BUPT, China)
+    Akira Kato (Keio University, Japan)
+    Dae Young Kim (CNU, Korea)
+    Dongman Lee (KAIST, Korea)
+    Yan MA (BUPT, China)
+    Hideya Ochiai (University of Tokyo, Japan)
+    Koji Okamura (Kyusyu University, Japan)
+    Sangheon Pack (Korea University, Korea)
+    Keiichi Shima (IIJ, Japan)
+    Fumio Teraoka (Keio University, Japan)
+    Rodney Van Meter (Keio University, Japan)
+    Yonggang Wen (Nanyang Univ. of Technology, Singapore)
+    Mingwei Xu (Tsinghua University, China)
+    Lixia Zhang (UCLA, USA)
+
+    Hirochika Asai (The University of Tokyo, Japan, Student PC)
+    Eunsang Cho (SNU, Korea, Student PC)
+    Hoon-gyu Choi (SNU, Korea, Student PC)
+    Jinyoung Han (SNU, Korea, Student PC)
+    Xiaoke Jiang (Tsinghua University, China, Student PC)
+    Munyoung Lee (SNU, Korea, Student PC)
+    Junho Suh (SNU, Korea, Student PC)
+    Sen Wang     (Tsinghua University, China, Student PC)
+    Yang Xiang (Tsinghua University, China, Student PC)
+    Baobao Zhang (Tsinghua University, China, Student PC)
+    Yuncheng Zhu (University of Tokyo, Japan, Student PC)
+    Daisuke Kotani (Kyoto University, Japan, Student PC)
+
